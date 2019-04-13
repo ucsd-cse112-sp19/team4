@@ -1,0 +1,57 @@
+html, body {
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: 100%;
+}
+#main {
+    text-align: center;
+}
+div .team, div .engineer {
+    display: inline-block;
+}
+div .team {
+    margin: 0 20px 0 20px;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+.contact-info{
+    font-size: 12px;
+}
+.initial {
+    opacity: 0;
+}
+.team {
+    animation: fadeIn 1s;
+    -moz-animation: fadeIn 1s;
+    /* Firefox */
+    -webkit-animation: fadeIn 1s;
+    /* Safari and Chrome */
+    -o-animation: fadeIn 1s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }  
+    to {
+        opacity: 1;
+    }
+}
+#team-lead{
+    animation-delay: 0.5s;
+}
+
+#team-coder{
+    animation-delay: 1s;
+}
+#team-qa{
+    animation-delay: 1.5s;
+}
+#team-util{
+    animation-delay: 2s;
+}
+#team-devops{
+    animation-delay: 2.5s;
+}
