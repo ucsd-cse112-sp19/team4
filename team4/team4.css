@@ -4,6 +4,13 @@ html, body {
     width: 100%;
     height: 100%;
 }
+.header{
+    background: white;
+    height: 75px;
+    width: 964px;
+    border: solid 2px #000;
+    color: black
+}
 #main {
     text-align: center;
 }
