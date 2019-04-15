@@ -8,8 +8,7 @@ html, body {
     background: white;
     height: 75px;
     width: 964px;
-    border: solid 2px #000;
-    color: black
+    border: solid;
 }
 #main {
     text-align: center;
