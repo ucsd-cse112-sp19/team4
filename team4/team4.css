@@ -3,12 +3,27 @@ html, body {
     padding:0;
     width: 100%;
     height: 100%;
+    font-family: 'PT Serif', serif;
 }
 .header{
     background: white;
+<<<<<<< HEAD
     height: 75px;
     width: 964px;
     border: solid;
+=======
+    height: 320px;
+    width: 60%;
+/*    border: solid 2px #000;*/
+    color: black;
+    margin: 0 auto;
+}
+#logo{
+    margin: 0 auto;
+    width: 320px;
+    height: 320px;
+    display: block;
+>>>>>>> 1462acf42dfa78a24df1c29ddd8ce69c604ba941
 }
 #main {
     text-align: center;
