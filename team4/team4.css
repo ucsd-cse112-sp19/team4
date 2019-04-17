@@ -4,26 +4,17 @@ html, body {
     width: 100%;
     height: 100%;
     font-family: 'PT Serif', serif;
+    background-color: #DCDCDC;
 }
 .header{
-    background: white;
-<<<<<<< HEAD
-    height: 75px;
-    width: 964px;
-    border: solid;
-=======
-    height: 320px;
-    width: 60%;
-/*    border: solid 2px #000;*/
     color: black;
     margin: 0 auto;
+    margin-top: 20px; 
 }
+
 #logo{
     margin: 0 auto;
-    width: 320px;
-    height: 320px;
     display: block;
->>>>>>> 1462acf42dfa78a24df1c29ddd8ce69c604ba941
 }
 #main {
     text-align: center;
@@ -52,6 +43,17 @@ p {
     /* Safari and Chrome */
     -o-animation: fadeIn 1s;
 }
+
+.engineer img {
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
