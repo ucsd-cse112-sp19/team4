@@ -44,13 +44,13 @@ p {
     -o-animation: fadeIn 1s;
 }
 
-.engineer img {
+.avatar {
     border: 5px solid rgb(255, 255, 255);
     border-radius: 4px;
     padding: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-img:hover {
+.avatar:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
@@ -77,4 +77,34 @@ img:hover {
 }
 #team-devops{
     animation-delay: 2.5s;
+}
+
+.engineer {
+    position: relative;
+}
+
+.more {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+}
+
+.engineer:hover .avatar {
+    opacity: 0.3;
+}
+
+.engineer:hover .more {
+    opacity: 1;
+}
+
+h2{
+    font-size: 32px;
+    /* background: -webkit-linear-gradient(rgb(155, 155, 155), #333); */
+    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
