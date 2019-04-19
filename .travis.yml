@@ -1,4 +1,4 @@
-language: JavaScript
-JavaScript:
-  - "stable"
+language: node_js
+node_js:
+ - "node"
 
