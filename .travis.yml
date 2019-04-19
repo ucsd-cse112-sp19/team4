@@ -1,4 +1,4 @@
-language: javascript
-javascript:
+language: JavaScript
+JavaScript:
   - "stable"
 
