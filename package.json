@@ -1,0 +1,22 @@
+{
+  "name": "team4",
+  "version": "1.0.0",
+  "description": "Team 4 project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ucsd-cse112/team4.git"
+  },
+  "author": "Team4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ucsd-cse112/team4/issues"
+  },
+  "homepage": "https://github.com/ucsd-cse112/team4#readme",
+  "dependencies": {
+    "jest": "^24.7.1"
+  }
+}
