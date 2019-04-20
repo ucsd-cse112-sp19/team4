@@ -1,18 +1,17 @@
+### Things to keep in mind:
+  Create a new branch with the name + number of the task on trello  
+  For example: T1-create-hello-world-component  
+  Add people to code review when creating a pull request.  
+  Keep MASTER branch clean (always working)  
+  Write comment whenever possible /** */   
+  Make sure to run the test before commit 
+
 ### How to install locally:
   npm install
   
 ### How ro run test locally:
-  npm test
-  npm run test
-  
-### Code quality:
-  Write comment whenever possible  
-  Make sure to run the test before commit  
-  
-### Things to keep in mind:
-  Create a new branch with number associate with the ticket on Trello  
-  Add people to code review before mergin to master branch  
-  Keep MASTER branch clean (always working)  
+  npm test  
+  or npm run test   
 
 ### Git
   git clone https://github.com/ucsd-cse112/team4.git  
