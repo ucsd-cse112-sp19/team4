@@ -1,35 +1,38 @@
 // Standard JS Rules:
 //    2 spaces – for indentation
-function test() {
-   console.log('three spaces')
+/**
+ * Three spaces
+ */
+function test () {
+  console.log('three spaces')
 }
 
 //    Single quotes for strings – except to avoid escaping
-console.log("double quoted string")
+console.log('double quoted string')
 
 //    No unused variables – this one catches tons of bugs!
 unused_var = 10
 
 //    No semicolons – It's fine. Really!
-console.log('semicolon ending');
+console.log('semicolon ending')
 
 //    Space after keywords if (condition) { ... }
-if(true) {
-    console.log('no space after if')
+if (true) {
+  console.log('no space after if')
 }
-if (true){
-    console.log('no space before opening curly brace')
+if (true) {
+  console.log('no space before opening curly brace')
 }
 
 //    Space after function name function name (arg) { ... }
-function no_space(arg) {
-    console.log('no space after function name')
+function no_space (arg) {
+  console.log('no space after function name')
 }
 
 //    Always use === instead of == – but obj == null is allowed to check null || undefined.
-temp = "hi"
+temp = 'hi'
 if (temp == temp) {
-    console.log('not using triple equals')
+  console.log('not using triple equals')
 }
 
 //    Always handle the node.js err function parameter

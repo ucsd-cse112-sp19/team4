@@ -4,7 +4,8 @@
   "description": "Team 4 project",
   "main": "index.js",
   "scripts": {
-    "test": "jest && standard"
+    "test": "jest && standard",
+    "docs": "./node_modules/.bin/jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
+    "jsdoc": "^3.5.5",
     "standard": "*"
   }
 }
