@@ -4,8 +4,17 @@
   "description": "Team 4 project",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "test": "jest && standard",
     "docs": "./node_modules/.bin/jsdoc -c jsdoc.json"
+=======
+    "test": "jest && standard component"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "standard component"
+    }
+>>>>>>> 4c1d788b2f0438ecf39d41e907ae79d0a57e41ce
   },
   "repository": {
     "type": "git",
@@ -29,7 +38,11 @@
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
+<<<<<<< HEAD
     "jsdoc": "^3.5.5",
+=======
+    "husky": "^1.3.1",
+>>>>>>> 4c1d788b2f0438ecf39d41e907ae79d0a57e41ce
     "standard": "*"
   }
 }
