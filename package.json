@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ucsd-cse112/team4#readme",
   "dependencies": {
+    "acorn": "^6.0.0",
     "jest": "^24.7.1",
     "npm": "^6.9.0"
   },
