@@ -40,4 +40,4 @@ if (temp == temp) {
 //    Prevents accidental use of vaguely-named browser globals like open, length, event, and name.
 //    Example: /* global alert, prompt */
 //    Exceptions are: window, document, and navigator
-
+// small change
