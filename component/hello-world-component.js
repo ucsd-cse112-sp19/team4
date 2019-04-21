@@ -29,6 +29,7 @@ class HelloWorldComponent extends HTMLElement {
       this.shadowRoot.querySelector('h1').style.background = 'linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)'
       this.shadowRoot.querySelector('h1').style.webkitBackgroundClip = 'text'
       this.shadowRoot.querySelector('h1').style.webkitTextFillColor = 'transparent'
+      this.shadowRoot.querySelector('h1').style.position = 'absolute'
     } else if (newVal === 'false') {
       this.shadowRoot.querySelector('h1').style.background = 'none'
     }
