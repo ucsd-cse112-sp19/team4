@@ -4,10 +4,12 @@
   "description": "Team 4 project",
   "main": "index.js",
   "scripts": {
-    "test": "jest && standard"
+    "test": "jest && standard component"
   },
-  "hooks": {
-    "lint": "standard"
+  "husky": {
+    "hooks": {
+      "pre-commit": "standard component"
+    }
   },
   "repository": {
     "type": "git",
