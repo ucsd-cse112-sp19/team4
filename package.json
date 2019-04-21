@@ -4,7 +4,7 @@
   "description": "Team 4 project",
   "main": "index.js",
   "scripts": {
-    "pretest": "standard || standard --fix",
+    "pretest": "standard --fix",
     "test": "jest && standard"
   },
   "repository": {
