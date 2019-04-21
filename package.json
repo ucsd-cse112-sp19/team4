@@ -4,17 +4,13 @@
   "description": "Team 4 project",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
-    "test": "jest && standard",
-    "docs": "./node_modules/.bin/jsdoc -c jsdoc.json"
-=======
+    "docs": "./node_modules/.bin/jsdoc -c jsdoc.json",
     "test": "jest && standard component"
   },
   "husky": {
     "hooks": {
       "pre-commit": "standard component"
     }
->>>>>>> 4c1d788b2f0438ecf39d41e907ae79d0a57e41ce
   },
   "repository": {
     "type": "git",
