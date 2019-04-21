@@ -1,13 +1,15 @@
 class HelloWorldComponent extends HTMLElement {
-
+    
     constructor(){
         super();
-        var rainbow = "false";
-        var language = "English";
         let shadowRoot = this.attachShadow({mode: 'open'});
-        let elementContent = `<h1>Hello Web Component World!</h1>`;
+        var content = this.textContent;
+        if (content === '')
+            content = 'World'
+        let elementContent = `<h1>Hello ${content}!</h1>`;
         shadowRoot.innerHTML = elementContent;
     }
+
     static get observedAttributes() {
         return ['rainbow', 'language'];
     }
@@ -21,13 +23,13 @@ class HelloWorldComponent extends HTMLElement {
     }
 
     get rainbow() {
+        console.log("get raindow")
         return this.hasAttribute('rainbow');
     }
 
     set rainbow(val){
         if (val) {
             console.log("Setting rainbow attribute")
-            this.style.background = "linear-gradient(to right, orange , yellow, green, cyan, blue, violet);"
         } else {
             console.log("Resetting rainbow attribute")
         }
@@ -41,9 +43,7 @@ class HelloWorldComponent extends HTMLElement {
         if (oldVal != newVal){
             this.setAttribute('rainbow', 'true');
         }
-        // this.style.text = "linear-gradient(to right, orange , yellow, green, cyan, blue, violet);"
-        // console.log(this.shadowRoot.querySelector("h1").style.color)
-        // this.shadowRoot.querySelector("h1").style.color = "linear-gradient(to right, orange , yellow, green, cyan, blue, violet);"
+        this.shadowRoot.querySelector("h1").style.background = "linear-gradient(to right, orange , yellow, green, cyan, blue, violet)";
     }
 }
 window.customElements.define('hello-world', HelloWorldComponent);
