@@ -9,7 +9,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "standard component"
+      "pre-commit": "standard component && npm run docs"
     }
   },
   "repository": {
