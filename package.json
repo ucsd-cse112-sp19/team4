@@ -7,7 +7,7 @@
     "test": "jest && standard"
   },
   "hooks": {
-    "pre-commit": "standard"
+    "lint": "standard"
   },
   "repository": {
     "type": "git",
