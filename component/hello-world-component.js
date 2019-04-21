@@ -3,6 +3,9 @@
  * This is a class
  */
 class HelloWorldComponent extends HTMLElement {
+  /**
+   * This is a basic constructor
+   */
   constructor () {
     super()
     let shadowRoot = this.attachShadow({ mode: 'open' })
