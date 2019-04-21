@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/ucsd-cse112/team4#readme",
   "dependencies": {
-    "jest": "^24.7.1"
+    "jest": "^24.7.1",
+    "npm": "^6.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
   }
 }
