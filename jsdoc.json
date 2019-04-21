@@ -1,6 +1,6 @@
 {
     "source": {
-        "include": ["./Linter_Tests/bad_js.js"],
+        "include": ["./component"],
         "includePattern": ".js$",
         "excludePattern": "(node_modules/|docs)"
     },
