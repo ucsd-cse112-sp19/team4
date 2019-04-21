@@ -11,7 +11,7 @@ class HelloWorldComponent extends HTMLElement {
     let elementContent = `<h1>Hello ${content}!</h1>`
     shadowRoot.innerHTML = elementContent
   }
-
+  /** this is a function */
   static get observedAttributes () {
     return ['rainbow', 'language']
   }

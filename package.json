@@ -25,6 +25,7 @@
   "dependencies": {
     "acorn": "^6.0.0",
     "jest": "^24.7.1",
+    "jsdocs": "^1.0.0",
     "npm": "^6.9.0"
   },
   "devDependencies": {
