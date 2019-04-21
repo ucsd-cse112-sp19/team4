@@ -41,4 +41,3 @@ if (temp == temp) {
 //    Example: /* global alert, prompt */
 //    Exceptions are: window, document, and navigator
 
-// small change
