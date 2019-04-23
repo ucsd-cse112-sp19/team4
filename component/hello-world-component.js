@@ -6,7 +6,8 @@
  */
 class HelloWorldComponent extends HTMLElement {
   /**
-   * This is a basic constructor hello
+   * HelloWorldComponent constructor.
+   * @constructor
    */
   constructor () {
     super()
