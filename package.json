@@ -25,7 +25,9 @@
   "dependencies": {
     "acorn": "^6.0.0",
     "jest": "^24.7.1",
-    "npm": "^6.9.0"
+    "jsdocs": "^1.0.0",
+    "npm": "^6.9.0",
+    "showroom": "^0.9.3"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
