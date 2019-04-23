@@ -1,72 +1,47 @@
-// import webC from '../component/hello-world-component.js'
-// import { createElement } from 'lwc'
-
-// /* global describe */
-// describe('webComponent tests', () => {
-//   /* global afterEach */
-//   afterEach(() => {
-//     while (document.body.firstChild) {
-//       document.body.removeChild(document.body.firstChild)
-//     }
-//   })
-
-//   /* global it */
-//   it('check language', () => {
-//     const el = createElement('c-hello', {
-//       is: webC
-//     })
-//     document.body.appendChild(el)
-
-//     const aih = el.shadowRoot.querySelector('h1')
-//     /* global expect */
-//     expect(aih.textContent).toBe('Hello World!')
-//   })
-// })
-
-// const sum = require('./sample')
-// /* global test */
-// test('adds 1 + 2 to equal 3', () => {
-//   /* global expect */
-//   expect(sum(1, 2)).toBe(3)
-//   console.log(webC(true, 'hello'))
-// })
-
 const showroom = require('showroom/puppeteer')()
+const assert = require('assert')
 
 /* global describe */
+// describe holds a set of tests
 describe('hello-world-component', () => {
-  /* global beforeAll */
-  beforeAll(async () => {
+  /* global before */
+  // runs this before all the tests have started
+  before(async () => {
+    // creates the server hosting the web component
     await showroom.start()
-    await showroom.setTestSubject('hello-world-component')
   })
 
-  /* global afterAll */
-  /* global done */
-  afterAll(async () => {
+  /* global after */
+  // runs this after all the tests have been ran
+  after(async () => {
+    // stops the server hosting the web component
     await showroom.stop()
   })
 
   /* global beforeEach */
-  // beforeEach(async () => {
-  //   await showroom.setTestSubject('hello-world-component')
-  // })
+  // runs this before each unit test is ran
+  beforeEach(async () => {
+    // remakes the web compenent
+    await showroom.setTestSubject('hello-world-component')
+  })
 
-  /* global test */
-  test('should display set attribute for lan to be en', async () => {
+  /* global it */
+  // tests to see if the default language value is en
+  it('should display set attribute for lan to be en', async () => {
     const innerLan = await showroom.getAttribute('language')
-    /* global expect */
-    expect(innerLan).toBe('en')
+    assert.strictEqual(innerLan, 'en')
   })
 
-  test('should display set attribute for rainbow to be false', async () => {
+  // tests to see if the default rainbow value is false
+  it('should display set attribute for rainbow to be false', async () => {
     const innerRain = await showroom.getAttribute('rainbow')
-    expect(innerRain).toBe('false')
+    assert.strictEqual(innerRain, 'false')
   })
 
-  test('should display set attribute for rainbow to be true after changing it', async () => {
+  // tests to see if it handles changes that are due to changing rainbow
+  it('should display set attribute for rainbow to be true after changing it', async () => {
     await showroom.setAttribute('rainbow', true)
     const innerRain = await showroom.getAttribute('rainbow')
-    expect(innerRain).toBe('true')
+    assert.strictEqual(innerRain, 'true')
   })
 })
