@@ -4,12 +4,19 @@
   "description": "Team 4 project",
   "main": "index.js",
   "scripts": {
-    "docs": "./node_modules/.bin/jsdoc -c jsdoc.json",
-    "test": "mocha --exit && standard component"
+    "docs": "jsdoc -c jsdoc.json",
+    "lint": "standard component",
+    "test": "npm run lint && mocha --exit",
+    "pre-commit": "npm run lint && npm run docs && git add docs/*",
+    "pre-push": "npm run lint",
+    "update-npm": "npm install"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "standard component && npm run docs && git add docs/*"
+      "pre-commit": "npm run pre-commit",
+      "pre-push": "npm run pre-push",
+      "post-merge": "npm run update-npm",
+      "post-checkout": "npm run update-npm"
     }
   },
   "repository": {
