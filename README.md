@@ -19,3 +19,6 @@
   git commit -m ""  
   git remote add origin https://github.com/ucsd-cse112/team4.git  
   git push -u origin master  
+
+### Build Status
+[![Build Status](https://travis-ci.com/ucsd-cse112/team4.svg?token=G2KuH6bAmVeY7RpLEfsK&branch=master)](https://travis-ci.com/ucsd-cse112/team4)
