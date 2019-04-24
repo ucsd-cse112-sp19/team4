@@ -12,10 +12,9 @@ class HelloWorldComponent extends HTMLElement {
   constructor () {
     super()
     let shadowRoot = this.attachShadow({ mode: 'open' })
-    var content = this.textContent
-    if (content === '') { content = 'World' }
-    let elementContent = `<h1>Hello ${content}!</h1>`
-    shadowRoot.innerHTML = elementContent
+    shadowRoot.innerHTML = '<h1></h1>'
+    this.handleLanguage('en')
+    this.handleRainbow('false')
   }
 
   /**
@@ -62,6 +61,10 @@ class HelloWorldComponent extends HTMLElement {
    */
   handleLanguage (newLang) {
     var content = this.textContent
+    /*
+     * Language content contains the strings for the
+     * greeting and world in that language
+     */
     var languageContent = {
       'en': ['Hello', 'World'],
       'sp': ['Hola', 'Mundo'],
