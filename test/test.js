@@ -9,6 +9,7 @@ describe('hello-world-component', () => {
   before(async () => {
     // creates the server hosting the web component
     await showroom.start()
+    await showroom.setTestSubject('hello-world-component')
   })
 
   /* global after */
@@ -19,10 +20,11 @@ describe('hello-world-component', () => {
   })
 
   /* global beforeEach */
-  // runs this before each unit test is ran
-  beforeEach(async () => {
-    // remakes the web compenent
-    await showroom.setTestSubject('hello-world-component')
+  // need to run this to make sure changes take affect since we are using asycncalls
+  beforeEach(function (done) {
+    setTimeout(function () {
+      done()
+    }, 25)
   })
 
   /* global it */
@@ -32,13 +34,20 @@ describe('hello-world-component', () => {
     assert.strictEqual(innerLan, 'en')
   })
 
+  // after changing the language checks to see if it is correctly displayed
+  it('testing the text between the custom element', async () => {
+    await showroom.setAttribute('language', 'sp')
+    const innerLan = await showroom.getAttribute('language')
+    assert.strictEqual(innerLan, 'sp')
+  })
+
   // tests to see if the default rainbow value is false
   it('should display set attribute for rainbow to be false', async () => {
     const innerRain = await showroom.getAttribute('rainbow')
     assert.strictEqual(innerRain, 'false')
   })
 
-  // tests to see if it handles changes that are due to changing rainbow
+  // tests to see if it handles changes the rainbow value from false to true
   it('should display set attribute for rainbow to be true after changing it', async () => {
     await showroom.setAttribute('rainbow', true)
     const innerRain = await showroom.getAttribute('rainbow')
