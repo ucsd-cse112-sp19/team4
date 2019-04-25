@@ -12,10 +12,9 @@ class HelloWorldComponent extends HTMLElement {
   constructor () {
     super()
     let shadowRoot = this.attachShadow({ mode: 'open' })
-    var content = this.textContent
-    if (content === '') { content = 'World' }
-    let elementContent = `<h1>Hello ${content}!</h1>`
-    shadowRoot.innerHTML = elementContent
+    shadowRoot.innerHTML = '<h1></h1>'
+    this.handleLanguage('en')
+    this.handleRainbow('false')
   }
 
   /**
@@ -58,83 +57,35 @@ class HelloWorldComponent extends HTMLElement {
 
   /**
    * Method for handling language logic.
-   * @param {string} newVal - string representation of the language.
+   * @param {string} newLang - string representation of the language.
    */
-  handleLanguage (newVal) {
+  handleLanguage (newLang) {
     var content = this.textContent
-    if (newVal === 'en') {
-      if (content === '') { content = 'World' }
-      this.shadowRoot.querySelector('h1').textContent = `Hello ${content}!`
+    /*
+     * Language content contains the strings for the
+     * greeting and world in that language
+     */
+    var languageContent = {
+      'en': ['Hello', 'World'],
+      'sp': ['Hola', 'Mundo'],
+      'fe': ['Bonjour', 'le monde'],
+      'ch': ['你好,', '世界'],
+      'jp': ['こんにちは', '世界'],
+      'ge': ['Hallo', 'Welt'],
+      'sw': ['Hej', 'världen'],
+      'hi': ['नमस्ते', 'दुनिया'],
+      'ru': ['Привет,', 'мир'],
+      'la': ['salve', 'Orbis Terrarum'],
+      'ko': ['안녕하세요', '세계'],
+      'pig': ['ellohay', 'orldway'],
+      'it': ['Ciao', 'mondo'],
+      'fi': ['Hei', 'maailma'],
+      'po': ['Olá', 'Mundo']
     }
-
-    if (newVal === 'sp') {
-      if (content === '') { content = 'Mundo' }
-      this.shadowRoot.querySelector('h1').textContent = `Hola ${content}!`
-    }
-
-    if (newVal === 'fe') {
-      if (content === '') { content = 'le monde' }
-      this.shadowRoot.querySelector('h1').textContent = `Bonjour ${content}!`
-    }
-
-    if (newVal === 'ch') {
-      if (content === '') { content = '世界' }
-      this.shadowRoot.querySelector('h1').textContent = `你好, ${content}!`
-    }
-
-    if (newVal === 'jp') {
-      if (content === '') { content = '世界' }
-      this.shadowRoot.querySelector('h1').textContent = `こんにちは ${content}!`
-    }
-
-    if (newVal === 'ge') {
-      if (content === '') { content = 'Welt' }
-      this.shadowRoot.querySelector('h1').textContent = `Hallo ${content}!`
-    }
-
-    if (newVal === 'sw') {
-      if (content === '') { content = 'världen' }
-      this.shadowRoot.querySelector('h1').textContent = `Hej ${content}!`
-    }
-
-    if (newVal === 'hi') {
-      if (content === '') { content = 'दुनिया' }
-      this.shadowRoot.querySelector('h1').textContent = `नमस्ते ${content}!`
-    }
-
-    if (newVal === 'ru') {
-      if (content === '') { content = 'мир' }
-      this.shadowRoot.querySelector('h1').textContent = `Привет, ${content}!`
-    }
-
-    if (newVal === 'la') {
-      if (content === '') { content = 'Orbis Terrarum' }
-      this.shadowRoot.querySelector('h1').textContent = `salve ${content}!`
-    }
-
-    if (newVal === 'ko') {
-      if (content === '') { content = '세계' }
-      this.shadowRoot.querySelector('h1').textContent = `안녕하세요 ${content}!`
-    }
-
-    if (newVal === 'pig') {
-      if (content === '') { content = 'orldway' }
-      this.shadowRoot.querySelector('h1').textContent = `ellohay ${content}!`
-    }
-
-    if (newVal === 'it') {
-      if (content === '') { content = 'mondo' }
-      this.shadowRoot.querySelector('h1').textContent = `Ciao ${content}!`
-    }
-
-    if (newVal === 'fi') {
-      if (content === '') { content = 'maailma' }
-      this.shadowRoot.querySelector('h1').textContent = `Hei ${content}!`
-    }
-
-    if (newVal === 'po') {
-      if (content === '') { content = 'Mundo' }
-      this.shadowRoot.querySelector('h1').textContent = `Olá ${content}!`
+    if (newLang in languageContent) {
+      const [greeting, world] = languageContent[newLang]
+      if (content === '') { content = world }
+      this.shadowRoot.querySelector('h1').textContent = `${greeting} ${content}!`
     }
   }
 
