@@ -68,7 +68,7 @@ class HelloWorldComponent extends HTMLElement {
     var languageContent = {
       'en': ['Hello', 'World'],
       'sp': ['Hola', 'Mundo'],
-      'fe': ['Bonjour', 'le monde'],
+      'fr': ['Bonjour', 'le monde'],
       'ch': ['你好,', '世界'],
       'jp': ['こんにちは', '世界'],
       'ge': ['Hallo', 'Welt'],
