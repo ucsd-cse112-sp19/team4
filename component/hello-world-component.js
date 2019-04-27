@@ -80,7 +80,8 @@ class HelloWorldComponent extends HTMLElement {
       'pig': ['ellohay', 'orldway'],
       'it': ['Ciao', 'mondo'],
       'fi': ['Hei', 'maailma'],
-      'po': ['Olá', 'Mundo']
+      'po': ['Olá', 'Mundo'],
+      'ic': ['Halló', 'heimur']
     }
     if (newLang in languageContent) {
       const [greeting, world] = languageContent[newLang]
