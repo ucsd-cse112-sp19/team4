@@ -11,10 +11,11 @@ class HelloWorldComponent extends HTMLElement {
    */
   constructor () {
     super()
-    let shadowRoot = this.attachShadow({ mode: 'open' })
-    shadowRoot.innerHTML = '<h1></h1>'
+    this.attachShadow({ mode: 'open' })
+    this.shadowRoot.innerHTML = '<h1><span></span></h1>'
     this.handleLanguage('en')
     this.handleRainbow('false')
+
   }
 
   /**
@@ -44,15 +45,15 @@ class HelloWorldComponent extends HTMLElement {
    * @param {boolean} newVal - boolean value for toggling rainbow attribute.
    */
   handleRainbow (newVal) {
-    let h1 = this.shadowRoot.querySelector('h1')
+    let span = this.shadowRoot.querySelector('span')
     if (newVal === 'true') {
-      h1.style.background = 'linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)'
+      span.style.background = 'linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)'
     } else if (newVal === 'false') {
-      h1.style.background = 'black'
+      span.style.background = 'black'
     }
-    h1.style.webkitBackgroundClip = 'text'
-    h1.style.webkitTextFillColor = 'transparent'
-    h1.style.position = 'absolute'
+    span.style.webkitBackgroundClip = 'text'
+    span.style.webkitTextFillColor = 'transparent'
+    this.style.position = 'relative'
   }
 
   /**
@@ -86,7 +87,7 @@ class HelloWorldComponent extends HTMLElement {
     if (newLang in languageContent) {
       const [greeting, world] = languageContent[newLang]
       if (content === '') { content = world }
-      this.shadowRoot.querySelector('h1').textContent = `${greeting} ${content}!`
+      this.shadowRoot.querySelector('span').textContent = `${greeting} ${content}!`
     }
   }
 
