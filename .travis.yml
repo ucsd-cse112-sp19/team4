@@ -2,9 +2,6 @@ language: node_js
 node_js:
   - "10"
 
-install:
-  - npm install
-
 
 cache:
   directories:
@@ -13,15 +10,16 @@ cache:
 notifications:
   slack: cse112-sp19-team4:Ni7i8GfaOAv6L7mitfqEkRcn
 
-env:
-  global:
-    CC_TEST_REPORTER_ID=3c07ee7e30821cfc4ed2312c05e18ed35f1fe3f3465fcc9ccd0569db8a68dd8d
+addons:
+  code_climate:
+    repo_token: 3c07ee7e30821cfc4ed2312c05e18ed35f1fe3f3465fcc9ccd0569db8a68dd8d
 
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-script:
-  
+script: istanbul cover node_modules/mocha/bin/_mocha -- -R spec
+
+before_script: 
+  - npm install codeclimate-test-reporter istanbul -g
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - codeclimate-test-reporter < ./coverage/lcov.info
+install:
+  - npm install  
+
