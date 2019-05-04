@@ -4,7 +4,20 @@
   "description": "Team 4 project",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "docs": "jsdoc -c jsdoc.json",
+    "lint": "standard component",
+    "test": "npm run lint && mocha --exit",
+    "pre-commit": "npm run lint && npm run docs && git add docs/*",
+    "pre-push": "npm run lint",
+    "update-npm": "npm install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pre-commit",
+      "pre-push": "npm run pre-push",
+      "post-merge": "npm run update-npm",
+      "post-checkout": "npm run update-npm"
+    }
   },
   "repository": {
     "type": "git",
@@ -17,6 +30,22 @@
   },
   "homepage": "https://github.com/ucsd-cse112/team4#readme",
   "dependencies": {
-    "jest": "^24.7.1"
+    "acorn": "^6.0.0",
+    "jest": "^24.7.1",
+    "jsdocs": "^1.0.0",
+    "npm": "^6.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^1.3.1",
+    "jsdoc": "^3.5.5",
+    "mocha": "^6.1.4",
+    "showroom": "^0.9.3",
+    "standard": "*"
   }
 }

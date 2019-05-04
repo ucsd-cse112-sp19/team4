@@ -1,3 +1,6 @@
+### Build Status
+[![Build Status](https://travis-ci.com/ucsd-cse112/team4.svg?token=G2KuH6bAmVeY7RpLEfsK&branch=master)](https://travis-ci.com/ucsd-cse112/team4)
+
 ### Things to keep in mind:
   Create a new branch with the name + number of the task on trello  
   For example: T1-create-hello-world-component  
