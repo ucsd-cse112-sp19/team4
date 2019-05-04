@@ -13,5 +13,10 @@
         "destination": "docs/",
         "recurse": true,
         "verbose": true
+    },
+    "templates": {
+        "default": {
+            "includeDate": false
+        }
     }
 }
