@@ -93,7 +93,6 @@ class HelloWorldComponent extends HTMLElement {
 
   /**
    * Callback for when the supported attributes change its value.
-   * A TEAM TEAM TEAM
    * @param {string} attrName - the name of the attribute.
    * @param {*} oldVal - the old value of the attribute.
    * @param {*} newVal - the new value of the attribute.
