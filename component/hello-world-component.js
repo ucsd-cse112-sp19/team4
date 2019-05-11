@@ -107,3 +107,7 @@ class HelloWorldComponent extends HTMLElement {
   }
 }
 window.customElements.define('hello-world', HelloWorldComponent)
+
+/**
+ * jhbfdjshbfhjdsbfhj
+ * */
