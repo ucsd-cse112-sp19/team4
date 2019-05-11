@@ -3,7 +3,6 @@
  * This is hello world component with 2 core attributes.<br>
  * - rainbow {boolean} - true if you want the text to have rainbow color, false otherwise.<br>
  * - language {string} - string value of the language (for example: en, sp, fr, or ch).
- * change something!!!!
  */
 class HelloWorldComponent extends HTMLElement {
   /**
@@ -28,7 +27,7 @@ class HelloWorldComponent extends HTMLElement {
   }
 
   /**
-   * Callback when the component get created.
+   * Callback when the component get created.* change something!!!!
    */
   connectedCallback () {
     console.log('Component connected!')
