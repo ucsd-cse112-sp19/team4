@@ -27,7 +27,7 @@ class HelloWorldComponent extends HTMLElement {
   }
 
   /**
-   * Callback when the component get created.* change something!!!!
+   * Callback when the component get created.
    */
   connectedCallback () {
     console.log('Component connected!')
