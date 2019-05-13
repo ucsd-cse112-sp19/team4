@@ -93,10 +93,10 @@ class HelloWorldComponent extends HTMLElement {
 
   /**
    * Callback for when the supported attributes change its value.
+   * MAKE SOME CHANGES
    * @param {string} attrName - the name of the attribute.
    * @param {*} oldVal - the old value of the attribute.
    * @param {*} newVal - the new value of the attribute.
-   * MAKE SOME CHANGES
    */
   attributeChangedCallback (attrName, oldVal, newVal) {
     if (attrName === 'rainbow') {
