@@ -15,7 +15,6 @@ class HelloWorldComponent extends HTMLElement {
     this.shadowRoot.innerHTML = '<h1><span></span></h1>'
     this.handleLanguage('en')
     this.handleRainbow('false')
-
   }
 
   /**
@@ -31,6 +30,7 @@ class HelloWorldComponent extends HTMLElement {
    */
   connectedCallback () {
     console.log('Component connected!')
+    console.log('CHANGES HAPPEN HERE')
   }
 
   /**
@@ -96,6 +96,7 @@ class HelloWorldComponent extends HTMLElement {
    * @param {string} attrName - the name of the attribute.
    * @param {*} oldVal - the old value of the attribute.
    * @param {*} newVal - the new value of the attribute.
+   * MAKE SOME CHANGES
    */
   attributeChangedCallback (attrName, oldVal, newVal) {
     if (attrName === 'rainbow') {
@@ -107,3 +108,6 @@ class HelloWorldComponent extends HTMLElement {
   }
 }
 window.customElements.define('hello-world', HelloWorldComponent)
+/**
+ * MAKE SOME CHANGES
+ * */
