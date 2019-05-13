@@ -11,6 +11,7 @@
     "test": "npm run run-lint-test",
     "pre-commit": "npm run run-lint && npm run run-docs && git add docs/*",
     "pre-push": "npm run run-lint",
+    "temp": "mocha component/T1/temp.js",
     "run-update-npm": "npm install"
   },
   "husky": {

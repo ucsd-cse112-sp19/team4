@@ -3,13 +3,14 @@ const assert = require('assert')
 
 /* global describe */
 // describe holds a set of tests
-describe('hello-world-component', () => {
+describe('hello-world-component', function () {
+  this.timeout(15000)
+
   /* global before */
   // runs this before all the tests have started
   before(async () => {
     // creates the server hosting the web component
     await showroom.start()
-    await showroom.setTestSubject('hello-world-component')
   })
 
   /* global after */
@@ -21,10 +22,8 @@ describe('hello-world-component', () => {
 
   /* global beforeEach */
   // need to run this to make sure changes take affect since we are using asycncalls
-  beforeEach(function (done) {
-    setTimeout(function () {
-      done()
-    }, 25)
+  beforeEach(async function () {
+    await showroom.setTestSubject('hello-world-component')
   })
 
   /* global it */
