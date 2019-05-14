@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "run-docs": "jsdoc -c jsdoc.json",
-    "run-lint": "standard component && ./node_modules/.bin/htmlhint component/*.html && stylelint component/*.css",
+    "run-lint": "standard component && ./node_modules/.bin/htmlhint component/*/*.html",
     "run-test": "mocha --exit",
     "run-lint-test": "npm run run-lint && npm run run-test",
     "test": "npm run run-lint-test",

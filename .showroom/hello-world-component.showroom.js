@@ -1,6 +1,6 @@
 export default {
   component: 'hello-world-component',
-  path: '../component/hello-world-component.js',
+  path: '../component/hello-world/hello-world-component.js',
   // events: ,
   attributes: {
     rainbow: 'false',
