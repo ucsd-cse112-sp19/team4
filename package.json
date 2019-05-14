@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "run-docs": "jsdoc -c jsdoc.json",
-    "run-lint": "standard component && ./node_modules/.bin/htmlhint component/*.html && stylelint component/*.css",
-    "run-test": "mocha --exit",
+    "run-lint": "standard component && htmlhint component/**/*.html && stylelint component/**/*.css",
+    "run-test": "mocha component/**/test.js --exit",
     "run-lint-test": "npm run run-lint && npm run run-test",
     "test": "npm run run-lint-test",
     "pre-commit": "npm run run-lint && npm run run-docs && git add docs/*",
     "pre-push": "npm run run-lint",
+    "temp": "mocha component/T1/temp.js",
     "run-update-npm": "npm install"
   },
   "husky": {
