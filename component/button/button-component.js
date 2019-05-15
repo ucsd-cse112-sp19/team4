@@ -99,6 +99,36 @@ template.innerHTML = `
       background-color: rgb(64, 158, 255, 0.85);
       border-color: rgb(64, 158, 255, 0.85);
     }
+    :host(:active) {
+      background-color: rgb(64, 158, 255, 0.15);
+      color: #0077f3;
+      border: 1px solid #0077f3;
+    }
+    :host([type='warning']:active) {
+      color: #fff;
+      background-color: #bd7b18;
+      border-color: #bd7b18;
+    }
+    :host([type='danger']:active) {
+      color: #fff;
+      background-color: #f02424;
+      border-color: #f02424;
+    }
+    :host([type='info']:active) {
+      color: #fff;
+      background-color: #6a6d73;
+      border-color: #6a6d73;
+    }
+    :host([type='success']:active) {
+      color: #fff;
+      background-color: #488728;
+      border-color: #488728;
+    }
+    :host([type='primary']:active) {
+      color: #fff;
+      background-color: #0077f3;
+      border-color: #0077f3;
+    }
 
   </style>
 `
@@ -117,11 +147,11 @@ class ButtonComponent extends HTMLElement {
   constructor () {
     super()
     this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true))
-    this.addEventListener('click', this.clickEffect)
+    // this.addEventListener('click', this.clickEffect)
   }
 
   clickEffect (event) {
-    this.classList.add('hello')
+    // this.classList.add('hello')
   }
 
   /**
