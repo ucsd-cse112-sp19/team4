@@ -17,7 +17,7 @@ template.innerHTML = `
       font-weight: 500;
       padding: 12px 20px;
       font-size: 14px;
-      border-radius: 4px
+      border-radius: 4px;
       box-shadow: 0 1px 2px darkgray;
     }
     :host([type='primary']) {
@@ -210,6 +210,30 @@ template.innerHTML = `
       color: #fff;
       background-color: #bd7b18;
       border-color: #bd7b18;
+    }
+    :host([icon]){
+      padding: 12px;
+      color: #fff;
+    }
+    :host([icon='icon-delete']){
+      content: url('../images/garbage.png');
+    }
+    :host([icon='icon-star-off']){
+      content: url('../images/star.png');
+    }
+    :host([icon='icon-message']){
+      content: url('../images/mail.png');
+    }
+    :host([icon='icon-check']){
+      content: url('../images/tick.png');
+    }
+    :host([icon='icon-edit']){
+      content: url('../images/edit.png');
+    }
+    :host([icon='icon-search']){
+      content: url('../images/search.png');
+      padding: 12px;
+      color: #fff;
     }
     /* Source https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
     .noselect {
