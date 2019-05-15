@@ -19,59 +19,85 @@ template.innerHTML = `
       font-size: 14px;
       border-radius: 4px
     }
-    :host(:hover) {
-      border: 1px solid lightblue;
-      background-color: lightblue;
-      color: black;
-    }
     :host::after {
       content: "Button";
     }
-    :host(.primary) {
+    
+    :host([type='primary']) {
       color: #fff;
       background-color: #409eff;
       border-color: #409eff;
     }
-    :host(.success){
+    :host([type='success']){
       color: #fff;
       background-color: #67c23a;
       border-color: #67c23a;
     }
-    :host(.warning){
+    :host([type='warning']){
       color: #fff;
       background-color: #e6a23c;
       border-color: #e6a23c;
     }
-    :host(.danger){
+    :host([type='danger']){
       color: #fff;
       background-color: #f56c6c;
       border-color: #f56c6c;
     }
-    :host(.info){
+    :host([type='info']){
       color: #fff;
       background-color: #909399;
       border-color: #909399;
     }
-    :host(.medium){
+    :host([size='medium']){
       padding: 10px 20px;
       font-size: 14px;
       border-radius: 4px;
     }
-    :host(.small){
+    :host([size='small']){
       padding: 9px 15px;
       font-size: 12px;
       border-radius: 3px;
     }
-    :host(.mini){
+    :host([size='mini']){
       padding: 7px 15px;
       font-size: 12px;
       border-radius: 3px;
     }
-    :host(.round) {
+    :host([round]) {
       border-radius: 20px;
     }
-    :host(.circle) {
+    :host([circle]) {
       border-radius: 50%;
+    }
+    :host(:hover) {
+      background-color: rgb(64, 158, 255, 0.15);
+      color: #409eff;
+      border: 1px solid #409eff;
+    }
+    :host([type='warning']:hover) {
+      color: #fff;
+      background-color: rgb(230, 162, 60, 0.85);
+      border-color: rgb(230, 162, 60, 0.85);
+    }
+    :host([type='danger']:hover) {
+      color: #fff;
+      background-color: rgb(245, 108, 108, 0.85);
+      border-color: rgb(245, 108, 108, 0.85);
+    }
+    :host([type='info']:hover) {
+      color: #fff;
+      background-color: rgb(144, 147, 153, 0.85);
+      border-color: rgb(144, 147, 153, 0.85);
+    }
+    :host([type='success']:hover) {
+      color: #fff;
+      background-color: rgb(103, 194, 58, 0.85);
+      border-color: rgb(103, 194, 58, 0.85);
+    }
+    :host([type='primary']:hover) {
+      color: #fff;
+      background-color: rgb(64, 158, 255, 0.85);
+      border-color: rgb(64, 158, 255, 0.85);
     }
 
   </style>
@@ -91,6 +117,11 @@ class ButtonComponent extends HTMLElement {
   constructor () {
     super()
     this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true))
+    this.addEventListener('click', this.clickEffect)
+  }
+
+  clickEffect (event) {
+    this.classList.add('hello')
   }
 
   /**
@@ -114,6 +145,7 @@ class ButtonComponent extends HTMLElement {
     console.log('Component disconnect!')
   }
 
+  /*
   handleType (newVal) {
     var type = ['primary', 'success', 'info', 'danger', 'warning']
     if (type.indexOf(newVal) !== -1) {
@@ -134,7 +166,7 @@ class ButtonComponent extends HTMLElement {
   handleCircle () {
     this.classList.add('circle')
   }
-
+  */
   /**
    * Callback for when the supported attributes change its value.
    * @param {string} attrName - the name of the attribute.
@@ -142,6 +174,7 @@ class ButtonComponent extends HTMLElement {
    * @param {*} newVal - the new value of the attribute.
    */
   attributeChangedCallback (attrName, oldVal, newVal) {
+    /*
     if (attrName === 'type') {
       this.handleType(newVal)
     }
@@ -154,6 +187,7 @@ class ButtonComponent extends HTMLElement {
     if (attrName === 'circle') {
       this.handleCircle()
     }
+    */
   }
 }
 window.customElements.define('button-component', ButtonComponent)
