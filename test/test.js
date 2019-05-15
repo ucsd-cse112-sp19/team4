@@ -1,4 +1,4 @@
-/* global beforeEach describe it */
+/* global beforeEach describe it $ */
 beforeEach(async () => {
   await browser.url('/')
 })
