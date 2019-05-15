@@ -65,6 +65,30 @@ template.innerHTML = `
     :host([circle]) {
       border-radius: 50%;
     }
+    :host([icon]){
+      padding: 12px;
+      color: #fff;
+    }
+    :host([icon='icon-delete']){
+      content: url('../images/garbage.png');
+    }
+    :host([icon='icon-star-off']){
+      content: url('../images/star.png');
+    }
+    :host([icon='icon-message']){
+      content: url('../images/mail.png');
+    }
+    :host([icon='icon-check']){
+      content: url('../images/tick.png');
+    }
+    :host([icon='icon-edit']){
+      content: url('../images/edit.png');
+    }
+    :host([icon='icon-search']){
+      content: url('../images/search.png');
+      padding: 12px;
+      color: #fff;
+    }
     :host(:hover) {
       background-color: rgb(64, 158, 255, 0.15);
       color: #409eff;
