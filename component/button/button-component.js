@@ -17,7 +17,7 @@ template.innerHTML = `
       font-weight: 500;
       padding: 12px 20px;
       font-size: 14px;
-      border-radius: 4px;
+      border-radius: 4px
       box-shadow: 0 1px 2px darkgray;
     }
     :host([type='primary']) {
@@ -66,34 +66,10 @@ template.innerHTML = `
     :host([circle]) {
       border-radius: 50%;
     }
-    :host([icon]){
-      padding: 12px;
-      color: #fff;
-    }
-    :host([icon='icon-delete']){
-      content: url('../images/garbage.png');
-    }
-    :host([icon='icon-star-off']){
-      content: url('../images/star.png');
-    }
-    :host([icon='icon-message']){
-      content: url('../images/mail.png');
-    }
-    :host([icon='icon-check']){
-      content: url('../images/tick.png');
-    }
-    :host([icon='icon-edit']){
-      content: url('../images/edit.png');
-    }
-    :host([icon='icon-search']){
-      content: url('../images/search.png');
-      padding: 12px;
-      color: #fff;
-    }
     :host(:hover) {
       background-color: rgb(64, 158, 255, 0.15);
       color: #409eff;
-      border: 1px solid #409eff;
+      border: 1px solid rgb(64, 158, 255, 0.30);
     }
     :host([type='warning']:hover) {
       color: #fff;
@@ -150,12 +126,114 @@ template.innerHTML = `
       background-color: #0077f3;
       border-color: #0077f3;
     }
+    :host([plain]:hover) {
+      background-color: #fff;
+      color: #409eff;
+      border: 1px solid #409eff;
+    }
+    :host([plain]:active) {
+      background-color: #fff;
+      color: #0077f3;
+      border: 1px solid #0077f3;
+    }
+    :host([type='primary'][plain]) {
+      color: rgb(64, 158, 255, 1.0);
+      background-color: rgb(64, 158, 255, 0.15);
+      border-color: rgb(64, 158, 255, 0.30);
+    }
+    :host([type='primary'][plain]:hover) {
+      background-color: rgb(64, 158, 255, 1.0);
+      color: #fff;
+      border: 1px solid rgb(64, 158, 255, 1.0);
+    }
+    :host([type='primary'][plain]:active) {
+      color: #fff;
+      background-color: #0077f3;
+      border-color: #0077f3;
+    }
+    :host([type='success'][plain]) {
+      color: #67c23a;
+      background-color: rgb(103, 194, 58, 0.15);
+      border-color: rgb(103, 194, 58, 0.30);
+    }
+    :host([type='success'][plain]:hover) {
+      background-color: #67c23a;
+      color: #fff;
+      border: 1px solid #67c23a;
+    }
+    :host([type='success'][plain]:active) {
+      color: #fff;
+      background-color: #488728;
+      border-color: #488728;
+    }
+    :host([type='info'][plain]) {
+      color: #909399;
+      background-color: rgb(144, 147, 153, 0.15);
+      border-color: rgb(144, 147, 153, 0.30);
+    }
+    :host([type='info'][plain]:hover) {
+      background-color: #909399;
+      color: #fff;
+      border: 1px solid #909399;
+    }
+    :host([type='info'][plain]:active) {
+      color: #fff;
+      background-color: #6a6d73;
+      border-color: #6a6d73;
+    }    
+    :host([type='danger'][plain]) {
+      color: #f56c6c;
+      background-color: rgb(245, 108, 108, 0.15);
+      border-color: rgb(245, 108, 108, 0.30);
+    }
+    :host([type='danger'][plain]:hover) {
+      background-color: #f56c6c;
+      color: #fff;
+      border: 1px solid #f56c6c;
+    }
+    :host([type='danger'][plain]:active) {
+      color: #fff;
+      background-color: #f02424;
+      border-color: #f02424;
+    }
+    :host([type='warning'][plain]) {
+      color: #e6a23c;
+      background-color: rgb(230, 162, 60, 0.15);
+      border-color: rgb(230, 162, 60, 0.30);
+    }
+    :host([type='warning'][plain]:hover) {
+      background-color: #e6a23c;
+      color: #fff;
+      border: 1px solid #e6a23c;
+    }
+    :host([type='warning'][plain]:active) {
+      color: #fff;
+      background-color: #bd7b18;
+      border-color: #bd7b18;
+    }
+    /* Source https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
+    .noselect {
+      -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+         -khtml-user-select: none; /* Konqueror HTML */
+           -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome and Opera */
+    }
+    p {
+      padding: 0px;
+      margin: 0px;
+    }
   </style>
-  <div id="btn-component">Button</div>
+  <p class="noselect"></p>
 `
 
 /* global HTMLElement */
 /**
+ * This is hello world component with 2 core attributes.<br>
+ * - rainbow {boolean} - true if you want the text to have rainbow color, false otherwise.<br>
+ * - language {string} - string value of the language (for example: en, sp, fr, or ch).
  */
 class ButtonComponent extends HTMLElement {
   /**
@@ -165,15 +243,15 @@ class ButtonComponent extends HTMLElement {
   constructor () {
     super()
     this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true))
-    if (this.textContent !== '') {
-      this.shadowRoot.querySelector('div').textContent = this.textContent
-    }
+    this.shadowRoot.querySelector('p').textContent = this.textContent
     // this.addEventListener('click', this.clickEffect)
   }
 
+  /*
   clickEffect (event) {
     // this.classList.add('hello')
   }
+  */
 
   /**
    * Method returns a list of attributes supported by this component.<br>
@@ -196,6 +274,28 @@ class ButtonComponent extends HTMLElement {
     console.log('Component disconnect!')
   }
 
+  /*
+  handleType (newVal) {
+    var type = ['primary', 'success', 'info', 'danger', 'warning']
+    if (type.indexOf(newVal) !== -1) {
+      this.classList.add(newVal)
+    }
+  }
+
+  handleSize (newVal) {
+    var size = ['medium', 'small', 'mini']
+    if (size.indexOf(newVal) !== -1) {
+      this.classList.add(newVal)
+    }
+  }
+
+  handleRound () {
+    this.classList.add('round')
+  }
+  handleCircle () {
+    this.classList.add('circle')
+  }
+  */
   /**
    * Callback for when the supported attributes change its value.
    * @param {string} attrName - the name of the attribute.
@@ -203,6 +303,20 @@ class ButtonComponent extends HTMLElement {
    * @param {*} newVal - the new value of the attribute.
    */
   attributeChangedCallback (attrName, oldVal, newVal) {
+    /*
+    if (attrName === 'type') {
+      this.handleType(newVal)
+    }
+    if (attrName === 'size') {
+      this.handleSize(newVal)
+    }
+    if (attrName === 'round') {
+      this.handleRound()
+    }
+    if (attrName === 'circle') {
+      this.handleCircle()
+    }
+    */
   }
 }
 window.customElements.define('button-component', ButtonComponent)
