@@ -17,7 +17,8 @@ template.innerHTML = `
       font-weight: 500;
       padding: 12px 20px;
       font-size: 14px;
-      border-radius: 4px
+      border-radius: 4px;
+      box-shadow: 0 1px 2px darkgray;
     }
     :host([type='primary']) {
       color: #fff;
