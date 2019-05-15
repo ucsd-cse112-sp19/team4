@@ -25,5 +25,5 @@
   git push -u origin master  
 
 ### Acknowledgement
-  We would like to thank [SauceLabs](https://saucelabs.com) for their support of open source projects like
+  We would like to thank [Sauce Labs](https://saucelabs.com) for their support of open source projects like
   ours.
