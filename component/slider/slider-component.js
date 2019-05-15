@@ -30,6 +30,10 @@ template.innerHTML = `
       border: 2px solid #409eff;
       border-radius: 25px;
       background: #fff;
+      transition: transform .2s;
+      -webkit-transition: transform .2s;
+      -moz-transition: transform .2s;
+      -o-transition: transform .2s;
     }
     input[type=range]::-moz-range-thumb {
       width: 25px;
@@ -62,8 +66,14 @@ template.innerHTML = `
       text-align: left;
     }
     input[type=range]:hover{
-      background: lightgrey;
+      cursor: pointer;
     }
+    input[type=range]::-webkit-slider-thumb:hover{
+      -webkit-transform: scale(1.2); /* Safari & Chrome */
+      -moz-transform: scale(1.2); /* Firefox */
+      -ms-transform: scale(1.2); /* Internet Explorer */
+      -o-transform: scale(1.2); /* Opera */
+    }   
   </style>
   <div class="slider">
     <span class="min">0</span>
