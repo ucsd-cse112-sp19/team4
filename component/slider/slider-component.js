@@ -77,6 +77,7 @@ const settings = {
   fill: '#409eff',
   background: '#d7dcdf'
 }
+var _this = null
 class SliderComponent extends HTMLElement {
   /**
    * SliderComponent constructor.
@@ -86,8 +87,9 @@ class SliderComponent extends HTMLElement {
     super()
     this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true))
     const slider = this.shadowRoot.querySelector('input')
-    slider.addEventListener('input', this.applyFill)
+    slider.addEventListener('input', this.onSlide)
     this.applyFill(slider)
+    _this = this
   }
 
   /**
@@ -120,8 +122,13 @@ class SliderComponent extends HTMLElement {
   attributeChangedCallback (attrName, oldVal, newVal) {
 
   }
-  applyFill () {
-    var _slider = this
+
+  onSlide () {
+    // 'this' here mean the input tag, not the actual component
+    _this.applyFill(this)
+  }
+
+  applyFill (_slider) {
     const percentage = 100 * (_slider.value - _slider.min) / (_slider.max - _slider.min)
     const bg = `linear-gradient(90deg, ${settings.fill} ${percentage}%, ${settings.background} ${percentage + 0.1}%)`
     _slider.style.background = bg
