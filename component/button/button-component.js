@@ -19,10 +19,6 @@ template.innerHTML = `
       font-size: 14px;
       border-radius: 4px
     }
-    :host::after {
-      content: "Button";
-    }
-    
     :host([type='primary']) {
       color: #fff;
       background-color: #409eff;
@@ -129,15 +125,12 @@ template.innerHTML = `
       background-color: #0077f3;
       border-color: #0077f3;
     }
-
   </style>
+  <div id="btn-component">Button</div>
 `
 
 /* global HTMLElement */
 /**
- * This is hello world component with 2 core attributes.<br>
- * - rainbow {boolean} - true if you want the text to have rainbow color, false otherwise.<br>
- * - language {string} - string value of the language (for example: en, sp, fr, or ch).
  */
 class ButtonComponent extends HTMLElement {
   /**
@@ -147,6 +140,9 @@ class ButtonComponent extends HTMLElement {
   constructor () {
     super()
     this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true))
+    if (this.textContent !== '') {
+      this.shadowRoot.querySelector('div').textContent = this.textContent
+    }
     // this.addEventListener('click', this.clickEffect)
   }
 
@@ -175,28 +171,6 @@ class ButtonComponent extends HTMLElement {
     console.log('Component disconnect!')
   }
 
-  /*
-  handleType (newVal) {
-    var type = ['primary', 'success', 'info', 'danger', 'warning']
-    if (type.indexOf(newVal) !== -1) {
-      this.classList.add(newVal)
-    }
-  }
-
-  handleSize (newVal) {
-    var size = ['medium', 'small', 'mini']
-    if (size.indexOf(newVal) !== -1) {
-      this.classList.add(newVal)
-    }
-  }
-
-  handleRound () {
-    this.classList.add('round')
-  }
-  handleCircle () {
-    this.classList.add('circle')
-  }
-  */
   /**
    * Callback for when the supported attributes change its value.
    * @param {string} attrName - the name of the attribute.
@@ -204,20 +178,6 @@ class ButtonComponent extends HTMLElement {
    * @param {*} newVal - the new value of the attribute.
    */
   attributeChangedCallback (attrName, oldVal, newVal) {
-    /*
-    if (attrName === 'type') {
-      this.handleType(newVal)
-    }
-    if (attrName === 'size') {
-      this.handleSize(newVal)
-    }
-    if (attrName === 'round') {
-      this.handleRound()
-    }
-    if (attrName === 'circle') {
-      this.handleCircle()
-    }
-    */
   }
 }
 window.customElements.define('button-component', ButtonComponent)
