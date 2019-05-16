@@ -1,9 +1,6 @@
 node_modules
 .DS_Store
 out
-<<<<<<< HEAD
-=======
 .nyc_output
->>>>>>> 36df65ac2cf5ff99be6271358752563ffa1f4ff4
 bower_components
 coverage
