@@ -115,11 +115,13 @@ class HelloWorldComponent extends HTMLElement {
       'po': ['Olá', 'Mundo'],
       'ic': ['Halló', 'heimur']
     }
-    if (newLang in languageContent) {
-      const [greeting, world] = languageContent[newLang]
-      if (content === '') { content = world }
-      this.shadowRoot.querySelector('span').textContent = `${greeting} ${content}!`
+    // setting default lang when language="" or any other string that is not supported
+    if (!(newLang in languageContent)) {
+      newLang = 'en'
     }
+    const [greeting, world] = languageContent[newLang]
+    if (content === '') { content = world }
+    this.shadowRoot.querySelector('span').textContent = `${greeting} ${content}!`
   }
 
   /**
