@@ -1,7 +1,7 @@
 var template = document.createElement('template')
 template.innerHTML = `
   <style>
-    // default setting for the slider
+    /*  Default CSS style for slider */
     :host {
       width: 300px;
       font-weight: 400;
@@ -23,6 +23,7 @@ template.innerHTML = `
     input[type=range]:focus {
       outline: none;
     }
+    /* CSS classes for slider thumb */
     input[type=range]::-webkit-slider-thumb {
       -webkit-appearance: none;
       width: 20px;
@@ -72,6 +73,7 @@ template.innerHTML = `
       -o-transform: scale(1.2); /* Opera */
     }   
   </style>
+  /* Defining the components of the slider */
   <div class="slider">
     <span class="min">0</span>
       <div class="range">
@@ -80,11 +82,19 @@ template.innerHTML = `
     <span class="max">100</span>
   </div>
 `
+/**
+ * Local setting var
+ */
 const settings = {
   fill: '#409eff',
   background: '#d7dcdf'
 }
 
+/* global HTMLElement */
+/**
+ * This is a custom slider component
+ * Ported from https://element.eleme.io/#/en-US/component/slider
+ */
 class SliderComponent extends HTMLElement {
   /**
    * SliderComponent constructor.
@@ -163,6 +173,10 @@ class SliderComponent extends HTMLElement {
     }
   }
 
+  /**
+   * Method for filling the color for the slider
+   * @param {*} _slider - Slider object (aka the input tag)
+   */
   applyFill (_slider) {
     const percentage = 100 * (_slider.value - _slider.min) / (_slider.max - _slider.min)
     const bg = `linear-gradient(90deg, ${settings.fill} ${percentage}%, ${settings.background} ${percentage + 0.1}%)`
