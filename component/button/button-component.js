@@ -1,6 +1,7 @@
 var template = document.createElement('template')
 template.innerHTML = `
   <style>
+    /* Default css attribute for the button */
     :host{
       display: inline-block;
       line-height: 1;
@@ -20,6 +21,7 @@ template.innerHTML = `
       border-radius: 4px;
       box-shadow: 0 1px 2px darkgray;
     }
+    /* CSS classes for type attribute */
     :host([type='primary']) {
       color: #fff;
       background-color: #409eff;
@@ -50,6 +52,7 @@ template.innerHTML = `
       font-size: 14px;
       border-radius: 4px;
     }
+    /* CSS classes for size attribute */
     :host([size='small']){
       padding: 9px 15px;
       font-size: 12px;
@@ -60,17 +63,21 @@ template.innerHTML = `
       font-size: 12px;
       border-radius: 3px;
     }
+    /* CSS classes for round attribute */
     :host([round]) {
       border-radius: 20px;
     }
+    /* CSS classes for circle attribute*/
     :host([circle]) {
       border-radius: 50%;
     }
+    /* CSS classes for on hover*/
     :host(:hover) {
       background-color: rgb(64, 158, 255, 0.15);
       color: #409eff;
       border: 1px solid rgb(64, 158, 255, 0.30);
     }
+    /* CSS classes for on hover with specific button type */
     :host([type='warning']:hover) {
       color: #fff;
       background-color: rgb(230, 162, 60, 0.85);
@@ -96,11 +103,13 @@ template.innerHTML = `
       background-color: rgb(64, 158, 255, 0.85);
       border-color: rgb(64, 158, 255, 0.85);
     }
+    /* CSS classes when being clicked */
     :host(:active) {
       background-color: rgb(64, 158, 255, 0.15);
       color: #0077f3;
       border: 1px solid #0077f3;
     }
+    /* CSS classes when being clicked for specific button type */
     :host([type='warning']:active) {
       color: #fff;
       background-color: #bd7b18;
@@ -126,6 +135,7 @@ template.innerHTML = `
       background-color: #0077f3;
       border-color: #0077f3;
     }
+    /* CSS classes for plain button */
     :host([plain]:hover) {
       background-color: #fff;
       color: #409eff;
@@ -211,11 +221,13 @@ template.innerHTML = `
       background-color: #bd7b18;
       border-color: #bd7b18;
     }
+    /* CSS classes for disabled button */
     :host([disabled]){
-    border: 1px solid #999999;
-    background-color: #cccccc;
-    pointer-events: none;
+      border: 1px solid #999999;
+      background-color: #cccccc;
+      pointer-events: none;
     }
+    /* CSS classes for button with icon */
     :host([icon]){
       padding: 12px;
       color: #fff;
@@ -274,27 +286,20 @@ template.innerHTML = `
 
 /* global HTMLElement */
 /**
- * This is hello world component with 2 core attributes.<br>
- * - rainbow {boolean} - true if you want the text to have rainbow color, false otherwise.<br>
- * - language {string} - string value of the language (for example: en, sp, fr, or ch).
+ * This is a custom button component
+ * Ported from https://element.eleme.io/#/en-US/component/button
  */
 class ButtonComponent extends HTMLElement {
   /**
-   * ButtonComponent constructor.
+   * ButtonComponent constructor. Attaching button template into
+   * the shadowRoot of the component
    * @constructor
    */
   constructor () {
     super()
     this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true))
     this.shadowRoot.querySelector('p').textContent = this.textContent
-    // this.addEventListener('click', this.clickEffect)
   }
-
-  /*
-  clickEffect (event) {
-    // this.classList.add('hello')
-  }
-  */
 
   /**
    * Method returns a list of attributes supported by this component.<br>
@@ -316,50 +321,14 @@ class ButtonComponent extends HTMLElement {
   disconnectedCallback () {
     console.log('Component disconnect!')
   }
-
-  /*
-  handleType (newVal) {
-    var type = ['primary', 'success', 'info', 'danger', 'warning']
-    if (type.indexOf(newVal) !== -1) {
-      this.classList.add(newVal)
-    }
-  }
-
-  handleSize (newVal) {
-    var size = ['medium', 'small', 'mini']
-    if (size.indexOf(newVal) !== -1) {
-      this.classList.add(newVal)
-    }
-  }
-
-  handleRound () {
-    this.classList.add('round')
-  }
-  handleCircle () {
-    this.classList.add('circle')
-  }
-  */
   /**
    * Callback for when the supported attributes change its value.
+   * Currently not using this since most of the logic can be handle in the css
    * @param {string} attrName - the name of the attribute.
    * @param {*} oldVal - the old value of the attribute.
    * @param {*} newVal - the new value of the attribute.
    */
   attributeChangedCallback (attrName, oldVal, newVal) {
-    /*
-    if (attrName === 'type') {
-      this.handleType(newVal)
-    }
-    if (attrName === 'size') {
-      this.handleSize(newVal)
-    }
-    if (attrName === 'round') {
-      this.handleRound()
-    }
-    if (attrName === 'circle') {
-      this.handleCircle()
-    }
-    */
   }
 }
 window.customElements.define('button-component', ButtonComponent)
