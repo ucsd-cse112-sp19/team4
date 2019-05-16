@@ -1,7 +1,7 @@
 var template = document.createElement('template')
 template.innerHTML = `
   <style>
-    // default setting for the slider
+    /*  Default CSS style for slider */
     :host {
       width: 300px;
       font-weight: 400;
@@ -23,6 +23,7 @@ template.innerHTML = `
     input[type=range]:focus {
       outline: none;
     }
+    /* CSS classes for slider thumb */
     input[type=range]::-webkit-slider-thumb {
       -webkit-appearance: none;
       width: 20px;
@@ -48,9 +49,6 @@ template.innerHTML = `
       width: 80vw;
       padding: 0 0.7375rem;
     }
-    .slider {
-      margin: 4em 0;
-    }
     .min,
     .max {
       width: 10vw;
@@ -75,6 +73,7 @@ template.innerHTML = `
       -o-transform: scale(1.2); /* Opera */
     }   
   </style>
+  /* Defining the components of the slider */
   <div class="slider">
     <span class="min">0</span>
       <div class="range">
@@ -83,11 +82,19 @@ template.innerHTML = `
     <span class="max">100</span>
   </div>
 `
+/**
+ * Local setting var
+ */
 const settings = {
   fill: '#409eff',
   background: '#d7dcdf'
 }
-var _this = null
+
+/* global HTMLElement */
+/**
+ * This is a custom slider component
+ * Ported from https://element.eleme.io/#/en-US/component/slider
+ */
 class SliderComponent extends HTMLElement {
   /**
    * SliderComponent constructor.
@@ -97,16 +104,28 @@ class SliderComponent extends HTMLElement {
     super()
     this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true))
     const slider = this.shadowRoot.querySelector('input')
-    slider.addEventListener('input', this.onSlide)
+    if (this.hasAttribute('value')) {
+      slider.setAttribute('value', this.getAttribute('value'))
+    } else {
+      this.setAttribute('value', slider.value)
+    }
+    // listener when sliding
+    slider.addEventListener('input', () => {
+      this.applyFill(slider)
+    })
+    // listener when sliding event finished
+    slider.addEventListener('change', () => {
+      this.applyFill(slider)
+      this.setAttribute('value', slider.value)
+    })
     this.applyFill(slider)
-    _this = this
   }
 
   /**
    * Method returns a list of attributes supported by this component.<br>
    */
   static get observedAttributes () {
-    return []
+    return ['value']
   }
 
   /**
@@ -130,14 +149,34 @@ class SliderComponent extends HTMLElement {
    * @param {*} newVal - the new value of the attribute.
   */
   attributeChangedCallback (attrName, oldVal, newVal) {
-
+    if (!isNaN(newVal) && newVal >= 0 && newVal <= 100) {
+      var slider = this.shadowRoot.querySelector('input')
+      slider.value = newVal
+      this.applyFill(slider)
+    }
   }
 
-  onSlide () {
-    // 'this' here mean the input tag, not the actual component
-    _this.applyFill(this)
+  /**
+   * Getter for value attribute.
+   */
+  get value () {
+    return this.getAttribute('value')
   }
 
+  /**
+   * Setter for value attribute.
+   * @param {string} newVal - The new value for value attribute
+   */
+  set value (newVal) {
+    if (!isNaN(newVal) && newVal >= 0 && newVal <= 100) {
+      this.setAttribute('value', newVal)
+    }
+  }
+
+  /**
+   * Method for filling the color for the slider
+   * @param {*} _slider - Slider object (aka the input tag)
+   */
   applyFill (_slider) {
     const percentage = 100 * (_slider.value - _slider.min) / (_slider.max - _slider.min)
     const bg = `linear-gradient(90deg, ${settings.fill} ${percentage}%, ${settings.background} ${percentage + 0.1}%)`
