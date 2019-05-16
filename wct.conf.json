@@ -1,0 +1,10 @@
+{
+    "extraScripts": [
+        "component/T1/hello-world-component.js"
+    ],
+    "plugins": {
+        "local": {
+            "browsers": ["chrome"]
+        }
+    }
+}

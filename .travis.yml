@@ -7,4 +7,5 @@ notifications:
 
 install:
   - npm install  
+  - npm run run-install
 
