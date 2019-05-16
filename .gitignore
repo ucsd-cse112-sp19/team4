@@ -1,4 +1,9 @@
 node_modules
 .DS_Store
 out
+<<<<<<< HEAD
 .nyc_output
+=======
+bower_components
+coverage
+>>>>>>> wct-test

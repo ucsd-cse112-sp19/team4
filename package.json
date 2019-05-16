@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "run-docs": "jsdoc -c jsdoc.json",
-    "run-lint": "standard component && ./node_modules/.bin/htmlhint component/*/*.html",
-    "run-test": "mocha --exit",
+    "run-lint": "standard component && htmlhint component/**/*.html && stylelint component/**/*.css",
+    "run-test": "wct component/**/test.js",
     "run-lint-test": "npm run run-lint && npm run run-test",
     "test": "npm run run-lint-test",
     "pre-commit": "npm run run-lint && npm run run-docs && git add docs/*",
     "pre-push": "npm run run-lint",
-    "run-update-npm": "npm install"
+    "run-install": "npm install && bower install",
+    "run-update-npm": "npm run run-install"
   },
   "husky": {
     "hooks": {
@@ -38,6 +39,7 @@
     "npm": "^6.9.0"
   },
   "devDependencies": {
+    "bower": "^1.8.8",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.17.2",
@@ -50,6 +52,7 @@
     "mocha": "^6.1.4",
     "showroom": "^0.9.3",
     "standard": "*",
-    "stylelint": "^10.0.1"
+    "stylelint": "^10.0.1",
+    "web-component-tester": "^6.9.2"
   }
 }

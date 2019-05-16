@@ -1,0 +1,20 @@
+{
+  "name": "team4",
+  "description": "Team 4 Web Components",
+  "main": "index.js",
+  "authors": [
+    "Team4"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ucsd-cse112/team4",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "web-component-tester": "^6.5.0"
+  }
+}
