@@ -13,8 +13,6 @@ class HelloWorldComponent extends HTMLElement {
     super()
     this.attachShadow({ mode: 'open' })
     this.shadowRoot.innerHTML = '<h1><span></span></h1>'
-    this.handleLanguage('en')
-    this.handleRainbow('false')
   }
 
   /**
@@ -30,6 +28,12 @@ class HelloWorldComponent extends HTMLElement {
    */
   connectedCallback () {
     console.log('Component connected!')
+    if (!this.hasAttribute('language')) {
+      this.setAttribute('language', 'en')
+    }
+    if (!this.hasAttribute('rainbow')) {
+      this.setAttribute('rainbow', 'false')
+    }
   }
 
   /**
@@ -83,11 +87,13 @@ class HelloWorldComponent extends HTMLElement {
       'po': ['Olá', 'Mundo'],
       'ic': ['Halló', 'heimur']
     }
-    if (newLang in languageContent) {
-      const [greeting, world] = languageContent[newLang]
-      if (content === '') { content = world }
-      this.shadowRoot.querySelector('span').textContent = `${greeting} ${content}!`
+    // setting default lang when language="" or any other string that is not supported
+    if (!(newLang in languageContent)) {
+      newLang = 'en'
     }
+    const [greeting, world] = languageContent[newLang]
+    if (content === '') { content = world }
+    this.shadowRoot.querySelector('span').textContent = `${greeting} ${content}!`
   }
 
   /**
@@ -103,6 +109,36 @@ class HelloWorldComponent extends HTMLElement {
     if (attrName === 'language') {
       this.handleLanguage(newVal)
     }
+  }
+
+  /**
+   * Getter for language attribute.
+   */
+  get language () {
+    return this.getAttribute('language')
+  }
+
+  /**
+   * Setter for language attribute.
+   * @param {string} newVal - The new value for language
+   */
+  set language (newVal) {
+    this.setAttribute('language', newVal)
+  }
+
+  /**
+   * Getter for rainbow attribute.
+   */
+  get rainbow () {
+    return this.getAttribute('rainbow')
+  }
+
+  /**
+   * Setter for rainbow attribute.
+   * @param {string} newVal - The new value for rainbow
+   */
+  set rainbow (newVal) {
+    this.setAttribute('rainbow', newVal)
   }
 }
 window.customElements.define('hello-world', HelloWorldComponent)
