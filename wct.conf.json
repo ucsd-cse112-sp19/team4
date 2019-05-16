@@ -5,6 +5,18 @@
     "plugins": {
         "local": {
             "browsers": ["chrome"]
+        },
+        "sauce": {
+            "browsers": [{
+                "browserName": "MicrosoftEdge",
+                "platform": "Windows 10",
+                "version": "18.17763"
+            }, {
+                "browserName": "chrome",
+                "platform": "Windows 10",
+                "version": "74.0"
+            }
+        ]
         }
     }
 }
