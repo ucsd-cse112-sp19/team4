@@ -1,55 +1,47 @@
-const showroom = require('showroom/puppeteer')()
-const assert = require('assert')
+/* global suite test assert */
 
-/* global describe */
-// describe holds a set of tests
-describe('hello-world-component', function () {
-  this.timeout(15000)
-
-  /* global before */
-  // runs this before all the tests have started
-  before(async () => {
-    // creates the server hosting the web component
-    await showroom.start()
+suite('hello-world-component', function () {
+  test('temp', function () {
+    const component = document.createElement('hello-world')
+    document.body.append(component)
+    assert.isDefined(component)
+    assert.equal(component.language, 'en')
+    assert.equal(component.rainbow, 'false')
   })
-
-  /* global after */
-  // runs this after all the tests have been ran
-  after(async () => {
-    // stops the server hosting the web component
-    await showroom.stop()
+  // Tests to see if the default language value is en
+  test('default language is en', function () {
+    const component = document.createElement('hello-world')
+    document.body.append(component)
+    assert.isDefined(component)
+    assert.equal(component.language, 'en')
   })
-
-  /* global beforeEach */
-  // need to run this to make sure changes take affect since we are using asycncalls
-  beforeEach(async function () {
-    await showroom.setTestSubject('hello-world-component')
+  // Tests to see if the default rainbow value is false
+  test('default rainbow is false', function () {
+    const component = document.createElement('hello-world')
+    document.body.append(component)
+    assert.isDefined(component)
+    assert.equal(component.rainbow, 'false')
   })
-
-  /* global it */
-  // tests to see if the default language value is en
-  it('should display set attribute for lan to be en', async () => {
-    const innerLan = await showroom.getAttribute('language')
-    assert.strictEqual(innerLan, 'en')
+  // Tests to see if it handles changing the language value
+  test('changing language works', function () {
+    const component = document.createElement('hello-world')
+    document.body.append(component)
+    assert.isDefined(component)
+    assert.equal(component.language, 'en')
+    component.language = 'fr'
+    assert.equal(component.language, 'fr')
+    component.language = 'en'
+    assert.equal(component.language, 'en')
   })
-
-  // after changing the language checks to see if it is correctly displayed
-  it('testing the text between the custom element', async () => {
-    await showroom.setAttribute('language', 'sp')
-    const innerLan = await showroom.getAttribute('language')
-    assert.strictEqual(innerLan, 'sp')
-  })
-
-  // tests to see if the default rainbow value is false
-  it('should display set attribute for rainbow to be false', async () => {
-    const innerRain = await showroom.getAttribute('rainbow')
-    assert.strictEqual(innerRain, 'false')
-  })
-
-  // tests to see if it handles changes the rainbow value from false to true
-  it('should display set attribute for rainbow to be true after changing it', async () => {
-    await showroom.setAttribute('rainbow', true)
-    const innerRain = await showroom.getAttribute('rainbow')
-    assert.strictEqual(innerRain, 'true')
+  // Tests to see if it handles changing the rainbow value
+  test('changing rainbow works', function () {
+    const component = document.createElement('hello-world')
+    document.body.append(component)
+    assert.isDefined(component)
+    assert.equal(component.rainbow, 'false')
+    component.rainbow = 'true'
+    assert.equal(component.rainbow, 'true')
+    component.rainbow = 'false'
+    assert.equal(component.rainbow, 'false')
   })
 })
