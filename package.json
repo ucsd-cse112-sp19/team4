@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "run-docs": "jsdoc -c jsdoc.json",
-    "run-lint": "standard component && htmlhint component/**/*.html && stylelint component/**/*.css",
+    "run-lint": "standard component/**/*.js && htmlhint component/**/*.html && stylelint component/**/*.css",
     "run-test": "wct component/**/test.js",
     "run-lint-test": "npm run run-lint && npm run run-test",
     "test": "npm run run-lint-test",
