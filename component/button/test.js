@@ -12,6 +12,7 @@ suite('button-component', function () {
     assert.equal(component.plain, 'false')
     assert.equal(component.round, 'false')
     assert.equal(component.circle, 'false')
+    assert.equal(component.disabled, 'false')
   })
   // Tests to see if the default plain attribute is false
   test('default plain is false', function () {
@@ -39,6 +40,15 @@ suite('button-component', function () {
     document.body.append(component)
     assert.isDefined(component)
     assert.equal(component.circle, 'false')
+  })
+  // Tests to see if the default disabled attribute is false
+  test('default disabled is false', function () {
+    const component = document.createElement('button')
+    component.size = 'medium'
+    component.type = 'primary'
+    document.body.append(component)
+    assert.isDefined(component)
+    assert.equal(component.disabled, 'false')
   })
   // Tests to see if it handles changing the size value
   test('changing size works', function () {
@@ -88,7 +98,7 @@ suite('button-component', function () {
     assert.equal(component.plain, 'false')
   })
   // Tests to see if it handles changing the round value
-  test('changing plain works', function () {
+  test('changing round works', function () {
     const component = document.createElement('button')
     component.size = 'medium'
     component.type = 'primary'
@@ -101,7 +111,7 @@ suite('button-component', function () {
     assert.equal(component.round, 'false')
   })
   // Tests to see if it handles changing the circle value
-  test('changing plain works', function () {
+  test('changing circle works', function () {
     const component = document.createElement('button')
     component.size = 'medium'
     component.type = 'primary'
@@ -112,5 +122,18 @@ suite('button-component', function () {
     assert.equal(component.circle, 'true')
     component.circle = 'false'
     assert.equal(component.circle, 'false')
+  })
+  // Tests to see if it handles changing the disabled value
+  test('changing circle works', function () {
+    const component = document.createElement('button')
+    component.size = 'medium'
+    component.type = 'primary'
+    document.body.append(component)
+    assert.isDefined(component)
+    assert.equal(component.disabled, 'false')
+    component.disabled = 'true'
+    assert.equal(component.disabled, 'true')
+    component.disabled = 'false'
+    assert.equal(component.disabled, 'false')
   })
 })
