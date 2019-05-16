@@ -1,8 +1,8 @@
 /* global suite test assert */
 
-suite('hello-world-component', function () {
+suite('slider-component', function () {
   test('temp', function () {
-    const component = document.createElement('hello-world')
+    const component = document.createElement('slider')
     document.body.append(component)
     assert.isDefined(component)
     assert.equal(component.language, 'en')
@@ -10,21 +10,21 @@ suite('hello-world-component', function () {
   })
   // Tests to see if the default language value is en
   test('default language is en', function () {
-    const component = document.createElement('hello-world')
+    const component = document.createElement('slider')
     document.body.append(component)
     assert.isDefined(component)
     assert.equal(component.language, 'en')
   })
   // Tests to see if the default rainbow value is false
   test('default rainbow is false', function () {
-    const component = document.createElement('hello-world')
+    const component = document.createElement('slider')
     document.body.append(component)
     assert.isDefined(component)
     assert.equal(component.rainbow, 'false')
   })
   // Tests to see if it handles changing the language value
   test('changing language works', function () {
-    const component = document.createElement('hello-world')
+    const component = document.createElement('slider')
     document.body.append(component)
     assert.isDefined(component)
     assert.equal(component.language, 'en')
@@ -35,7 +35,7 @@ suite('hello-world-component', function () {
   })
   // Tests to see if it handles changing the rainbow value
   test('changing rainbow works', function () {
-    const component = document.createElement('hello-world')
+    const component = document.createElement('slider')
     document.body.append(component)
     assert.isDefined(component)
     assert.equal(component.rainbow, 'false')
