@@ -239,6 +239,11 @@ template.innerHTML = `
       background-color: #bd7b18;
       border-color: #bd7b18;
     }
+    :host([disabled]){
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    pointer-events: none;
+    }
     :host([icon]){
       padding: 12px;
       color: #fff;
@@ -323,7 +328,7 @@ class ButtonComponent extends HTMLElement {
    * Method returns a list of attributes supported by this component.&lt;br>
    */
   static get observedAttributes () {
-    return ['size', 'type', 'plain', 'round', 'circle']
+    return ['size', 'type', 'plain', 'round', 'circle', 'disabled']
   }
 
   /**
