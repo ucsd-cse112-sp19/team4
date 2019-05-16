@@ -349,6 +349,97 @@ class ButtonComponent extends HTMLElement {
   disconnectedCallback () {
     console.log('Component disconnect!')
   }
+
+  /**
+   * Getter for type attribute.
+   */
+  get type () {
+    return this.getAttribute('type')
+  }
+
+  /**
+   * Setter for type attribute.
+   * @param {string} newVal - The new value for type
+   */
+  set type (newVal) {
+    this.setAttribute('type', newVal)
+  }
+
+  /**
+   * Getter for size attribute.
+   */
+  get size () {
+    return this.getAttribute('size')
+  }
+
+  /**
+   * Setter for size attribute.
+   * @param {string} newVal - The new value for size
+   */
+  set size (newVal) {
+    this.setAttribute('size', newVal)
+  }
+
+  /**
+   * Getter for plain attribute.
+   */
+  get plain () {
+    return this.getAttribute('plain')
+  }
+
+  /**
+   * Setter for plain attribute.
+   * @param {string} newVal - The new value for plain
+   */
+  set plain (newVal) {
+    this.setAttribute('plain', newVal)
+  }
+
+  /**
+   * Getter for round attribute.
+   */
+  get round () {
+    return this.getAttribute('round')
+  }
+
+  /**
+   * Setter for round attribute.
+   * @param {string} newVal - The new value for round
+   */
+  set round (newVal) {
+    this.setAttribute('round', newVal)
+  }
+
+  /**
+   * Getter for circle attribute.
+   */
+  get circle () {
+    return this.getAttribute('circle')
+  }
+
+  /**
+   * Setter for circle attribute.
+   * @param {string} newVal - The new value for circle
+   */
+  set circle (newVal) {
+    this.setAttribute('circle', newVal)
+  }
+
+  /**
+   * Getter for disabled attribute.
+   */
+  get disabled () {
+    return this.getAttribute('disabled')
+  }
+
+  /**
+   * Setter for disabled attribute.
+   * @param {string} newVal - The new value for disabled
+   */
+  set disabled (newVal) {
+    this.setAttribute('disabled', newVal)
+  }
+
   /**
    * Callback for when the supported attributes change its value.
    * Currently not using this since most of the logic can be handle in the css
