@@ -29,13 +29,36 @@
             <pre class="prettyprint source linenums"><code>var template = document.createElement('template')
 template.innerHTML = `
   &lt;style>
+    :host{
+      /* Common Theme */
+      --color-white: #fff;
+
+      /* Element Theme */
+      --el-btn-color-default: #fff;
+      --el-btn-color-warning: #e6a23c;
+      --el-btn-color-success: #67c23a;
+      --el-btn-color-danger: #f56c6c;
+      --el-btn-color-primary: #409eff;
+      --el-btn-color-info: #909399;
+
+      /* Bootstrap Theme */
+      --bt-btn-color-primary: #007bff;
+      --bt-btn-color-secondary: #6c757d;
+      --bt-btn-color-success: #28a745;
+      --bt-btn-color-info: #17a2b8;
+      --bt-btn-color-warning: #ffc107;
+      --bt-btn-color-danger: #dc3545;
+      --bt-btn-color-light: #f8f9fa;
+      --bt-btn-color-dark: #343a40;
+
+    }
     /* Default css attribute for the button */
     :host{
       display: inline-block;
       line-height: 1;
       white-space: nowrap;
       cursor: pointer;
-      background: #fff;
+      background: var(--el-btn-color-default);
       border: 1px solid #dcdfe6;
       color: #606266;
       text-align: center;
@@ -52,35 +75,40 @@ template.innerHTML = `
     /* CSS classes for type attribute */
     :host([type='primary']) {
       color: #fff;
-      background-color: #409eff;
-      border-color: #409eff;
+      background-color: var(--el-btn-color-primary);
+      border-color: var(--el-btn-color-primary);
+    }
+    :host([theme='bootstrap'][type='primary']) {
+      color: #fff;
+      background-color: var(--bt-btn-color-primary);
+      border-color: var(--bt-btn-color-primary);
     }
     :host([type='success']){
       color: #fff;
-      background-color: #67c23a;
-      border-color: #67c23a;
+      background-color: var(--el-btn-color-success);
+      border-color: var(--el-btn-color-success);
     }
     :host([type='warning']){
       color: #fff;
-      background-color: #e6a23c;
-      border-color: #e6a23c;
+      background-color: var(--el-btn-color-warning);
+      border-color: var(--el-btn-color-warning);
     }
     :host([type='danger']){
       color: #fff;
-      background-color: #f56c6c;
-      border-color: #f56c6c;
+      background-color: var(--el-btn-color-danger);
+      border-color: var(--el-btn-color-danger);
     }
     :host([type='info']){
       color: #fff;
-      background-color: #909399;
-      border-color: #909399;
+      background-color: var(--el-btn-color-info);
+      border-color: var(--el-btn-color-info);
     }
+    /* CSS classes for size attribute */
     :host([size='medium']){
       padding: 10px 20px;
       font-size: 14px;
       border-radius: 4px;
     }
-    /* CSS classes for size attribute */
     :host([size='small']){
       padding: 9px 15px;
       font-size: 12px;
