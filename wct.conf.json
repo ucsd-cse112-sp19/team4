@@ -1,10 +1,25 @@
 {
     "extraScripts": [
-        "component/T1/hello-world-component.js"
+        "component/hello-world/hello-world-component.js",
+        "component/button/button-componentq.js"
     ],
     "plugins": {
-        "local": {
-            "browsers": ["chrome"]
+        "sauce": {
+            "browsers": [
+                {
+                    "browserName": "chrome",
+                    "platform": "Windows 10",
+                    "version": "74.0"
+                }, {
+                    "browserName": "firefox",
+                    "platform": "Windows 10",
+                    "version": "66.0"
+                }, {
+                    "browserName": "firefox",
+                    "platform": "Windows 8.1",
+                    "version": "66.0"
+                }
+            ]
         }
     }
 }
