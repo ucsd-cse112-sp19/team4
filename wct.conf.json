@@ -5,24 +5,12 @@
     "plugins": {
         "sauce": {
             "browsers": [{
-                "browserName": "safari",
-                "platform": "macOS 10.14",
-                "version": "12.0"
-            }, {
-                "browserName": "chrome",
-                "platform": "macOS 10.14",
-                "version": "74.0"
-            }, {
                 "browserName": "chrome",
                 "platform": "Windows 10",
                 "version": "74.0"
             }, {
                 "browserName": "firefox",
                 "platform": "Windows 10",
-                "version": "66.0"
-            }, {
-                "browserName": "firefox",
-                "platform": "macOS 10.14",
                 "version": "66.0"
             }
         ]
