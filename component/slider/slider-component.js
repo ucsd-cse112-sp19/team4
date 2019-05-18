@@ -133,6 +133,9 @@ class SliderComponent extends HTMLElement {
    */
   connectedCallback () {
     console.log('Component connected!')
+    if(!this.hasAttribute('value')){
+      this.setAttribute('value', 50)
+    }
   }
 
   /**
