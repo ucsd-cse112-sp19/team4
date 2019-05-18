@@ -10,6 +10,10 @@
                 "version": "12.0"
             }, {
                 "browserName": "chrome",
+                "platform": "macOS 10.14",
+                "version": "74.0"
+            }, {
+                "browserName": "chrome",
                 "platform": "Windows 10",
                 "version": "74.0"
             }, {
