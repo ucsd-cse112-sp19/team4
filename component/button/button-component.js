@@ -399,7 +399,7 @@ class ButtonComponent extends HTMLElement {
    */
   set plain (newVal) {
     if (newVal) {
-      this.setAttribute('plain')
+      this.setAttribute('plain', '')
     } else {
       this.removeAttribute('plain')
     }
@@ -418,7 +418,7 @@ class ButtonComponent extends HTMLElement {
    */
   set round (newVal) {
     if (newVal) {
-      this.setAttribute('round')
+      this.setAttribute('round', '')
     } else {
       this.removeAttribute('round')
     }
@@ -437,7 +437,7 @@ class ButtonComponent extends HTMLElement {
    */
   set circle (newVal) {
     if (newVal) {
-      this.setAttribute('circle')
+      this.setAttribute('circle', '')
     } else {
       this.removeAttribute('circle')
     }
@@ -456,7 +456,7 @@ class ButtonComponent extends HTMLElement {
    */
   set disabled (newVal) {
     if (newVal) {
-      this.setAttribute('disabled')
+      this.setAttribute('disabled', '')
     } else {
       this.removeAttribute('disabled')
     }

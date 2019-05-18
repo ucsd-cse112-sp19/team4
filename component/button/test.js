@@ -58,11 +58,11 @@ suite('button-component', function () {
     document.body.append(component)
     assert.isDefined(component)
     assert.equal(component.size, 'medium')
-    component.language = 'small'
+    component.size = 'small'
     assert.equal(component.size, 'small')
-    component.language = 'mini'
-    assert.equal(component.language, 'mini')
-    component.language = 'medium'
+    component.size = 'mini'
+    assert.equal(component.size, 'mini')
+    component.size = 'medium'
     assert.equal(component.size, 'medium')
   })
   // Tests to see if it handles changing the type value
