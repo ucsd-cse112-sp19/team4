@@ -340,6 +340,12 @@ class ButtonComponent extends HTMLElement {
    * Callback when the component get created.
    */
   connectedCallback () {
+    if (!this.hasAttribute('size')) {
+      this.setAttribute('size', 'default')
+    }
+    if (!this.hasAttribute('type')) {
+      this.setAttribute('type', 'default')
+    }
     console.log('Component connected!')
   }
 
@@ -384,7 +390,7 @@ class ButtonComponent extends HTMLElement {
    * Getter for plain attribute.
    */
   get plain () {
-    return this.getAttribute('plain')
+    return this.hasAttribute('plain')
   }
 
   /**
@@ -392,14 +398,18 @@ class ButtonComponent extends HTMLElement {
    * @param {string} newVal - The new value for plain
    */
   set plain (newVal) {
-    this.setAttribute('plain', newVal)
+    if (newVal === 'true') {
+      this.setAttribute('plain')
+    } else {
+      this.removeAttribute('plain')
+    }
   }
 
   /**
    * Getter for round attribute.
    */
   get round () {
-    return this.getAttribute('round')
+    return this.hasAttribute('round')
   }
 
   /**
@@ -407,14 +417,18 @@ class ButtonComponent extends HTMLElement {
    * @param {string} newVal - The new value for round
    */
   set round (newVal) {
-    this.setAttribute('round', newVal)
+    if (newVal === 'true') {
+      this.setAttribute('round')
+    } else {
+      this.removeAttribute('round')
+    }
   }
 
   /**
    * Getter for circle attribute.
    */
   get circle () {
-    return this.getAttribute('circle')
+    return this.hasAttribute('circle')
   }
 
   /**
@@ -422,14 +436,18 @@ class ButtonComponent extends HTMLElement {
    * @param {string} newVal - The new value for circle
    */
   set circle (newVal) {
-    this.setAttribute('circle', newVal)
+    if (newVal === 'true') {
+      this.setAttribute('circle')
+    } else {
+      this.removeAttribute('circle')
+    }
   }
 
   /**
    * Getter for disabled attribute.
    */
   get disabled () {
-    return this.getAttribute('disabled')
+    return this.hasAttribute('disabled')
   }
 
   /**
@@ -437,7 +455,11 @@ class ButtonComponent extends HTMLElement {
    * @param {string} newVal - The new value for disabled
    */
   set disabled (newVal) {
-    this.setAttribute('disabled', newVal)
+    if (newVal === 'true') {
+      this.setAttribute('disabled')
+    } else {
+      this.removeAttribute('disabled')
+    }
   }
 
   /**
