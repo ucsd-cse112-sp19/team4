@@ -27,7 +27,7 @@
     "url": "git+https://github.com/ucsd-cse112/team4.git"
   },
   "author": "Team4",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ucsd-cse112/team4/issues"
   },
