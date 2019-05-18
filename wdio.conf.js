@@ -266,6 +266,13 @@ exports.config = {
   * @param {String} oldSessionId session ID of the old session
   * @param {String} newSessionId session ID of the new session
   */
-  //onReload: function(oldSessionId, newSessionId) {
-  //}
+  // onReload: function(oldSessionId, newSessionId) {
+  // }
 }
+var config = exports.config
+
+if (process.env.CI) {
+  config.user = process.env.SAUCE_USERNAME
+  config.key = process.env.SAUCE_ACCESS_KEY
+}
+exports.config = config
