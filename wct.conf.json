@@ -6,14 +6,6 @@
         "sauce": {
             "browsers": [{
                 "browserName": "chrome",
-                "platform": "Linux",
-                "version": "48.0"
-            }, {
-                "browserName": "firefox",
-                "platform": "Linux",
-                "version": "45.0"
-            }, {
-                "browserName": "chrome",
                 "platform": "Windows 10",
                 "version": "74.0"
             }, {
