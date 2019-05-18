@@ -398,7 +398,7 @@ class ButtonComponent extends HTMLElement {
    * @param {string} newVal - The new value for plain
    */
   set plain (newVal) {
-    if (newVal === 'true') {
+    if (newVal) {
       this.setAttribute('plain')
     } else {
       this.removeAttribute('plain')
@@ -417,7 +417,7 @@ class ButtonComponent extends HTMLElement {
    * @param {string} newVal - The new value for round
    */
   set round (newVal) {
-    if (newVal === 'true') {
+    if (newVal) {
       this.setAttribute('round')
     } else {
       this.removeAttribute('round')
@@ -436,7 +436,7 @@ class ButtonComponent extends HTMLElement {
    * @param {string} newVal - The new value for circle
    */
   set circle (newVal) {
-    if (newVal === 'true') {
+    if (newVal) {
       this.setAttribute('circle')
     } else {
       this.removeAttribute('circle')
@@ -455,7 +455,7 @@ class ButtonComponent extends HTMLElement {
    * @param {string} newVal - The new value for disabled
    */
   set disabled (newVal) {
-    if (newVal === 'true') {
+    if (newVal) {
       this.setAttribute('disabled')
     } else {
       this.removeAttribute('disabled')
