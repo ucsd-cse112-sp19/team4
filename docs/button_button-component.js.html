@@ -32,24 +32,18 @@ template.innerHTML = `
     :host{
       /* Common Theme */
       --color-white: #fff;
+      --text-color: #000;
 
-      /* Element Theme */
-      --el-btn-color-default: #fff;
-      --el-btn-color-warning: #e6a23c;
-      --el-btn-color-success: #67c23a;
-      --el-btn-color-danger: #f56c6c;
-      --el-btn-color-primary: #409eff;
-      --el-btn-color-info: #909399;
-
-      /* Bootstrap Theme */
-      --bt-btn-color-primary: #007bff;
-      --bt-btn-color-secondary: #6c757d;
-      --bt-btn-color-success: #28a745;
-      --bt-btn-color-info: #17a2b8;
-      --bt-btn-color-warning: #ffc107;
-      --bt-btn-color-danger: #dc3545;
-      --bt-btn-color-light: #f8f9fa;
-      --bt-btn-color-dark: #343a40;
+      /* Default Element Theme */
+      --btn-color-default: #fff;
+      --btn-color-warning: #e6a23c;
+      --btn-color-success: #67c23a;
+      --btn-color-danger: #f56c6c;
+      --btn-color-primary: #409eff;
+      --btn-color-info: #909399;
+      --btn-default-hover: rgba(64, 158, 255, 0.15);
+      --btn-default-border: #dcdfe6;
+      --btn-bg-primary-plain: rgba(64, 158, 255, 1.0);
 
     }
     /* Default css attribute for the button */
@@ -58,9 +52,9 @@ template.innerHTML = `
       line-height: 1;
       white-space: nowrap;
       cursor: pointer;
-      background: var(--el-btn-color-default);
-      border: 1px solid #dcdfe6;
-      color: #606266;
+      background: var(--btn-color-default);
+      border: 1px solid var(--btn-default-border);
+      color: var(--text-color);
       text-align: center;
       box-sizing: border-box;
       outline: none;
@@ -75,33 +69,28 @@ template.innerHTML = `
     /* CSS classes for type attribute */
     :host([type='primary']) {
       color: #fff;
-      background-color: var(--el-btn-color-primary);
-      border-color: var(--el-btn-color-primary);
-    }
-    :host([theme='bootstrap'][type='primary']) {
-      color: #fff;
-      background-color: var(--bt-btn-color-primary);
-      border-color: var(--bt-btn-color-primary);
+      background-color: var(--btn-color-primary);
+      border-color: var(--btn-color-primary);
     }
     :host([type='success']){
       color: #fff;
-      background-color: var(--el-btn-color-success);
-      border-color: var(--el-btn-color-success);
+      background-color: var(--btn-color-success);
+      border-color: var(--btn-color-success);
     }
     :host([type='warning']){
       color: #fff;
-      background-color: var(--el-btn-color-warning);
-      border-color: var(--el-btn-color-warning);
+      background-color: var(--btn-color-warning);
+      border-color: var(--btn-color-warning);
     }
     :host([type='danger']){
       color: #fff;
-      background-color: var(--el-btn-color-danger);
-      border-color: var(--el-btn-color-danger);
+      background-color: var(--btn-color-danger);
+      border-color: var(--btn-color-danger);
     }
     :host([type='info']){
       color: #fff;
-      background-color: var(--el-btn-color-info);
-      border-color: var(--el-btn-color-info);
+      background-color: var(--btn-color-info);
+      border-color: var(--btn-color-info);
     }
     /* CSS classes for size attribute */
     :host([size='medium']){
@@ -129,39 +118,44 @@ template.innerHTML = `
     }
     /* CSS classes for on hover*/
     :host(:hover) {
-      background-color: rgb(64, 158, 255, 0.15);
+      background-color: rgba(64, 158, 255, 0.15);
       color: #409eff;
-      border: 1px solid rgb(64, 158, 255, 0.30);
+      border: 1px solid rgba(64, 158, 255, 0.3);
+    }
+    :host([theme=bootstrap]:hover) {
+      background-color: rgb(84, 92, 99);
+      color: #fff;
+      border: 1px solid rgb(84, 92, 99);
     }
     /* CSS classes for on hover with specific button type */
     :host([type='warning']:hover) {
       color: #fff;
-      background-color: rgb(230, 162, 60, 0.85);
-      border-color: rgb(230, 162, 60, 0.85);
+      background-color: rgba(230, 162, 60, 0.85);
+      border-color: rgba(230, 162, 60, 0.85);
     }
     :host([type='danger']:hover) {
       color: #fff;
-      background-color: rgb(245, 108, 108, 0.85);
-      border-color: rgb(245, 108, 108, 0.85);
+      background-color: rgba(245, 108, 108, 0.85);
+      border-color: rgba(245, 108, 108, 0.85);
     }
     :host([type='info']:hover) {
       color: #fff;
-      background-color: rgb(144, 147, 153, 0.85);
-      border-color: rgb(144, 147, 153, 0.85);
+      background-color: rgba(144, 147, 153, 0.85);
+      border-color: rgba(144, 147, 153, 0.85);
     }
     :host([type='success']:hover) {
       color: #fff;
-      background-color: rgb(103, 194, 58, 0.85);
-      border-color: rgb(103, 194, 58, 0.85);
+      background-color: rgba(103, 194, 58, 0.85);
+      border-color: rgba(103, 194, 58, 0.85);
     }
     :host([type='primary']:hover) {
       color: #fff;
-      background-color: rgb(64, 158, 255, 0.85);
-      border-color: rgb(64, 158, 255, 0.85);
+      background-color: rgba(64, 158, 255, 0.85);
+      border-color: rgba(64, 158, 255, 0.85);
     }
     /* CSS classes when being clicked */
     :host(:active) {
-      background-color: rgb(64, 158, 255, 0.15);
+      background-color: rgba(64, 158, 255, 0.15);
       color: #0077f3;
       border: 1px solid #0077f3;
     }
@@ -197,20 +191,38 @@ template.innerHTML = `
       color: #409eff;
       border: 1px solid #409eff;
     }
+    :host([theme='bootstrap'][plain]){
+      background-color: #fff;
+      color: #6c757d;
+    } 
+    :host([theme='bootstrap'][plain]:hover) {
+      background-color: #6c757d;
+      color: #fff;
+      border: 1px solid #6c757d;
+    }
     :host([plain]:active) {
       background-color: #fff;
       color: #0077f3;
       border: 1px solid #0077f3;
     }
     :host([type='primary'][plain]) {
-      color: rgb(64, 158, 255, 1.0);
-      background-color: rgb(64, 158, 255, 0.15);
-      border-color: rgb(64, 158, 255, 0.30);
+      color: rgba(64, 158, 255, 1.0);
+      background-color: rgba(64, 158, 255, 0.15);
+      border-color: rgba(64, 158, 255, 0.30);
+    }
+    :host([theme='bootstrap'][type='primary'][plain]) {
+      color: #007bff;
+      background-color: #fff;;
+      border-color: #007bff;
     }
     :host([type='primary'][plain]:hover) {
-      background-color: rgb(64, 158, 255, 1.0);
+      background-color: rgba(64, 158, 255, 1.0);
       color: #fff;
-      border: 1px solid rgb(64, 158, 255, 1.0);
+      border: 1px solid rgba(64, 158, 255, 1.0);
+    }
+    :host([theme='bootstrap'][type='primary'][plain]:hover) {
+      background-color: #007bff;
+      border: 1px solid #007bff;
     }
     :host([type='primary'][plain]:active) {
       color: #fff;
@@ -219,13 +231,22 @@ template.innerHTML = `
     }
     :host([type='success'][plain]) {
       color: #67c23a;
-      background-color: rgb(103, 194, 58, 0.15);
-      border-color: rgb(103, 194, 58, 0.30);
+      background-color: rgba(103, 194, 58, 0.15);
+      border-color: rgba(103, 194, 58, 0.30);
+    }
+    :host([theme='bootstrap'][type='success'][plain]) {
+      color: #28a745;
+      background-color: #fff;
+      border-color: #28a745;
     }
     :host([type='success'][plain]:hover) {
       background-color: #67c23a;
       color: #fff;
       border: 1px solid #67c23a;
+    }
+    :host([theme='bootstrap'][type='success'][plain]:hover) {
+      background-color: #28a745;
+      border: 1px solid #28a745;
     }
     :host([type='success'][plain]:active) {
       color: #fff;
@@ -234,13 +255,22 @@ template.innerHTML = `
     }
     :host([type='info'][plain]) {
       color: #909399;
-      background-color: rgb(144, 147, 153, 0.15);
-      border-color: rgb(144, 147, 153, 0.30);
+      background-color: rgba(144, 147, 153, 0.15);
+      border-color: rgba(144, 147, 153, 0.30);
+    }
+    :host([theme='bootstrap'][type='info'][plain]) {
+      color: #17a2b8;
+      background-color: #fff;
+      border-color: #17a2b8;
     }
     :host([type='info'][plain]:hover) {
       background-color: #909399;
       color: #fff;
       border: 1px solid #909399;
+    }
+    :host([theme='bootstrap'][type='info'][plain]:hover) {
+      background-color: #17a2b8;
+      border: 1px solid #17a2b8;
     }
     :host([type='info'][plain]:active) {
       color: #fff;
@@ -249,13 +279,22 @@ template.innerHTML = `
     }    
     :host([type='danger'][plain]) {
       color: #f56c6c;
-      background-color: rgb(245, 108, 108, 0.15);
-      border-color: rgb(245, 108, 108, 0.30);
+      background-color: rgba(245, 108, 108, 0.15);
+      border-color: rgba(245, 108, 108, 0.30);
+    }
+    :host([theme='bootstrap'][type='danger'][plain]) {
+      color: #dc3545;
+      background-color: #fff;
+      border-color: #dc3545;
     }
     :host([type='danger'][plain]:hover) {
       background-color: #f56c6c;
       color: #fff;
       border: 1px solid #f56c6c;
+    }
+    :host([theme='bootstrap'][type='danger'][plain]:hover) {
+      background-color: #dc3545;
+      border: 1px solid #dc3545;
     }
     :host([type='danger'][plain]:active) {
       color: #fff;
@@ -264,13 +303,22 @@ template.innerHTML = `
     }
     :host([type='warning'][plain]) {
       color: #e6a23c;
-      background-color: rgb(230, 162, 60, 0.15);
-      border-color: rgb(230, 162, 60, 0.30);
+      background-color: rgba(230, 162, 60, 0.15);
+      border-color: rgba(230, 162, 60, 0.30);
+    }
+    :host([theme='bootstrap'][type='warning'][plain]) {
+      color: #ffc107;
+      background-color: #fff;
+      border-color: #ffc107;
     }
     :host([type='warning'][plain]:hover) {
       background-color: #e6a23c;
-      color: #fff;
+      color: #000;
       border: 1px solid #e6a23c;
+    }
+    :host([theme='bootstrap'][type='warning'][plain]:hover) {
+      background-color: #ffc107;
+      border: 1px solid #ffc107;
     }
     :host([type='warning'][plain]:active) {
       color: #fff;
@@ -282,6 +330,7 @@ template.innerHTML = `
       border: 1px solid #999999;
       background-color: #cccccc;
       pointer-events: none;
+      opacity: 0.4;
     }
     /* CSS classes for button with icon */
     :host([icon]){
@@ -339,6 +388,17 @@ template.innerHTML = `
   &lt;/style>
   &lt;p class="noselect">&lt;/p>
 `
+const bootstrapTheme = {
+  /* Bootstrap Theme */
+  primary: '#007bff',
+  secondary: '#6c757d',
+  success: '#28a745',
+  info: '#17a2b8',
+  warning: '#ffc107',
+  danger: '#dc3545',
+  default: '#6c757d',
+  black: '#fff'
+}
 
 /* global HTMLElement */
 /**
@@ -361,7 +421,7 @@ class ButtonComponent extends HTMLElement {
    * Method returns a list of attributes supported by this component.&lt;br>
    */
   static get observedAttributes () {
-    return ['size', 'type', 'plain', 'round', 'circle', 'disabled']
+    return ['size', 'type', 'plain', 'round', 'circle', 'disabled', 'theme']
   }
 
   /**
@@ -490,6 +550,20 @@ class ButtonComponent extends HTMLElement {
     }
   }
 
+  handleTheme (theme) {
+    if (theme === 'bootstrap') {
+      var style = this.style
+      style.setProperty('--btn-color-default', bootstrapTheme.default)
+      style.setProperty('--btn-color-warning', bootstrapTheme.warning)
+      style.setProperty('--btn-color-success', bootstrapTheme.success)
+      style.setProperty('--btn-color-danger', bootstrapTheme.danger)
+      style.setProperty('--btn-color-primary', bootstrapTheme.primary)
+      style.setProperty('--btn-color-info', bootstrapTheme.info)
+      style.setProperty('--text-color', bootstrapTheme.black)
+      style.setProperty('--btn-default-border', bootstrapTheme.default)
+    }
+  }
+
   /**
    * Callback for when the supported attributes change its value.
    * Currently not using this since most of the logic can be handle in the css
@@ -498,6 +572,9 @@ class ButtonComponent extends HTMLElement {
    * @param {*} newVal - the new value of the attribute.
    */
   attributeChangedCallback (attrName, oldVal, newVal) {
+    if (attrName === 'theme') {
+      this.handleTheme(newVal)
+    }
   }
 }
 window.customElements.define('button-component', ButtonComponent)

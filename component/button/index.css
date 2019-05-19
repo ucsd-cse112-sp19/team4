@@ -1,5 +1,9 @@
-.test{
-	background: #000;
-	border: 1 #000 solid; 
-	color: #fff;
+#element {
+	display: inline-block;
+	width: 49%;
+}
+
+#bootstrap {
+	display: inline-block;
+	width: 49%;
 }
