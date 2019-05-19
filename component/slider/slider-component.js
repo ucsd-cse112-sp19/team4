@@ -74,7 +74,7 @@ template.innerHTML = `
     }   
   </style>
   /* Defining the components of the slider */
-  <div class="slider">
+  <div class="slide-r">
     <span class="min">0</span>
       <div class="range">
         <input type="range" min="1" max="100" step="1">
