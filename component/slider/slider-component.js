@@ -73,7 +73,6 @@ template.innerHTML = `
       -o-transform: scale(1.2); /* Opera */
     }   
   </style>
-  /* Defining the components of the slider */
   <div class="slide-r">
     <span class="min">0</span>
       <div class="range">
