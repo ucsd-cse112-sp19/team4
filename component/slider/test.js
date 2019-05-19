@@ -11,8 +11,8 @@ suite('slider-component', function () {
     const component = document.createElement('slider-component')
     document.body.append(component)
     assert.isDefined(component)
-    assert.equal(component.value, 50)
-    component.value = 82
-    assert.equal(component.value, 82)
+    assert.equal(component.value, '50')
+    component.value = '82'
+    assert.equal(component.value, '82')
   })
 })
