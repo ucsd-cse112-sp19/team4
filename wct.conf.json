@@ -1,7 +1,7 @@
 {
     "extraScripts": [
         "component/T1/hello-world-component.js",
-        "component/slider/slider-componet.js"
+        "component/slider/slider-component.js"
     ],
     "plugins": {
         "sauce": {
