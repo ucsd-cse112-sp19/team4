@@ -3,7 +3,6 @@
 suite('slider-component', function () {
   test('temp', function () {
     const component = document.createElement('slider-component')
-    const component2 = document.createElement('slider-component')
     document.body.append(component)
     assert.isDefined(component)
   })

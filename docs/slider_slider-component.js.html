@@ -132,11 +132,6 @@ class SliderComponent extends HTMLElement {
     super()
     this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true))
     const slider = this.shadowRoot.querySelector('input')
-    if (this.hasAttribute('value')) {
-      slider.setAttribute('value', this.getAttribute('value'))
-    } else {
-      this.setAttribute('value', slider.value)
-    }
     // listener when sliding
     slider.addEventListener('input', () => {
       this.applyFill(slider)
@@ -161,8 +156,12 @@ class SliderComponent extends HTMLElement {
    */
   connectedCallback () {
     console.log('Component connected!')
-    if(!this.hasAttribute('value')){
+    if (!this.hasAttribute('value')) {
       this.setAttribute('value', 50)
+    } else if (this.hasAttribute('value')) {
+      this.setAttribute('value', this.getAttribute('value'))
+    } else {
+      this.setAttribute('value', this.value)
     }
   }
 
