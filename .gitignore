@@ -4,3 +4,4 @@ out
 .nyc_output
 bower_components
 coverage
+package-lock.json
