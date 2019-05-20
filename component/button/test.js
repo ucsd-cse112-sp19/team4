@@ -65,7 +65,7 @@ suite('button-component', function () {
     component.size = 'medium'
     assert.equal(component.size, 'medium')
   })
-  // Tests to see if it handles changing the type value
+  // Tests to see if this handles changing the type value
   test('changing type works', function () {
     const component = document.createElement('button-component')
     component.size = 'medium'
