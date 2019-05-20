@@ -1,10 +1,10 @@
-/* global beforeEach describe it only $ */
+/* global beforeEach describe it $ */
 beforeEach(async () => {
   await browser.url('/')
 })
 
 describe('Testing functionallity for buttons ', () => {
-  only.it('Testing the top row checking if the button\'s interact correctly', () => {
+  it.only('Testing the top row checking if the button\'s interact correctly', () => {
     browser.pause(500)
 
     // the $(selector) looks in the document to find the unique id
