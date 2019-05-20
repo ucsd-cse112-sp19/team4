@@ -62,10 +62,9 @@ exports.config = {
     // grid with only 5 firefox instances available you can make sure that not more than
     // 5 instances get started at a time.
     maxInstances: 5,
-    //
-    browserName: 'chrome'
-    version: '27.0',
-    platform: 'XP',
+    browserName: 'firefox',
+    // version: '27.0',
+    // platform: 'XP',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER
