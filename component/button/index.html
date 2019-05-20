@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-		<title>Components</title>
-		<link rel="stylesheet" type="text/css" href="index.css">
+      <meta charset="UTF-8">
+      <title>Components</title>
+      <link rel="stylesheet" type="text/css" href="index.css">
+      <!-- Load polyfills here -->
+      <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+      <!-- Then, load button component -->
+      <script type="module" src="./button-component.js"></script>
     </head>
     <body>
       <div id="element">
