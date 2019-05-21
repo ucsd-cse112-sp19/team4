@@ -61,7 +61,7 @@ exports.config = {
     // maxInstances can get overwritten per capability. So if you have an in-house Selenium
     // grid with only 5 firefox instances available you can make sure that not more than
     // 5 instances get started at a time.
-    maxInstances: 5,
+    maxInstances: 1,
     browserName: 'chrome',
     version: '74.0',
     platform: 'Windows 10',
@@ -72,6 +72,14 @@ exports.config = {
     // it is possible to configure which logTypes to include/exclude.
     // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
     // excludeDriverLogs: ['bugreport', 'server'],
+  }, {
+    maxInstances: 1,
+    browserName: 'firefox',
+    version: '66.0',
+    platform: 'Windows 10',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    name: 'integration',
+    build: process.env.TRAVIS_BUILD_NUMBER
   }],
   //
   // ===================
