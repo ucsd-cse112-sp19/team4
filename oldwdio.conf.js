@@ -1,3 +1,15 @@
+var baseUrl
+
+// if server is equal to production at runtime
+if (process.env.SERVER === 'prod') {
+  baseUrl = 'https://www.google.com'
+} else {
+  baseUrl = 'https://ericksotoe.github.io/'
+}
+
+// if we set debug mode to true we will run long time if not 10 secs
+var timeout = process.env.DEBUG ? 99999999 : 20000
+
 exports.config = {
   //
   // ====================
@@ -7,22 +19,6 @@ exports.config = {
   // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
   // on a remote machine).
   runner: 'local',
-  //
-  // =================
-  // Service Providers
-  // =================
-  // WebdriverIO supports Sauce Labs, Browserstack, and Testing Bot (other cloud providers
-  // should work too though). These services define specific user and key (or access key)
-  // values you need to put in here in order to connect to these services.
-  //
-  user: process.env.SAUCE_USERNAME,
-  key: process.env.SAUCE_ACCESS_KEY,
-  //
-  // If you run your tests on SauceLabs you can specify the region you want to run your tests
-  // in via the `region` property. Available short handles for regions are `us` (default) and `eu`.
-  // These regions are used for the Sauce Labs VM cloud and the Sauce Labs Real Device Cloud.
-  // If you don't provide the region it will default for the `us`
-  region: 'us',
   //
   // ==================
   // Specify Test Files
@@ -65,13 +61,25 @@ exports.config = {
     // maxInstances can get overwritten per capability. So if you have an in-house Selenium
     // grid with only 5 firefox instances available you can make sure that not more than
     // 5 instances get started at a time.
-    maxInstances: 5,
-    //
-    browserName: 'firefox',
+    maxInstances: 1,
+    browserName: 'chrome',
+    version: '74.0',
+    platform: 'Windows 10',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    name: 'integration',
+    build: process.env.TRAVIS_BUILD_NUMBER
     // If outputDir is provided WebdriverIO can capture driver session logs
     // it is possible to configure which logTypes to include/exclude.
     // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
     // excludeDriverLogs: ['bugreport', 'server'],
+  }, {
+    maxInstances: 1,
+    browserName: 'firefox',
+    version: '66.0',
+    platform: 'Windows 10',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    name: 'integration',
+    build: process.env.TRAVIS_BUILD_NUMBER
   }],
   //
   // ===================
@@ -104,10 +112,10 @@ exports.config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  baseUrl: 'http://localhost',
+  baseUrl: baseUrl,
   //
   // Default timeout for all waitFor* commands.
-  waitforTimeout: 10000,
+  waitforTimeout: 30000,
   //
   // Default timeout in milliseconds for request
   // if Selenium Grid doesn't send response
@@ -120,7 +128,13 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ['sauce', 'selenium-standalone'],
+  services: ['sauce'],
+  // host: '127.0.0.1',
+  // port: 4445,
+  user: process.env.SAUCE_USERNAME,
+  key: process.env.SAUCE_ACCESS_KEY,
+  region: 'us',
+  sauceConnect: true,
   //
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -143,7 +157,7 @@ exports.config = {
   // See the full list at http://mochajs.org/
   mochaOpts: {
     ui: 'bdd',
-    timeout: 60000
+    timeout: timeout
   },
   //
   // =====
@@ -175,8 +189,14 @@ exports.config = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
-  // before: function (capabilities, specs) {
-  // },
+  before: function (capabilities, specs) {
+    // eslint-disable-next-line no-undef
+    expect = require('chai').expect
+    // eslint-disable-next-line no-undef
+    should = require('chai').should()
+    // eslint-disable-next-line no-undef
+    // only = require('chai').only()
+  },
   /**
    * Runs before a WebdriverIO command gets executed.
    * @param {String} commandName hook command name
@@ -265,3 +285,10 @@ exports.config = {
   // onReload: function(oldSessionId, newSessionId) {
   // }
 }
+var config = exports.config
+
+if (process.env.CI) {
+  config.user = process.env.SAUCE_USERNAME
+  config.key = process.env.SAUCE_ACCESS_KEY
+}
+exports.config = config
