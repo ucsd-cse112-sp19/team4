@@ -78,9 +78,9 @@ exports.config = {
     // grid with only 5 firefox instances available you can make sure that not more than
     // 5 instances get started at a time.
     maxInstances: 1,
-    browserName: 'MicrosoftEdge',
-    version: '16.16299',
-    platform: 'Windows 10',
+    browserName: 'safari',
+    version: '12.0',
+    platform: 'macOS 10.14',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER
