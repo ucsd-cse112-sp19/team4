@@ -1,3 +1,15 @@
+var baseUrl
+
+// if server is equal to production at runtime
+if (process.env.SERVER === 'prod') {
+  baseUrl = 'https://www.google.com'
+} else {
+  baseUrl = 'https://ericksotoe.github.io/'
+}
+
+// if we set debug mode to true we will run long time if not 10 secs
+var timeout = process.env.DEBUG ? 99999999 : 20000
+
 exports.config = {
   //
   // ====================
@@ -65,9 +77,14 @@ exports.config = {
     // maxInstances can get overwritten per capability. So if you have an in-house Selenium
     // grid with only 5 firefox instances available you can make sure that not more than
     // 5 instances get started at a time.
-    maxInstances: 5,
+    maxInstances: 1,
     //
     browserName: 'firefox',
+    version: '66.0',
+    platform: 'Windows 10',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    name: 'integration',
+    build: process.env.TRAVIS_BUILD_NUMBER
     // If outputDir is provided WebdriverIO can capture driver session logs
     // it is possible to configure which logTypes to include/exclude.
     // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
@@ -104,10 +121,10 @@ exports.config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  baseUrl: 'http://localhost',
+  baseUrl: baseUrl
   //
   // Default timeout for all waitFor* commands.
-  waitforTimeout: 10000,
+  waitforTimeout: 30000,
   //
   // Default timeout in milliseconds for request
   // if Selenium Grid doesn't send response
@@ -121,6 +138,8 @@ exports.config = {
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
   services: ['sauce', 'selenium-standalone'],
+  region: 'us',
+  sauceConnect: true,
   //
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -143,7 +162,7 @@ exports.config = {
   // See the full list at http://mochajs.org/
   mochaOpts: {
     ui: 'bdd',
-    timeout: 60000
+    timeout: timeout
   },
   //
   // =====
@@ -175,8 +194,10 @@ exports.config = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
-  // before: function (capabilities, specs) {
-  // },
+  before: function (capabilities, specs) {
+    expect = require('chai').expect
+    should = require('chai').should
+  },
   /**
    * Runs before a WebdriverIO command gets executed.
    * @param {String} commandName hook command name
@@ -265,3 +286,10 @@ exports.config = {
   // onReload: function(oldSessionId, newSessionId) {
   // }
 }
+var config = exports.config
+
+if (process.env.CI) {
+  config.user = process.env.SAUCE_USERNAME
+  config.key = process.env.SAUCE_ACCESS_KEY
+}
+exports.config = config
