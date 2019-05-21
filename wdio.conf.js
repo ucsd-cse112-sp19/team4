@@ -100,7 +100,7 @@ exports.config = {
     maxInstances: 1,
     browserName: 'safari',
     version: '12.0',
-    platform: 'macOS 10.14',
+    platform: 'macOS 10.13',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER
@@ -109,6 +109,14 @@ exports.config = {
     browserName: 'firefox',
     version: '43.0',
     platform: 'Windows 7',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    name: 'integration',
+    build: process.env.TRAVIS_BUILD_NUMBER
+  }, {
+    maxInstances: 1,
+    browserName: 'firefox',
+    version: '64.0',
+    platform: 'Windows 10',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER
