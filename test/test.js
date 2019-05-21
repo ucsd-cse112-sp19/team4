@@ -30,7 +30,7 @@ describe('Testing functionallity for buttons ', () => {
     browser.pause(200)
     res1.moveTo()
     browser.pause(300)
-    res7.clicl()
+    res7.click()
     browser.pause(300)
 
     // res1.moveTo()
