@@ -4,7 +4,7 @@ beforeEach(async () => {
 })
 
 describe('Testing functionallity for buttons ', () => {
-  it.only('Testing the top row checking if the button\'s interact correctly', async () => {
+  it.only('Testing the top row checking if the button\'s interact correctly', () => {
     //browser.pause(200)
 
     // the $(selector) looks in the document to find the unique id
@@ -16,15 +16,15 @@ describe('Testing functionallity for buttons ', () => {
     const res6 = $('#ses')
 
     res1.click()
-    // browser.pause(300)
+    browser.pause(200)
     res2.click()
-    // browser.pause(300)
+    browser.pause(200)
     res3.click()
-    // browser.pause(300)
+    browser.pause(200)
     res4.click()
-    // browser.pause(300)
+    browser.pause(200)
     res5.click()
-    // browser.pause(300)
+    browser.pause(200)
     res6.click()
 
     // res1.moveTo()
