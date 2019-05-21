@@ -104,6 +104,14 @@ exports.config = {
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER
+  }, {
+    maxInstances: 1,
+    browserName: 'firefox',
+    version: '43.0',
+    platform: 'Windows 7',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    name: 'integration',
+    build: process.env.TRAVIS_BUILD_NUMBER
   }
   // }, {
   //   maxInstances: 1,
