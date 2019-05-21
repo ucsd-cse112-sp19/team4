@@ -78,9 +78,9 @@ exports.config = {
     // grid with only 5 firefox instances available you can make sure that not more than
     // 5 instances get started at a time.
     maxInstances: 1,
-    browserName: 'safari',
-    version: '12.0',
-    platform: 'macOS 10.14',
+    browserName: 'chrome',
+    version: '74.0',
+    platform: 'Windows 10',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER
@@ -88,6 +88,46 @@ exports.config = {
     // it is possible to configure which logTypes to include/exclude.
     // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
     // excludeDriverLogs: ['bugreport', 'server'],
+  }, {
+    maxInstances: 1,
+    browserName: 'firefox',
+    version: '66.0',
+    platform: 'Windows 10',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    name: 'integration',
+    build: process.env.TRAVIS_BUILD_NUMBER
+  }, {
+    maxInstances: 1,
+    browserName: 'safari',
+    version: '12.0',
+    platform: 'macOS 10.14',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    name: 'integration',
+    build: process.env.TRAVIS_BUILD_NUMBER
+  }, {
+    maxInstances: 1,
+    browserName: 'internet explorer',
+    version: '11.0',
+    platform: 'Windows 8.1',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    name: 'integration',
+    build: process.env.TRAVIS_BUILD_NUMBER
+  }, {
+    maxInstances: 1,
+    browserName: 'internet explorer',
+    version: '11.285',
+    platform: 'Windows 10',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    name: 'integration',
+    build: process.env.TRAVIS_BUILD_NUMBER
+  }, {
+    maxInstances: 1,
+    browserName: 'MicrosoftEdge',
+    version: '16.16299',
+    platform: 'Windows 10',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    name: 'integration',
+    build: process.env.TRAVIS_BUILD_NUMBER
   }],
   //
   // ===================
