@@ -62,7 +62,7 @@ exports.config = {
     // grid with only 5 firefox instances available you can make sure that not more than
     // 5 instances get started at a time.
     maxInstances: 5,
-    browserName: 'chrome',
+    browserName: 'firefox',
     // version: '27.0',
     // platform: 'XP',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
@@ -107,7 +107,7 @@ exports.config = {
   baseUrl: baseUrl,
   //
   // Default timeout for all waitFor* commands.
-  waitforTimeout: 10000,
+  waitforTimeout: 30000,
   //
   // Default timeout in milliseconds for request
   // if Selenium Grid doesn't send response
