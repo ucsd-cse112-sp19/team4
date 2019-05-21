@@ -3,8 +3,8 @@ node_js:
   - "10"
 
 env:
-  - SAUCE_USERNAME=ucsd-cse112-team4
-  - SAUCE_ACCESS_KEY=2bee726e-04d8-47e2-96ca-41e9cb60ab82
+  SAUCE_USERNAME=ucsd-cse112-team4
+  SAUCE_ACCESS_KEY=2bee726e-04d8-47e2-96ca-41e9cb60ab82
 
 cache:
   directories:
