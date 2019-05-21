@@ -136,4 +136,14 @@ suite('button-component', function () {
     component.disabled = false
     assert.equal(component.disabled, false)
   })
+  // Tests to see if button's theme is bootsrap
+  test('testing bootsrap works', function () {
+    const component = document.createElement('button-component')
+    component.size = 'medium'
+    component.type = 'primary'
+    component.theme = 'bootstrap'
+    document.body.append(component)
+    assert.isDefined(component)
+    assert.equal(component.theme, 'bootstrap')
+  })
 })
