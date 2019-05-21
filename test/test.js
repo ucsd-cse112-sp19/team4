@@ -4,7 +4,7 @@ beforeEach(async () => {
 })
 
 describe('Testing functionallity for buttons ', () => {
-  it.only('Testing the top row checking if the button\'s interact correctly', () => {
+  it.only('Testing the top row checking if the button\'s interact correctly', async () => {
     //browser.pause(200)
 
     // the $(selector) looks in the document to find the unique id
