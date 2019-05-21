@@ -78,9 +78,8 @@ exports.config = {
     // grid with only 5 firefox instances available you can make sure that not more than
     // 5 instances get started at a time.
     maxInstances: 1,
-    //
-    browserName: 'firefox',
-    version: '66.0',
+    browserName: 'chrome',
+    version: '74.0',
     platform: 'Windows 10',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
@@ -138,7 +137,6 @@ exports.config = {
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
   services: ['sauce', 'selenium-standalone'],
-  region: 'us',
   sauceConnect: true,
   //
   // Framework you want to run your specs with.
@@ -195,7 +193,9 @@ exports.config = {
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
   before: function (capabilities, specs) {
+    // eslint-disable-next-line no-undef
     expect = require('chai').expect
+    // eslint-disable-next-line no-undef
     should = require('chai').should
   },
   /**
