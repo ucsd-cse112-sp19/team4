@@ -80,7 +80,7 @@ exports.config = {
     maxInstances: 1,
     browserName: 'safari',
     version: '12.0',
-    platform: 'macOS Mojave 10.14',
+    platform: 'macOS 10.14',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER
