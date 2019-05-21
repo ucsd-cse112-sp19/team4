@@ -28,7 +28,7 @@ describe('Testing functionallity for buttons ', () => {
     browser.pause(200)
     res6.click()
     browser.pause(200)
-    res1.moveTo()
+    res1.getLocation()
     browser.pause(300)
     res7.click()
     browser.pause(300)
