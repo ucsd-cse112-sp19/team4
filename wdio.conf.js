@@ -79,8 +79,8 @@ exports.config = {
     // 5 instances get started at a time.
     maxInstances: 1,
     browserName: 'internet explorer',
-    version: '11.0',
-    platform: 'Windows 8.1',
+    version: '11.285',
+    platform: 'Windows 10',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER
