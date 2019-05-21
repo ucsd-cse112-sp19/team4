@@ -2,3 +2,7 @@ node_modules
 bower_components
 .DS_Store
 out
+.nyc_output
+bower_components
+coverage
+package-lock.json
