@@ -400,6 +400,7 @@ class ButtonComponent extends HTMLElement {
    * Callback when the component get created.
    */
   connectedCallback () {
+    super.connectedCallback()
     if (!this.hasAttribute('size')) {
       this.setAttribute('size', 'default')
     }
