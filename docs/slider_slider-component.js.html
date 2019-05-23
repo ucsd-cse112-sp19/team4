@@ -139,12 +139,14 @@ class SliderComponent extends HTMLElement {
   constructor () {
     super()
     this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true))
-    var slider = this.shadowRoot.querySelector('input')
-    this.handleListener(slider)
-    this.handleMinAndMax()
-    this.handleValue(slider)
-    this.color = theme.default
-    this.applyFill(slider)
+    if (this.shadowRoot.querySelector('input') !== null) {
+      var slider = this.shadowRoot.querySelector('input')
+      this.handleListener(slider)
+      this.handleMinAndMax()
+      this.handleValue(slider)
+      this.color = theme.default
+      this.applyFill(slider)
+    }
   }
 
   /**
