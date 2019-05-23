@@ -6,9 +6,12 @@
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/BartholomewTam.svg)](https://saucelabs.com/u/BartholomewTam)
 
 ### Button Componenet
-  Below is a demo of our button component:
+  Below is a demo of our button components and the codes generating them:
 
-![Demo](/button.gif)
+![Demo](/images/button.gif)
+![code](/images/button_code_1.png)
+![code](/images/button_code_2.png)
+![code](/images/button_code_3.png)
 
 ### Things to keep in mind:
   Create a new branch with the name + number of the task on trello  
