@@ -5,6 +5,11 @@
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/BartholomewTam.svg)](https://saucelabs.com/u/BartholomewTam)
 
+### Button Componenet
+  Below is a demo of our button component:
+
+![Output sample](https://github.com/ucsd-cse112/team4/tree/testing-button/button.gif)
+
 ### Things to keep in mind:
   Create a new branch with the name + number of the task on trello  
   For example: T1-create-hello-world-component  
