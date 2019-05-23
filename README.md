@@ -1,6 +1,17 @@
 ### Build Status
 [![Build Status](https://travis-ci.com/ucsd-cse112/team4.svg?token=G2KuH6bAmVeY7RpLEfsK&branch=master)](https://travis-ci.com/ucsd-cse112/team4)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![Build Status](https://app.saucelabs.com/buildstatus/ucsd-cse112-team4)](https://app.saucelabs.com/builds/cc6c191af20b4ea4a322a9dbe376e72b)
+[![Sauce Test Status](https://saucelabs.com/buildstatus/BartholomewTam)](https://saucelabs.com/u/BartholomewTam)
+
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/BartholomewTam.svg)](https://saucelabs.com/u/BartholomewTam)
+
+### Button Componenet
+  Below is a demo of our button components and the codes generating them:
+
+![Demo](/images/button.gif)
+![code](/images/button_code_1.png)
+![code](/images/button_code_2.png)
+![code](/images/button_code_3.png)
 
 ### Things to keep in mind:
   Create a new branch with the name + number of the task on trello  
