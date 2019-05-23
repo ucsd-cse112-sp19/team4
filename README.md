@@ -1,5 +1,7 @@
 ### Build Status
 [![Build Status](https://travis-ci.com/ucsd-cse112/team4.svg?token=G2KuH6bAmVeY7RpLEfsK&branch=master)](https://travis-ci.com/ucsd-cse112/team4)[![Build Status](https://app.saucelabs.com/buildstatus/ucsd-cse112-team4)](https://app.saucelabs.com/builds/cc6c191af20b4ea4a322a9dbe376e72b)
+[![Sauce Test Status](https://saucelabs.com/buildstatus/BartholomewTam)](https://saucelabs.com/u/BartholomewTam)
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/BartholomewTam.svg)](https://saucelabs.com/u/BartholomewTam)
 
 ### Things to keep in mind:
   Create a new branch with the name + number of the task on trello  
@@ -22,3 +24,7 @@
   git commit -m ""  
   git remote add origin https://github.com/ucsd-cse112/team4.git  
   git push -u origin master  
+
+### Acknowledgement
+  We would like to thank [Sauce Labs](https://saucelabs.com) for their support of open source projects like
+  ours.
