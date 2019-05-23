@@ -124,7 +124,7 @@ suite('button-component', function () {
     assert.equal(component.circle, false)
   })
   // Tests to see if it handles changing the disabled value
-  test('changing circle works', function () {
+  test('Tests to see if it handles changing the disabled value ', function () {
     const component = document.createElement('button-component')
     component.size = 'medium'
     component.type = 'primary'

@@ -12,7 +12,9 @@
     "pre-commit": "npm run run-lint && npm run run-docs && git add docs/*",
     "pre-push": "npm run run-lint",
     "run-install": "npm install && bower install",
-    "run-update-npm": "npm run run-install"
+    "run-update-npm": "npm run run-install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "husky": {
     "hooks": {
@@ -50,6 +52,9 @@
     "mocha": "^6.1.4",
     "standard": "*",
     "stylelint": "^10.0.1",
-    "web-component-tester": "^6.9.2"
+    "web-component-tester": "^6.9.2",
+    "@storybook/html": "^5.0.11",
+    "@babel/core": "^7.4.5",
+    "babel-loader": "^8.0.6"
   }
 }
