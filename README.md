@@ -1,6 +1,6 @@
 ### Build Status
 [![Build Status](https://travis-ci.com/ucsd-cse112/team4.svg?token=G2KuH6bAmVeY7RpLEfsK&branch=master)](https://travis-ci.com/ucsd-cse112/team4)
-[//]: <[![Build Status](https://app.saucelabs.com/buildstatus/ucsd-cse112-team4)](https://app.saucelabs.com/builds/cc6c191af20b4ea4a322a9dbe376e72b)>
+[//] # "[![Build Status](https://app.saucelabs.com/buildstatus/ucsd-cse112-team4)](https://app.saucelabs.com/builds/cc6c191af20b4ea4a322a9dbe376e72b)"
 [![Sauce Test Status](https://saucelabs.com/buildstatus/BartholomewTam)](https://saucelabs.com/u/BartholomewTam)
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/BartholomewTam.svg)](https://saucelabs.com/u/BartholomewTam)
