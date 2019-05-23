@@ -93,7 +93,9 @@ class HelloWorldComponent extends HTMLElement {
     }
     const [greeting, world] = languageContent[newLang]
     if (content === '') { content = world }
-    this.shadowRoot.querySelector('span').textContent = `${greeting} ${content}!`
+    if (this.shadowRoot.querySelector('span') !== null) {
+      this.shadowRoot.querySelector('span').textContent = `${greeting} ${content}!`
+    }
   }
 
   /**
