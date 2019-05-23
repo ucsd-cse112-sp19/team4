@@ -12,6 +12,13 @@
 ![code](/images/button_code_2.png)
 ![code](/images/button_code_3.png)
 
+### Slider Componenet
+  Our slider component is ported from [Element.io](https://element.eleme.io/#/en-US/component/slider). Users can define the initial value, the min/max values, and the boostrap theme by simply changing the attribute values of the tag. Below is a quick demo:
+
+![Demo](/images/slider_demo.gif)
+
+### Onboarding
+
 ### Things to keep in mind:
   Create a new branch with the name + number of the task on trello  
   For example: T1-create-hello-world-component  
