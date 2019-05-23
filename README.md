@@ -8,7 +8,7 @@
 ### Button Componenet
   Below is a demo of our button component:
 
-![Output sample](https://github.com/ucsd-cse112/team4/tree/testing-button/button.gif)
+![Demo](/button.gif)
 
 ### Things to keep in mind:
   Create a new branch with the name + number of the task on trello  
