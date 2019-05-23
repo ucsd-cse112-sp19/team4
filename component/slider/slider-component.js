@@ -231,7 +231,7 @@ class SliderComponent extends HTMLElement {
       }
     }
   }
-  
+
   /**
    * Method for handling when the sliding happen
    * @param {*} slider - the slider
@@ -264,8 +264,7 @@ class SliderComponent extends HTMLElement {
   handleType (newVal) {
     if (theme.hasOwnProperty(newVal)) {
       this.color = theme[newVal]
-    }
-    else {
+    } else {
       this.color = theme.default
     }
     this.applyFill(this.shadowRoot.querySelector('input'))
