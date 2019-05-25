@@ -1,14 +1,11 @@
-import { document, console } from 'global'
 import { storiesOf } from '@storybook/html'
+import '../component/button/button-component.js'
 
-storiesOf('Demo', module)
-  .add('heading', () => '<h1>Hello World</h1>')
-  .add('button-component', () => {
-    const button = document.createElement('button-component')
-    document.body.append(button)
-    button.size = 'medium'
-    button.type = 'primary'
-    button.innerText = 'Hello Button'
-    button.addEventListener('click', e => console.log(e))
-    return button
+storiesOf('button-component', module)
+  .add('button', () => {
+    const el = document.createElement('button-component')
+    el.type = 'primary'
+    el.size = 'medium'
+    document.body.append(el)
+    return el
   })

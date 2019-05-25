@@ -14,7 +14,8 @@
     "run-install": "npm install && bower install",
     "run-update-npm": "npm run run-install",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "snapshot" : "build-storybook && percy-storybook --widths=320,1280"
   },
   "husky": {
     "hooks": {
@@ -41,6 +42,7 @@
   "devDependencies": {
     "bower": "^1.8.8",
     "eslint": "^5.16.0",
+    "@percy-io/percy-storybook": "^3",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-node": "^8.0.1",
