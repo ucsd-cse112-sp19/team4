@@ -18,7 +18,8 @@ describe('Testing functionallity for buttons ', () => {
     // const res7 = $('#clicker')
 
     browser.pause(200)
-    res1.moveTo()
+    browser.moveToObject(res1,1,1)
+    // res1.moveTo()
     browser.pause(200)
 
     // res1.click()
