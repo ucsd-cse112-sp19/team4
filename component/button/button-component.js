@@ -386,9 +386,6 @@ class ButtonComponent extends HTMLElement {
   constructor () {
     super()
     this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true))
-    if (this.shadowRoot.querySelector('p') !== null) {
-      this.shadowRoot.querySelector('p').textContent = this.textContent
-    }
   }
 
   /**
@@ -402,6 +399,9 @@ class ButtonComponent extends HTMLElement {
    * Callback when the component get created.
    */
   connectedCallback () {
+    if (this.shadowRoot.querySelector('p') !== null) {
+      this.shadowRoot.querySelector('p').textContent = this.textContent
+    }
     if (!this.hasAttribute('size')) {
       this.setAttribute('size', 'default')
     }
