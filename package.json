@@ -42,7 +42,6 @@
     "@wdio/local-runner": "^5.9.1",
     "@wdio/mocha-framework": "^5.9.1",
     "@wdio/sauce-service": "^5.9.0",
-    "@wdio/selenium-standalone-service": "^5.8.4",
     "@wdio/sync": "^5.9.1",
     "chai": "^4.2.0",
     "eslint": "^5.16.0",
@@ -57,7 +56,6 @@
     "jsdoc": "^3.6.2",
     "loglevel-plugin-prefix": "^0.8.4",
     "mocha": "^6.1.4",
-    "selenium-standalone": "^6.15.3",
     "standard": "*",
     "stylelint": "^10.0.1",
     "webdriverio": "^5.9.1"
