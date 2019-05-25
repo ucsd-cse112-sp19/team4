@@ -4,7 +4,7 @@ var baseUrl
 if (process.env.SERVER === 'prod') {
   baseUrl = 'https://www.google.com'
 } else {
-  baseUrl = 'https://ericksotoe.github.io/'
+  baseUrl = 'http://webdriveruniversity.com/Contact-Us/contactus.html'
 }
 
 // if we set debug mode to true we will run long time if not 10 secs
