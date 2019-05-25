@@ -8,7 +8,7 @@ describe('Testing functionallity for buttons ', () => {
     browser.pause(200)
 
     // the $(selector) looks in the document to find the unique id
-    const res1 = $("input[type='submit']")
+    const res1 = $('#contact-us')
     // const res1 = $('#uno')
     // const res2 = $('#dos')
     // const res3 = $('#tre')
