@@ -8,8 +8,7 @@ describe('Testing functionallity for buttons ', () => {
     browser.pause(200)
 
     // the $(selector) looks in the document to find the unique id
-    const res1 = $('#contact-us')
-    // const res1 = $('#uno')
+    const res1 = $('#uno')
     // const res2 = $('#dos')
     // const res3 = $('#tre')
     // const res4 = $('#qua')
@@ -19,7 +18,7 @@ describe('Testing functionallity for buttons ', () => {
 
     browser.pause(200)
     // browser.moveToObject(res1,1,1)
-    res1.moveTo()
+    res1.moveTo(1,1)
     browser.pause(200)
 
     // res1.click()
