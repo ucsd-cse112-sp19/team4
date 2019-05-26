@@ -120,6 +120,14 @@ exports.config = {
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER
+  }, {
+    maxInstances: 1,
+    browserName: 'MicrosoftEdge',
+    version: '16.16299',
+    platform: 'Windows 10',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    name: 'integration',
+    build: process.env.TRAVIS_BUILD_NUMBER
   }
   // }, {
   //   maxInstances: 1,
