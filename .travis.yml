@@ -14,5 +14,8 @@ install:
   - npm install  
   - npm run run-install
 
+script:
+  - npm run snapshot
+
 addons:
   sauce_connect: true
