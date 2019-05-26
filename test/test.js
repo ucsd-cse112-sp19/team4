@@ -14,7 +14,7 @@ describe('Testing functionallity for buttons ', () => {
     const res4 = $('#qua')
     const res5 = $('#cin')
     const res6 = $('#ses')
-    //const res7 = $('#clicker')
+    // const res7 = $('#clicker')
 
     // browser.pause(200)
     // browser.moveToObject(res1,1,1)
@@ -72,11 +72,11 @@ describe('Testing functionallity for buttons ', () => {
     // res2.dragAndDrop(res2, 200)
     // browser.pause(125)
     // res1.dragAndDrop(res1, 200)
-    //browser.pause(200)
+    // browser.pause(200)
 
     // console.log(res4.getCSSProperty('background-color'))
     // console.log(res4.getCSSProperty('background-color'))
-    //browser.pause(1000)
+    // browser.pause(1000)
   })
 
   it('Testing the middle row checking if the button\'s interact correctly', () => {
@@ -115,7 +115,7 @@ describe('Testing functionallity for buttons ', () => {
     res1.dragAndDrop(res1, 200)
     browser.pause(500)
 
-    //console.log(res4.getCSSProperty('background-color'))
+    // console.log(res4.getCSSProperty('background-color'))
     // console.log(res4.getCSSProperty('background-color'))
     browser.pause(1000)
   })

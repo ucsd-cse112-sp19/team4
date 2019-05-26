@@ -106,22 +106,6 @@ exports.config = {
     build: process.env.TRAVIS_BUILD_NUMBER
   }, {
     maxInstances: 1,
-    browserName: 'firefox',
-    version: '43.0',
-    platform: 'Windows 7',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    name: 'integration',
-    build: process.env.TRAVIS_BUILD_NUMBER
-  }, {
-    maxInstances: 1,
-    browserName: 'firefox',
-    version: '64.0',
-    platform: 'Windows 10',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    name: 'integration',
-    build: process.env.TRAVIS_BUILD_NUMBER
-  }, {
-    maxInstances: 1,
     browserName: 'MicrosoftEdge',
     version: '16.16299',
     platform: 'Windows 10',
@@ -271,7 +255,7 @@ exports.config = {
     expect = require('chai').expect
     // eslint-disable-next-line no-undef
     should = require('chai').should
-  },
+  }
   /**
    * Runs before a WebdriverIO command gets executed.
    * @param {String} commandName hook command name
