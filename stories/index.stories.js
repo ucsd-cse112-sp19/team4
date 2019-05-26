@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/html'
 import '../component/button/button-component.js'
 import '../component/slider/slider-component.js'
 
-storiesOf('button-component', module)
+storiesOf('Web Components', module)
   .add('button', () => {
     const el = document.createElement('button-component')
     el.type = 'primary'
@@ -11,9 +11,8 @@ storiesOf('button-component', module)
     return el
   })
 
-storiesOf('slider-component', module)
   .add('slider', () => {
-    const el = document.createElement('slider-component')
-    document.body.append(el)
-    return el
+    const slider = document.createElement('slider-component')
+    document.body.append(slider)
+    return slider
   })
