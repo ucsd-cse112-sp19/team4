@@ -12,7 +12,7 @@ storiesOf('button-component', module)
   })
 
 storiesOf('slider-component', module)
-  .add('button', () => {
+  .add('slider', () => {
     const el = document.createElement('slider-component')
     document.body.append(el)
     return el
