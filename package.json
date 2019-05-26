@@ -15,7 +15,7 @@
     "run-update-npm": "npm run run-install",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "snapshot" : "build-storybook && percy-storybook --widths=320,1280"
+    "snapshot": "build-storybook && percy-storybook --widths=320,1280"
   },
   "husky": {
     "hooks": {
@@ -43,6 +43,7 @@
     "bower": "^1.8.8",
     "eslint": "^5.16.0",
     "@percy-io/percy-storybook": "^3",
+    "@percy/storybook": "^3.0.2",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-node": "^8.0.1",
@@ -57,6 +58,7 @@
     "web-component-tester": "^6.9.2",
     "@storybook/html": "^5.0.11",
     "@babel/core": "^7.4.5",
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "puppeteer": "^1.17.0"
   }
 }

@@ -6,3 +6,4 @@ out
 bower_components
 coverage
 package-lock.json
+storybook-static
