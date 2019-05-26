@@ -14,7 +14,7 @@ describe('Testing functionallity for buttons ', () => {
     const res4 = $('#qua')
     const res5 = $('#cin')
     const res6 = $('#ses')
-    const res7 = $('#clicker')
+    //const res7 = $('#clicker')
 
     // browser.pause(200)
     // browser.moveToObject(res1,1,1)
@@ -33,8 +33,8 @@ describe('Testing functionallity for buttons ', () => {
     browser.pause(200)
     res6.click()
     browser.pause(300)
-    res7.click()
-    browser.pause(300)
+    // res7.click()
+    // browser.pause(300)
 
     // res1.moveTo()
     // browser.pause(125)
