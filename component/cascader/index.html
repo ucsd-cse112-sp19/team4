@@ -6,7 +6,23 @@
 	</head>
 	
 	<body>
-		<cascader-component options="css,"></cascader-component>
+		<cascader-component 
+			options="{value:guide,
+					  label:Guide}">
+
+
+		</cascader-component>
 	</body>
-	<script src="cascader.js"></script>
+	<script src="cascader.js">
+		var options =  [{
+			value: 'guide',
+			label: 'Guide',
+		},{
+			value: 'consistency',
+			label: 'Consistency'
+		},{
+			value: 'feedback',
+			label: 'Feedback'
+		}]
+	</script>
 </html>
