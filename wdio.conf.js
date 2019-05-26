@@ -128,6 +128,14 @@ exports.config = {
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER
+  }, {
+    maxInstances: 1,
+    browserName: 'internet explorer',
+    version: '11.0',
+    platform: 'Windows 8.1',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    name: 'integration',
+    build: process.env.TRAVIS_BUILD_NUMBER
   }
   // }, {
   //   maxInstances: 1,
