@@ -3,17 +3,14 @@
 	<head>
         <meta charset="UTF-8">
 		<title>Components</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	</head>
 	
 	<body>
-		<cascader-component 
-			options="{value:guide,
-					  label:Guide}">
-
-
+		<cascader-component options="options">
 		</cascader-component>
 	</body>
-	<script src="cascader.js">
+	<script>
 		var options =  [{
 			value: 'guide',
 			label: 'Guide',
@@ -23,6 +20,10 @@
 		},{
 			value: 'feedback',
 			label: 'Feedback'
+		},{
+			value: 'component',
+			label: 'Component'
 		}]
 	</script>
+	<script src="cascader.js"></script>
 </html>
