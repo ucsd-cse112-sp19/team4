@@ -15,7 +15,6 @@ template.innerHTML = `
       display: inline-block;
       position: relative;
       font-size: 14px;
-      line-height: 40px;
       cursor: pointer;
     }
     .el-input{
@@ -25,7 +24,6 @@ template.innerHTML = `
       width: 100%;
       cursor: pointer;
     }
-
     .el-input_inner{
       -webkit-appearance: none;
       background-color: #fff;
@@ -55,6 +53,13 @@ template.innerHTML = `
     .el-input_icon{
       width: 25px;
       line-height: 40px;
+    }
+    .el-input_child_icon{
+      font-size: 14px;
+      color: #bfcbd9;
+      position: absolute;
+      right: 15px;
+      top: 11px;
     }
     .el-input_icon::after{
       content: "";
@@ -106,6 +111,7 @@ template.innerHTML = `
       margin: 0;
       padding: 6px 0;
       min-width: 160px;
+      border-right: 1px solid #e4e7ed
     }
     .el-cascader-menu_item{
       font-size: 14px;
@@ -126,6 +132,13 @@ template.innerHTML = `
       padding-right: 10px;
       font-weight: 400;
     }
+    .is-focus{
+      border-color: #409eff;
+    }
+    .is-active{
+      background-color: #f5f7fa;
+      color: #409eff;
+    }
   </style>
     <div>
       <span class="el-cascader">
@@ -137,10 +150,9 @@ template.innerHTML = `
         </div>
         <span class="el-cascader_label"></span>
       </span>
-    <div class="el-cascader-menus el-popper" style="position: absolute; left: 280px; width: auto; height: auto;">
-      <ul class="el-cascader-menu" style="display: none">
-      </ul>
-    </div>
+        <div class="el-cascader-menus el-popper" style="position: absolute; left: 280px; width: auto; height: auto;">
+          <ul class="el-cascader-menu" style="display: none"></ul>
+        </div>
     </div>
 `
 
@@ -160,7 +172,8 @@ class CascaderComponent extends HTMLElement {
     this.cascader = this.shadowRoot.querySelector('.el-cascader')
     this.ul = this.shadowRoot.querySelector('ul')
     this.cascader.addEventListener('click', () => {
-      this.toggleMenu()
+      this.toggleFocus()
+      this.toggleMenu(this.ul)
     })
   }
 
@@ -195,12 +208,37 @@ class CascaderComponent extends HTMLElement {
    */
   connectedCallback () {
     var i = 0
+    this.menus = this.shadowRoot.querySelector('.el-cascader-menus')
+    this.submenus = []
     // eslint-disable-next-line no-undef
     for (; i < options.length; i++) {
-      var newli = document.createElement('li')
+      let newli = document.createElement('li')
       // eslint-disable-next-line no-undef
-      newli.innerHTML = '<span>' + options[i].label + '</span>'
+      if (options[i].children === undefined) {
+        // eslint-disable-next-line no-undef
+        newli.innerHTML = '<span>' + options[i].label + '</span>'
+      } else {
+        // eslint-disable-next-line no-undef
+        newli.innerHTML = '<span>' + options[i].label + '</span> <i class="fas fa-angle-right el-input_child_icon"></i>'
+        let newSubMenu = document.createElement('ul')
+        newSubMenu.setAttribute('id', 'submenu' + i)
+        newSubMenu.style.display = 'none'
+        newSubMenu.classList.add('el-cascader-menu')
+        // eslint-disable-next-line no-undef
+        this.addToSubMenu(options[i], newSubMenu)
+        this.submenus.push(newSubMenu)
+        newli.addEventListener('click', () => {
+          this.showSubMenus(newSubMenu)
+        })
+        this.menus.appendChild(newSubMenu)
+      }
       newli.classList.add('el-cascader-menu_item')
+      newli.addEventListener('mouseover', () => {
+        newli.classList.add('is-active')
+      })
+      newli.addEventListener('mouseout', () => {
+        newli.classList.remove('is-active')
+      })
       this.ul.appendChild(newli)
     }
     console.log('Component connected!')
@@ -213,11 +251,58 @@ class CascaderComponent extends HTMLElement {
     console.log('Component disconnect!')
   }
 
-  toggleMenu () {
-    if (this.ul.style.display === 'none') {
-      this.ul.style.display = 'block'
+  toggleMenu (menu) {
+    if (menu.style.display === 'none') {
+      menu.style.display = 'inline-block'
     } else {
-      this.ul.style.display = 'none'
+      const uls = this.shadowRoot.querySelectorAll('ul')
+      for (let i = 0; i < uls.length; i++) {
+        uls[i].style.display = 'none'
+      }
+    }
+  }
+
+  toggleFocus () {
+    this.input = this.shadowRoot.querySelector('input')
+    if (this.input.classList.contains('is-focus')) {
+      this.input.classList.remove('is-focus')
+    } else {
+      this.input.classList.add('is-focus')
+    }
+  }
+
+  showSubMenus (submenu) {
+    var i = 0
+    for (; i < this.submenus.length; i++) {
+      if (this.submenus[i] === submenu) {
+        this.submenus[i].style.display = 'inline-block'
+      } else {
+        this.submenus[i].style.display = 'none'
+      }
+    }
+  }
+
+  addToSubMenu (option, submenu) {
+    var newoptions = option.children
+    var i = 0
+    for (; i < newoptions.length; i++) {
+      let newli = document.createElement('li')
+      // eslint-disable-next-line no-undef
+      if (newoptions[i].children === undefined) {
+        // eslint-disable-next-line no-undef
+        newli.innerHTML = '<span>' + newoptions[i].label + '</span>'
+      } else {
+        // eslint-disable-next-line no-undef
+        newli.innerHTML = '<span>' + newoptions[i].label + '</span> <i class="fas fa-angle-right el-input_child_icon"></i>'
+      }
+      newli.classList.add('el-cascader-menu_item')
+      newli.addEventListener('mouseover', () => {
+        newli.classList.add('is-active')
+      })
+      newli.addEventListener('mouseout', () => {
+        newli.classList.remove('is-active')
+      })
+      submenu.appendChild(newli)
     }
   }
 }

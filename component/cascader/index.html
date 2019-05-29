@@ -14,15 +14,27 @@
 		var options =  [{
 			value: 'guide',
 			label: 'Guide',
-		},{
-			value: 'consistency',
-			label: 'Consistency'
-		},{
-			value: 'feedback',
-			label: 'Feedback'
+			children: [
+				{value: 'disiplines', label: 'Disiplines'},
+				{value: 'navigation', label: 'Navigation'}
+			]
 		},{
 			value: 'component',
-			label: 'Component'
+			label: 'Component',
+			children: [
+				{value: 'basic', label: 'Basic'},
+				{value: 'form', label: 'Form'},
+				{value: 'data', label: 'Data'},
+				{value: 'notice', label: 'Notice'}
+			]
+		},{
+			value: 'resources',
+			label: 'Resources',
+			children: [
+				{value: 'axure', label: 'Axure'},
+				{value: 'sketch', label: 'Sketch'},
+				{value: 'design', label: 'Design'}
+			]
 		}]
 	</script>
 	<script src="cascader.js"></script>
