@@ -133,17 +133,73 @@
               		label: 'Badge'
             	 }]
 				},
-				{value: 'notice', label: 'Notice'},
-				{value: 'navigation', label: 'Navigation'},
-				{value: 'others', label: 'Others'}
+				{value: 'notice', 
+				 label: 'Notice',
+				 children: [{
+              		value: 'alert',
+              		label: 'Alert'
+            	 }, {
+              		value: 'loading',
+              		label: 'Loading'
+            	 }, {
+              		value: 'message',
+              		label: 'Message'
+            	 }, {
+              		value: 'message-box',
+              		label: 'MessageBox'
+            	 }, {
+              		value: 'notification',
+              		label: 'Notification'
+				 }]
+				},
+				{value: 'navigation', 
+				 label: 'Navigation',
+				 children: [{
+              		value: 'menu',
+              		label: 'NavMenu'
+            	 }, {
+              		value: 'tabs',
+              		label: 'Tabs'
+            	 }, {
+              		value: 'breadcrumb',
+              		label: 'Breadcrumb'
+            	 }, {
+              		value: 'dropdown',
+              		label: 'Dropdown'
+            	 }, {
+              		value: 'steps',
+              		label: 'Steps'
+				 }]
+				},
+				{value: 'others', 
+				 label: 'Others', 
+				 children: [{
+              	    value: 'dialog',
+              		label: 'Dialog'
+            	 }, {
+              		value: 'tooltip',
+              		label: 'Tooltip'
+            	 }, {
+              		value: 'popover',
+              		label: 'Popover'
+            	 }, {
+              		value: 'card',
+              		label: 'Card'
+            	 }, {
+              		value: 'carousel',
+              		label: 'Carousel'
+            	 }, {
+              		value: 'collapse',
+              		label: 'Collapse'
+            	 }]}
 			]
 		},{
 			value: 'resources',
 			label: 'Resources',
 			children: [
-				{value: 'axure', label: 'Axure'},
-				{value: 'sketch', label: 'Sketch'},
-				{value: 'design', label: 'Design'}
+				{value: 'axure', label: 'Axure Components'},
+				{value: 'sketch', label: 'Sketch Templates'},
+				{value: 'design', label: 'Design Documentation'}
 			]
 		}]
 	</script>

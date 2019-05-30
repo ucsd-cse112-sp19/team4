@@ -257,9 +257,7 @@ class CascaderComponent extends HTMLElement {
 
   toggleFocus () {
     this.input = this.shadowRoot.querySelector('input')
-    if (this.input.classList.contains('is-focus')) {
-      this.input.classList.remove('is-focus')
-    } else {
+    if (!this.input.classList.contains('is-focus')) {
       this.input.classList.add('is-focus')
     }
   }
@@ -302,7 +300,7 @@ class CascaderComponent extends HTMLElement {
     for (let i = 0; i < this.activeOptions.length; i++) {
       this.shadowRoot.querySelector('input').placeholder += this.activeOptions[i]
       if (i !== this.activeOptions.length - 1) {
-        this.shadowRoot.querySelector('input').placeholder += '/'
+        this.shadowRoot.querySelector('input').placeholder += '/ '
       }
     }
     this.closeSubMenus()
