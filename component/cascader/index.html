@@ -15,17 +15,127 @@
 			value: 'guide',
 			label: 'Guide',
 			children: [
-				{value: 'disiplines', label: 'Disiplines'},
-				{value: 'navigation', label: 'Navigation'}
+				{value: 'disiplines', 
+				 label: 'Disiplines',
+				 children: [{
+					value: 'consistency',
+					label: 'Consistency'
+				 }, {
+					value: 'feedback',
+					label: 'Feedback'
+				 }, {
+					value: 'efficiency',
+					label: 'Efficiency'
+				 }, {
+					value: 'controllability',
+					label: 'Controllability'
+				 }]
+				},
+				{value: 'navigation', 
+				 label: 'Navigation',
+				 children: [{
+              		value: 'side nav',
+              		label: 'Side Navigation'
+            	 }, {
+              		value: 'top nav',
+              		label: 'Top Navigation'
+            	 }]
+				}
 			]
 		},{
 			value: 'component',
 			label: 'Component',
 			children: [
-				{value: 'basic', label: 'Basic'},
-				{value: 'form', label: 'Form'},
-				{value: 'data', label: 'Data'},
-				{value: 'notice', label: 'Notice'}
+				{value: 'basic', 
+				 label: 'Basic', 
+				 children: [{
+              		value: 'layout',
+              		label: 'Layout'
+            	 }, {
+              		value: 'color',
+              		label: 'Color'
+            	 }, {
+              		value: 'typography',
+              		label: 'Typography'
+            	 }, {
+              		value: 'icon',
+              		label: 'Icon'
+            	 }, {
+					value: 'button',
+					label: 'Button'
+				 }]
+				},
+				{value: 'form', 
+				 label: 'Form', 
+				 children: [{
+              		value: 'radio',
+              		label: 'Radio'
+            	 }, {
+              		value: 'checkbox',
+              		label: 'Checkbox'
+            	 }, {
+              		value: 'input',
+              		label: 'Input'
+            	 }, {
+              		value: 'input-number',
+              		label: 'InputNumber'
+            	 }, {
+              		value: 'select',
+              		label: 'Select'
+            	 }, {
+              		value: 'cascader',
+              		label: 'Cascader'
+            	 }, {
+              		value: 'switch',
+              		label: 'Switch'
+            	 }, {
+              		value: 'slider',
+              		label: 'Slider'
+            	 }, {
+              		value: 'time-picker',
+              		label: 'TimePicker'
+            	 }, {
+              		value: 'date-picker',
+              		label: 'DatePicker'
+            	 }, {
+              		value: 'datetime-picker',
+              		label: 'DateTimePicker'
+            	 }, {
+              		value: 'upload',
+              		label: 'Upload'
+            	 }, {
+              		value: 'rate',
+              		label: 'Rate'
+            	 }, {
+              		value: 'form',
+              		label: 'Form'
+            	 }]
+				},
+				{value: 'data', 
+				 label: 'Data',
+				 children: [{
+              		value: 'table',
+              		label: 'Table'
+            	 }, {
+              		value: 'tag',
+              		label: 'Tag'
+            	 }, {
+              		value: 'progress',
+              		label: 'Progress'
+            	 }, {
+              		value: 'tree',
+              		label: 'Tree'
+            	 }, {
+              		value: 'pagination',
+              		label: 'Pagination'
+            	 }, {
+              		value: 'badge',
+              		label: 'Badge'
+            	 }]
+				},
+				{value: 'notice', label: 'Notice'},
+				{value: 'navigation', label: 'Navigation'},
+				{value: 'others', label: 'Others'}
 			]
 		},{
 			value: 'resources',

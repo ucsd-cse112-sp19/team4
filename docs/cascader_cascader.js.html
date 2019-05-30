@@ -44,6 +44,7 @@ template.innerHTML = `
       position: relative;
       font-size: 14px;
       cursor: pointer;
+      line-height: 40px
     }
     .el-input{
       position: relative;
@@ -198,10 +199,11 @@ class CascaderComponent extends HTMLElement {
     super()
     this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true))
     this.cascader = this.shadowRoot.querySelector('.el-cascader')
-    this.ul = this.shadowRoot.querySelector('ul')
+    this.ul = this.shadowRoot.querySelector('.el-cascader-menu')
+    this.activeOptions = []
     this.cascader.addEventListener('click', () => {
       this.toggleFocus()
-      this.toggleMenu(this.ul)
+      this.toggleMenu()
     })
   }
 
@@ -213,33 +215,14 @@ class CascaderComponent extends HTMLElement {
   }
 
   /**
-   * Gettter for :options attribute
-   */
-  get options () {
-    return this.hasAttribute('options')
-  }
-
-  /**
-   * Setter for :options attribute.
-   * @param {string} newVal - The new value for :options
-   */
-
-  set options (newVal) {
-    if (newVal) {
-      this.setAttribute('options', '')
-    } else {
-      this.removeAttribute('options')
-    }
-  }
-  /**
    * Callback when the component get created.
    */
   connectedCallback () {
-    var i = 0
     this.menus = this.shadowRoot.querySelector('.el-cascader-menus')
     this.submenus = []
+    this.submenu2s = []
     // eslint-disable-next-line no-undef
-    for (; i &lt; options.length; i++) {
+    for (let i = 0; i &lt; options.length; i++) {
       let newli = document.createElement('li')
       // eslint-disable-next-line no-undef
       if (options[i].children === undefined) {
@@ -257,8 +240,12 @@ class CascaderComponent extends HTMLElement {
         this.submenus.push(newSubMenu)
         newli.addEventListener('click', () => {
           this.showSubMenus(newSubMenu)
+          this.closeSubMenu2s()
+          if (this.activeOptions.length === 1) {
+            this.activeOptions.pop()
+          }
+          this.activeOptions.push(newli.textContent)
         })
-        this.menus.appendChild(newSubMenu)
       }
       newli.classList.add('el-cascader-menu_item')
       newli.addEventListener('mouseover', () => {
@@ -268,6 +255,12 @@ class CascaderComponent extends HTMLElement {
         newli.classList.remove('is-active')
       })
       this.ul.appendChild(newli)
+    }
+    for (let i = 0; i &lt; this.submenus.length; i++) {
+      this.menus.appendChild(this.submenus[i])
+    }
+    for (let i = 0; i &lt; this.submenu2s.length; i++) {
+      this.menus.appendChild(this.submenu2s[i])
     }
     console.log('Component connected!')
   }
@@ -279,9 +272,9 @@ class CascaderComponent extends HTMLElement {
     console.log('Component disconnect!')
   }
 
-  toggleMenu (menu) {
-    if (menu.style.display === 'none') {
-      menu.style.display = 'inline-block'
+  toggleMenu () {
+    if (this.ul.style.display === 'none') {
+      this.ul.style.display = 'inline-block'
     } else {
       const uls = this.shadowRoot.querySelectorAll('ul')
       for (let i = 0; i &lt; uls.length; i++) {
@@ -310,18 +303,71 @@ class CascaderComponent extends HTMLElement {
     }
   }
 
+  closeSubMenus () {
+    for (let i = 0; i &lt; this.submenus.length; i++) {
+      this.submenus[i].style.display = 'none'
+    }
+  }
+
+  showSubMenu2s (submenu2) {
+    for (let i = 0; i &lt; this.submenu2s.length; i++) {
+      if (this.submenu2s[i] === submenu2) {
+        this.submenu2s[i].style.display = 'inline-block'
+      } else {
+        this.submenu2s[i].style.display = 'none'
+      }
+    }
+  }
+
+  closeSubMenu2s () {
+    for (let i = 0; i &lt; this.submenu2s.length; i++) {
+      this.submenu2s[i].style.display = 'none'
+    }
+  }
+
+  setUpInput () {
+    this.shadowRoot.querySelector('input').placeholder = ''
+    for (let i = 0; i &lt; this.activeOptions.length; i++) {
+      this.shadowRoot.querySelector('input').placeholder += this.activeOptions[i]
+      if (i !== this.activeOptions.length - 1) {
+        this.shadowRoot.querySelector('input').placeholder += '/'
+      }
+    }
+    this.closeSubMenus()
+    this.closeSubMenu2s()
+    this.activeOptions = []
+    this.ul.style.display = 'none'
+  }
+
   addToSubMenu (option, submenu) {
     var newoptions = option.children
-    var i = 0
-    for (; i &lt; newoptions.length; i++) {
+    for (let i = 0; i &lt; newoptions.length; i++) {
       let newli = document.createElement('li')
       // eslint-disable-next-line no-undef
       if (newoptions[i].children === undefined) {
         // eslint-disable-next-line no-undef
         newli.innerHTML = '&lt;span>' + newoptions[i].label + '&lt;/span>'
+        newli.addEventListener('click', () => {
+          this.activeOptions.push(newli.textContent)
+          this.setUpInput()
+        })
       } else {
         // eslint-disable-next-line no-undef
         newli.innerHTML = '&lt;span>' + newoptions[i].label + '&lt;/span> &lt;i class="fas fa-angle-right el-input_child_icon">&lt;/i>'
+        let newSubMenu2 = document.createElement('ul')
+        newSubMenu2.setAttribute('id', 'submenu2' + i)
+        newSubMenu2.style.display = 'none'
+        newSubMenu2.classList.add('el-cascader-menu')
+        // eslint-disable-next-line no-undef
+        this.addToSubMenu(newoptions[i], newSubMenu2)
+        this.submenu2s.push(newSubMenu2)
+        newli.addEventListener('click', () => {
+          this.showSubMenu2s(newSubMenu2)
+          if (this.activeOptions.length === 2) {
+            this.activeOptions.pop()
+          }
+          this.activeOptions.push(newli.textContent)
+        })
       }
       newli.classList.add('el-cascader-menu_item')
       newli.addEventListener('mouseover', () => {
