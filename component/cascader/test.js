@@ -82,7 +82,11 @@ suite('cascader-component', function () {
       label: 'Colors',
       children: [{
         value: 'Red',
-        label: 'Red'
+        label: 'Red',
+        children: [{
+          value: 'Another Color',
+          label: 'Another Color'
+        }]
       }, {
         value: 'Blue',
         label: 'Blue'
