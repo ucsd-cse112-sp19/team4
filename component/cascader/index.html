@@ -3,18 +3,21 @@
 	<head>
         <meta charset="UTF-8">
 		<title>Components</title>
+		<link rel="stylesheet" type="text/css" href="index.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	</head>
 	
 	<body>
-		<cascader-component options="options">
-		</cascader-component>
+		<div id="element">
+			<cascader-component option="options1"></cascader-component>
+			<cascader-component option="options2"></cascader-component>
+		</div>
 	</body>
 	<script>
-		var options =  [{
-			value: 'guide',
-			label: 'Guide',
-			children: [
+		var options1 =  [
+			{value: 'guide',
+			 label: 'Guide',
+			 children: [
 				{value: 'disiplines', 
 				 label: 'Disiplines',
 				 children: [{
@@ -34,12 +37,12 @@
 				{value: 'navigation', 
 				 label: 'Navigation',
 				 children: [{
-              		value: 'side nav',
-              		label: 'Side Navigation'
-            	 }, {
-              		value: 'top nav',
-              		label: 'Top Navigation'
-            	 }]
+					  value: 'side nav',
+					  label: 'Side Navigation'
+				 }, {
+					  value: 'top nav',
+					  label: 'Top Navigation'
+				 }]
 				}
 			]
 		},{
@@ -49,18 +52,18 @@
 				{value: 'basic', 
 				 label: 'Basic', 
 				 children: [{
-              		value: 'layout',
-              		label: 'Layout'
-            	 }, {
-              		value: 'color',
-              		label: 'Color'
-            	 }, {
-              		value: 'typography',
-              		label: 'Typography'
-            	 }, {
-              		value: 'icon',
-              		label: 'Icon'
-            	 }, {
+					  value: 'layout',
+					  label: 'Layout'
+				 }, {
+					  value: 'color',
+					  label: 'Color'
+				 }, {
+					  value: 'typography',
+					  label: 'Typography'
+				 }, {
+					  value: 'icon',
+					  label: 'Icon'
+				 }, {
 					value: 'button',
 					label: 'Button'
 				 }]
@@ -68,130 +71,130 @@
 				{value: 'form', 
 				 label: 'Form', 
 				 children: [{
-              		value: 'radio',
-              		label: 'Radio'
-            	 }, {
-              		value: 'checkbox',
-              		label: 'Checkbox'
-            	 }, {
-              		value: 'input',
-              		label: 'Input'
-            	 }, {
-              		value: 'input-number',
-              		label: 'InputNumber'
-            	 }, {
-              		value: 'select',
-              		label: 'Select'
-            	 }, {
-              		value: 'cascader',
-              		label: 'Cascader'
-            	 }, {
-              		value: 'switch',
-              		label: 'Switch'
-            	 }, {
-              		value: 'slider',
-              		label: 'Slider'
-            	 }, {
-              		value: 'time-picker',
-              		label: 'TimePicker'
-            	 }, {
-              		value: 'date-picker',
-              		label: 'DatePicker'
-            	 }, {
-              		value: 'datetime-picker',
-              		label: 'DateTimePicker'
-            	 }, {
-              		value: 'upload',
-              		label: 'Upload'
-            	 }, {
-              		value: 'rate',
-              		label: 'Rate'
-            	 }, {
-              		value: 'form',
-              		label: 'Form'
-            	 }]
+					  value: 'radio',
+					  label: 'Radio'
+				 }, {
+					  value: 'checkbox',
+					  label: 'Checkbox'
+				 }, {
+					  value: 'input',
+					  label: 'Input'
+				 }, {
+					  value: 'input-number',
+					  label: 'InputNumber'
+				 }, {
+					  value: 'select',
+					  label: 'Select'
+				 }, {
+					  value: 'cascader',
+					  label: 'Cascader'
+				 }, {
+					  value: 'switch',
+					  label: 'Switch'
+				 }, {
+					  value: 'slider',
+					  label: 'Slider'
+				 }, {
+					  value: 'time-picker',
+					  label: 'TimePicker'
+				 }, {
+					  value: 'date-picker',
+					  label: 'DatePicker'
+				 }, {
+					  value: 'datetime-picker',
+					  label: 'DateTimePicker'
+				 }, {
+					  value: 'upload',
+					  label: 'Upload'
+				 }, {
+					  value: 'rate',
+					  label: 'Rate'
+				 }, {
+					  value: 'form',
+					  label: 'Form'
+				 }]
 				},
 				{value: 'data', 
 				 label: 'Data',
 				 children: [{
-              		value: 'table',
-              		label: 'Table'
-            	 }, {
-              		value: 'tag',
-              		label: 'Tag'
-            	 }, {
-              		value: 'progress',
-              		label: 'Progress'
-            	 }, {
-              		value: 'tree',
-              		label: 'Tree'
-            	 }, {
-              		value: 'pagination',
-              		label: 'Pagination'
-            	 }, {
-              		value: 'badge',
-              		label: 'Badge'
-            	 }]
+					  value: 'table',
+					  label: 'Table'
+				 }, {
+					  value: 'tag',
+					  label: 'Tag'
+				 }, {
+					  value: 'progress',
+					  label: 'Progress'
+				 }, {
+					  value: 'tree',
+					  label: 'Tree'
+				 }, {
+					  value: 'pagination',
+					  label: 'Pagination'
+				 }, {
+					  value: 'badge',
+					  label: 'Badge'
+				 }]
 				},
 				{value: 'notice', 
 				 label: 'Notice',
 				 children: [{
-              		value: 'alert',
-              		label: 'Alert'
-            	 }, {
-              		value: 'loading',
-              		label: 'Loading'
-            	 }, {
-              		value: 'message',
-              		label: 'Message'
-            	 }, {
-              		value: 'message-box',
-              		label: 'MessageBox'
-            	 }, {
-              		value: 'notification',
-              		label: 'Notification'
+					  value: 'alert',
+					  label: 'Alert'
+				 }, {
+					  value: 'loading',
+					  label: 'Loading'
+				 }, {
+					  value: 'message',
+					  label: 'Message'
+				 }, {
+					  value: 'message-box',
+					  label: 'MessageBox'
+				 }, {
+					  value: 'notification',
+					  label: 'Notification'
 				 }]
 				},
 				{value: 'navigation', 
 				 label: 'Navigation',
 				 children: [{
-              		value: 'menu',
-              		label: 'NavMenu'
-            	 }, {
-              		value: 'tabs',
-              		label: 'Tabs'
-            	 }, {
-              		value: 'breadcrumb',
-              		label: 'Breadcrumb'
-            	 }, {
-              		value: 'dropdown',
-              		label: 'Dropdown'
-            	 }, {
-              		value: 'steps',
-              		label: 'Steps'
+					  value: 'menu',
+					  label: 'NavMenu'
+				 }, {
+					  value: 'tabs',
+					  label: 'Tabs'
+				 }, {
+					  value: 'breadcrumb',
+					  label: 'Breadcrumb'
+				 }, {
+					  value: 'dropdown',
+					  label: 'Dropdown'
+				 }, {
+					  value: 'steps',
+					  label: 'Steps'
 				 }]
 				},
 				{value: 'others', 
 				 label: 'Others', 
 				 children: [{
-              	    value: 'dialog',
-              		label: 'Dialog'
-            	 }, {
-              		value: 'tooltip',
-              		label: 'Tooltip'
-            	 }, {
-              		value: 'popover',
-              		label: 'Popover'
-            	 }, {
-              		value: 'card',
-              		label: 'Card'
-            	 }, {
-              		value: 'carousel',
-              		label: 'Carousel'
-            	 }, {
-              		value: 'collapse',
-              		label: 'Collapse'
-            	 }]}
+					  value: 'dialog',
+					  label: 'Dialog'
+				 }, {
+					  value: 'tooltip',
+					  label: 'Tooltip'
+				 }, {
+					  value: 'popover',
+					  label: 'Popover'
+				 }, {
+					  value: 'card',
+					  label: 'Card'
+				 }, {
+					  value: 'carousel',
+					  label: 'Carousel'
+				 }, {
+					  value: 'collapse',
+					  label: 'Collapse'
+				 }]}
 			]
 		},{
 			value: 'resources',
@@ -202,6 +205,9 @@
 				{value: 'design', label: 'Design Documentation'}
 			]
 		}]
+		var options2 = [{value: 'rule',
+						label: 'Rule'}]
 	</script>
 	<script src="cascader.js"></script>
+
 </html>

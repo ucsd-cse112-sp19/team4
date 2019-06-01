@@ -5,8 +5,7 @@ template.innerHTML = `
   </head>
   <style>
     :host{
-      width: 50%;
-      text-align: center;
+      height: 200px;
       padding: 30px 0;
       display: block;
     }
@@ -141,7 +140,7 @@ template.innerHTML = `
       color: #409eff;
     }
   </style>
-    <div>
+    <div style="height: 400px">
       <span class="el-cascader">
         <div class="el-input">
           <input type="text" placeholder="Please select" class="el-input_inner">
@@ -151,7 +150,7 @@ template.innerHTML = `
         </div>
         <span class="el-cascader_label"></span>
       </span>
-        <div class="el-cascader-menus el-popper" style="position: absolute; left: 280px; width: auto; height: auto;">
+        <div class="el-cascader-menus el-popper" style="left: 2%; width: auto; height: auto;">
           <ul class="el-cascader-menu" style="display: none"></ul>
         </div>
     </div>
@@ -193,22 +192,28 @@ class CascaderComponent extends HTMLElement {
     this.menus = this.shadowRoot.querySelector('.el-cascader-menus')
     this.submenus = []
     this.submenu2s = []
-    // eslint-disable-next-line no-undef
-    for (let i = 0; i < options.length; i++) {
+    for (let i = 1; i < 10; i++) {
+      if (this.getAttribute('option') === ('options' + i)) {
+        // eslint-disable-next-line no-eval
+        this.options = eval('options' + i)
+        break
+      }
+    }
+    for (let i = 0; i < this.options.length; i++) {
       let newli = document.createElement('li')
-      // eslint-disable-next-line no-undef
-      if (options[i].children === undefined) {
-        // eslint-disable-next-line no-undef
-        newli.innerHTML = '<span>' + options[i].label + '</span>'
+      if (this.options[i].children === undefined) {
+        newli.innerHTML = '<span>' + this.options[i].label + '</span>'
+        newli.addEventListener('click', () => {
+          this.activeOptions.push(newli.textContent)
+          this.setUpInput()
+        })
       } else {
-        // eslint-disable-next-line no-undef
-        newli.innerHTML = '<span>' + options[i].label + '</span> <i class="fas fa-angle-right el-input_child_icon"></i>'
+        newli.innerHTML = '<span>' + this.options[i].label + '</span> <i class="fas fa-angle-right el-input_child_icon"></i>'
         let newSubMenu = document.createElement('ul')
         newSubMenu.setAttribute('id', 'submenu' + i)
         newSubMenu.style.display = 'none'
         newSubMenu.classList.add('el-cascader-menu')
-        // eslint-disable-next-line no-undef
-        this.addToSubMenu(options[i], newSubMenu)
+        this.addToSubMenu(this.options[i], newSubMenu)
         this.submenus.push(newSubMenu)
         newli.addEventListener('click', () => {
           this.showSubMenus(newSubMenu)
@@ -244,6 +249,9 @@ class CascaderComponent extends HTMLElement {
     console.log('Component disconnect!')
   }
 
+  /**
+   * Method used for toogle the 1st-level menus<br>
+   */
   toggleMenu () {
     if (this.ul.style.display === 'none') {
       this.ul.style.display = 'inline-block'
@@ -255,6 +263,9 @@ class CascaderComponent extends HTMLElement {
     }
   }
 
+  /**
+   * Method used for toggle the focus.<br>
+   */
   toggleFocus () {
     this.input = this.shadowRoot.querySelector('input')
     if (!this.input.classList.contains('is-focus')) {
@@ -262,6 +273,9 @@ class CascaderComponent extends HTMLElement {
     }
   }
 
+  /**
+   * Method to show the selected submenu in the 2nd level.<br>
+   */
   showSubMenus (submenu) {
     var i = 0
     for (; i < this.submenus.length; i++) {
@@ -273,12 +287,18 @@ class CascaderComponent extends HTMLElement {
     }
   }
 
+  /**
+   * Method to close all the submenu in the 2nd level.<br>
+   */
   closeSubMenus () {
     for (let i = 0; i < this.submenus.length; i++) {
       this.submenus[i].style.display = 'none'
     }
   }
 
+  /**
+   * Method to show the selected submenu in the 3rd level.<br>
+   */
   showSubMenu2s (submenu2) {
     for (let i = 0; i < this.submenu2s.length; i++) {
       if (this.submenu2s[i] === submenu2) {
@@ -289,12 +309,18 @@ class CascaderComponent extends HTMLElement {
     }
   }
 
+  /**
+   * Method to show all the submenu in the 3rd level.<br>
+   */
   closeSubMenu2s () {
     for (let i = 0; i < this.submenu2s.length; i++) {
       this.submenu2s[i].style.display = 'none'
     }
   }
 
+  /**
+   * Method to change text to the selected option.<br>
+   */
   setUpInput () {
     this.shadowRoot.querySelector('input').placeholder = ''
     for (let i = 0; i < this.activeOptions.length; i++) {
@@ -309,6 +335,9 @@ class CascaderComponent extends HTMLElement {
     this.ul.style.display = 'none'
   }
 
+  /**
+   * Method to add the option to the new submenu.<br>
+   */
   addToSubMenu (option, submenu) {
     var newoptions = option.children
     for (let i = 0; i < newoptions.length; i++) {
