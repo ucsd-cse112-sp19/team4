@@ -9,13 +9,16 @@
  */
 function assertAttributeEqual (component, attribute, value) {
   assert.isDefined(attribute)
+  assert.include(ButtonComponent.observedAttributes, attribute)
   assert.equal(component[attribute], value)
 }
 
 suite('button-component', function () {
   test('all attributes are in component', function () {
-    for (var attribute in ['size', 'type', 'plain', 'round', 'circle', 'disabled']) {
-      assert.include(ButtonComponent.observedAttributes, attribute)
+    assert.isDefined(ButtonComponent)
+    const attributes = ['size', 'type', 'plain', 'round', 'circle', 'disabled', 'theme']
+    for (var i in attributes) {
+      assert.include(ButtonComponent.observedAttributes, attributes[i])
     }
     const component = document.createElement('button-component')
     component.size = 'medium'
