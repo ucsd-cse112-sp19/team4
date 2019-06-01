@@ -275,6 +275,8 @@ exports.config = {
     expect = require('chai').expect
     // eslint-disable-next-line no-undef
     should = require('chai').should
+    // eslint-disable-next-line no-undef
+    toEqual = require('chai').toEqual
   }
   /**
    * Runs before a WebdriverIO command gets executed.
