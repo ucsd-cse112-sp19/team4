@@ -74,4 +74,39 @@ suite('cascader-component', function () {
     document.body.append(component)
     assert.isDefined(component)
   })
+  // Tests toggling cascader menu after clicking
+  test('opening and closing cascader works', function () {
+    const component = document.createElement('cascader-component')
+    component.options = [{
+      value: 'colors',
+      label: 'Colors',
+      children: [{
+        value: 'Red',
+        label: 'Red',
+        children: [{
+          value: 'Another Color',
+          label: 'Another Color'
+        }]
+      }, {
+        value: 'Blue',
+        label: 'Blue'
+      }, {
+        value: 'Green',
+        label: 'Green'
+      }]
+    }]
+    var ul = component.querySelector('.el-cascader-menu')
+    document.body.append(component)
+    assert.isDefined(component)
+    assert.equal(ul.style.display, 'none')
+    component.toggleFocus()
+    component.toggleMenu()
+    assert.equal(ul.style.display, 'inline-block')
+    component.toggleFocus()
+    component.toggleMenu()
+    const uls = component.querySelectorAll('ul')
+    for (let i = 0; i < uls.length; i++) {
+      assert.equal(uls[i].style.display, 'none')
+    }
+  })
 })
