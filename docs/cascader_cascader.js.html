@@ -168,7 +168,7 @@ template.innerHTML = `
       color: #409eff;
     }
   &lt;/style>
-    &lt;div style="height: 400px">
+    &lt;div style="position: relative">
       &lt;span class="el-cascader">
         &lt;div class="el-input">
           &lt;input type="text" placeholder="Please select" class="el-input_inner">
@@ -178,7 +178,7 @@ template.innerHTML = `
         &lt;/div>
         &lt;span class="el-cascader_label">&lt;/span>
       &lt;/span>
-        &lt;div class="el-cascader-menus el-popper" style="left: 2%; width: auto; height: auto;">
+        &lt;div class="el-cascader-menus el-popper" style="position: absolute; left: 2%; width: auto; height: auto;">
           &lt;ul class="el-cascader-menu" style="display: none">&lt;/ul>
         &lt;/div>
     &lt;/div>
@@ -203,6 +203,7 @@ class CascaderComponent extends HTMLElement {
     this.cascader.addEventListener('click', () => {
       this.toggleFocus()
       this.toggleMenu()
+      this.setAttribute('shownMenu', this.ul)
     })
   }
 

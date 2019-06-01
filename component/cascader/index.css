@@ -1,7 +1,7 @@
 #element {
 	display: inline-block;
 	width: 49%;
-	left: 70;
+	margin: 10px 5px 15px 20px; 
 }
 
 #bootstrap {
