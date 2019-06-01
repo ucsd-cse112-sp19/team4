@@ -17,12 +17,14 @@ describe('Example', () => {
 
   it('should compare successful with a baseline', () => {
     // Check a screen
+    console.log(expect(browser.checkScreen('examplePaged', { /* some options */ })).toEqual(0))
     expect(browser.checkScreen('examplePaged', { /* some options */ })).toEqual(0)
 
     // Check an element
     // expect(browser.checkElement($('#element-id'), 'firstButtonElement', { /* some options */ })).toEqual(0)
 
     // Check a full page screens
+    console.log(expect(browser.checkFullPageScreen('fullPage', { /* some options */ })).toEqual(0))
     expect(browser.checkFullPageScreen('fullPage', { /* some options */ })).toEqual(0)
   })
 })
