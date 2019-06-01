@@ -104,23 +104,15 @@ exports.config = {
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER
-  }, {
-    maxInstances: 1,
-    browserName: 'MicrosoftEdge',
-    version: '16.16299',
-    platform: 'Windows 10',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    name: 'integration',
-    build: process.env.TRAVIS_BUILD_NUMBER
-  }, {
-    maxInstances: 1,
-    browserName: 'internet explorer',
-    version: '11.0',
-    platform: 'Windows 8.1',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    name: 'integration',
-    build: process.env.TRAVIS_BUILD_NUMBER
   }
+  // {
+  //   maxInstances: 1,
+  //   browserName: 'MicrosoftEdge',
+  //   version: '16.16299',
+  //   platform: 'Windows 10',
+  //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+  //   name: 'integration',
+  //   build: process.env.TRAVIS_BUILD_NUMBER
   // }, {
   //   maxInstances: 1,
   //   browserName: 'internet explorer',
@@ -129,23 +121,32 @@ exports.config = {
   //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
   //   name: 'integration',
   //   build: process.env.TRAVIS_BUILD_NUMBER
-  // }, {
-  //   maxInstances: 1,
-  //   browserName: 'internet explorer',
-  //   version: '11.285',
-  //   platform: 'Windows 10',
-  //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-  //   name: 'integration',
-  //   build: process.env.TRAVIS_BUILD_NUMBER
-  // }, {
-  //   maxInstances: 1,
-  //   browserName: 'MicrosoftEdge',
-  //   version: '16.16299',
-  //   platform: 'Windows 10',
-  //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-  //   name: 'integration',
-  //   build: process.env.TRAVIS_BUILD_NUMBER
   // }
+    // }, {
+    //   maxInstances: 1,
+    //   browserName: 'internet explorer',
+    //   version: '11.0',
+    //   platform: 'Windows 8.1',
+    //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    //   name: 'integration',
+    //   build: process.env.TRAVIS_BUILD_NUMBER
+    // }, {
+    //   maxInstances: 1,
+    //   browserName: 'internet explorer',
+    //   version: '11.285',
+    //   platform: 'Windows 10',
+    //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    //   name: 'integration',
+    //   build: process.env.TRAVIS_BUILD_NUMBER
+    // }, {
+    //   maxInstances: 1,
+    //   browserName: 'MicrosoftEdge',
+    //   version: '16.16299',
+    //   platform: 'Windows 10',
+    //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    //   name: 'integration',
+    //   build: process.env.TRAVIS_BUILD_NUMBER
+    // }
   ],
   //
   // ===================
@@ -194,7 +195,22 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ['sauce'],
+  services: ['sauce',
+    ['image-comparison',
+      // The options
+      {
+        // Some options, see the docs for more
+        baselineFolder: join(process.cwd(), './tests/sauceLabsBaseline/'),
+        formatImageName: '{tag}-{logName}-{width}x{height}',
+        screenshotPath: join(process.cwd(), '.tmp/'),
+        savePerInstance: true,
+        autoSaveBaseline: true,
+        blockOutStatusBar: true,
+        blockOutToolBar: true
+        // ... more options
+      }]
+  ],
+
   sauceConnect: false,
   //
   // Framework you want to run your specs with.
