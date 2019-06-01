@@ -1,11 +1,10 @@
 /* global beforeEach describe it $ */
-// beforeEach(async () => {
-//   await browser.url('/')
-// })
+beforeEach(async () => {
+  await browser.url('/')
+})
 
 describe('Testing functionallity for buttons ', () => {
-  it('Testing the top row checking if the button\'s interact correctly', async () => {
-    await browser.url('/')
+  it.only('Testing the top row checking if the button\'s interact correctly', () => {
     browser.pause(200)
 
     // the $(selector) looks in the document to find the unique id
@@ -81,7 +80,6 @@ describe('Testing functionallity for buttons ', () => {
   })
 
   it('Testing the middle row checking if the button\'s interact correctly', () => {
-    await browser.url('/slider')
     browser.pause(500)
 
     const res1 = $('#sluno')
