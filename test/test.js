@@ -81,7 +81,7 @@ describe('Testing functionallity for buttons ', () => {
   })
 
   it('Testing the middle row checking if the button\'s interact correctly', () => {
-    await browser.url('/slider/')
+    await browser.url('/slider')
     browser.pause(500)
 
     const res1 = $('#sluno')
@@ -124,7 +124,7 @@ describe('Testing functionallity for buttons ', () => {
 
     // console.log(res4.getCSSProperty('background-color'))
     // console.log(res4.getCSSProperty('background-color'))
-    browser.pause(1000)
+    // browser.pause(1000)
   })
 
   // it('Testing the bottom row checking if the button\'s interact correctly', () => {
