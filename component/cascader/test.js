@@ -97,7 +97,7 @@ suite('cascader-component', function () {
     }]
     document.body.append(component)
     assert.isDefined(component)
-    console.log(component)
+    console.log(component.ul)
     assert.equal(component.ul.style.display, 'none')
     component.toggleFocus()
     component.toggleMenu()

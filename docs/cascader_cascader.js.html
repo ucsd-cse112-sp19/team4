@@ -218,6 +218,7 @@ class CascaderComponent extends HTMLElement {
    * Callback when the component get created.
    */
   connectedCallback () {
+    console.log(this.ul)
     this.menus = this.shadowRoot.querySelector('.el-cascader-menus')
     this.submenus = []
     this.submenu2s = []
