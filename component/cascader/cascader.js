@@ -193,6 +193,7 @@ class CascaderComponent extends HTMLElement {
     this.menus = this.shadowRoot.querySelector('.el-cascader-menus')
     this.submenus = []
     this.submenu2s = []
+    this.setAttribute('shownMenu', this.ul)
     for (let i = 1; i < 10; i++) {
       if (this.getAttribute('option') === ('options' + i)) {
         // eslint-disable-next-line no-eval
@@ -211,7 +212,6 @@ class CascaderComponent extends HTMLElement {
       } else {
         newli.innerHTML = '<span>' + this.options[i].label + '</span> <i class="fas fa-angle-right el-input_child_icon"></i>'
         let newSubMenu = document.createElement('ul')
-        newSubMenu.setAttribute('id', 'submenu' + i)
         newSubMenu.style.display = 'none'
         newSubMenu.classList.add('el-cascader-menu')
         this.addToSubMenu(this.options[i], newSubMenu)
@@ -355,7 +355,6 @@ class CascaderComponent extends HTMLElement {
         // eslint-disable-next-line no-undef
         newli.innerHTML = '<span>' + newoptions[i].label + '</span> <i class="fas fa-angle-right el-input_child_icon"></i>'
         let newSubMenu2 = document.createElement('ul')
-        newSubMenu2.setAttribute('id', 'submenu2' + i)
         newSubMenu2.style.display = 'none'
         newSubMenu2.classList.add('el-cascader-menu')
         // eslint-disable-next-line no-undef
