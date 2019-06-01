@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-/* global beforeEach describe it $ */
+/* global beforeEach describe it expect $ */
 beforeEach(async () => {
   await browser.url('/')
 })
