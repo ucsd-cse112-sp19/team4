@@ -17,7 +17,7 @@ suite('button-component', function () {
   test('all attributes are in component', function () {
     assert.isDefined(ButtonComponent)
     const attributes = ['size', 'type', 'plain', 'round', 'circle', 'disabled', 'theme']
-    for (var i in attributes) {
+    for (var i = 0; i < attributes.length; i += 1) {
       assert.include(ButtonComponent.observedAttributes, attributes[i])
     }
     const component = document.createElement('button-component')

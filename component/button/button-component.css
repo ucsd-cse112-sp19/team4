@@ -179,21 +179,21 @@
   border-color: var(--btn-color-info);
 }
 
-/* CSS classes for size attribute */
+/* CSS classes for biggness attribute */
 
-:host([size='medium']){
+:host([biggness='medium']){
   padding: 10px 20px;
   font-size: 14px;
   border-radius: 4px;
 }
 
-:host([size='small']){
+:host([biggness='small']){
   padding: 9px 15px;
   font-size: 12px;
   border-radius: 3px;
 }
 
-:host([size='mini']){
+:host([biggness='mini']){
   padding: 7px 15px;
   font-size: 12px;
   border-radius: 3px;

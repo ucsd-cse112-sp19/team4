@@ -24,7 +24,7 @@ class ButtonComponent extends HTMLElement {
    * Method returns a list of attributes supported by this component.<br>
    */
   static get observedAttributes () {
-    return ['size', 'type', 'plain', 'round', 'circle', 'disabled', 'theme']
+    return ['biggness', 'type', 'plain', 'round', 'circle', 'disabled', 'theme']
   }
 
   /**
@@ -34,8 +34,8 @@ class ButtonComponent extends HTMLElement {
     if (this.shadowRoot.querySelector('p') !== null) {
       this.shadowRoot.querySelector('p').textContent = this.textContent
     }
-    if (!this.hasAttribute('size')) {
-      this.setAttribute('size', 'default')
+    if (!this.hasAttribute('biggness')) {
+      this.setAttribute('biggness', 'default')
     }
     if (!this.hasAttribute('type')) {
       this.setAttribute('type', 'default')
@@ -66,18 +66,18 @@ class ButtonComponent extends HTMLElement {
   }
 
   /**
-   * Getter for size attribute.
+   * Getter for biggness attribute.
    */
-  get size () {
-    return this.getAttribute('size')
+  get biggness () {
+    return this.getAttribute('biggness')
   }
 
   /**
-   * Setter for size attribute.
-   * @param {string} newVal - The new value for size
+   * Setter for biggness attribute.
+   * @param {string} newVal - The new value for biggness
    */
-  set size (newVal) {
-    this.setAttribute('size', newVal)
+  set biggness (newVal) {
+    this.setAttribute('biggness', newVal)
   }
 
   /**
