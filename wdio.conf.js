@@ -1,4 +1,4 @@
-/* global join */
+const { join } = require('path')
 
 var baseUrl
 
