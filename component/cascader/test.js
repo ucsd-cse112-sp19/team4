@@ -95,16 +95,16 @@ suite('cascader-component', function () {
         label: 'Green'
       }]
     }]
+    var ul = component.querySelector('.el-cascader-menu')
     document.body.append(component)
     assert.isDefined(component)
-    console.log('This is component.ul', component.ul)
-    assert.equal(component.ul.style.display, 'none')
+    assert.equal(ul.style.display, 'none')
     component.toggleFocus()
     component.toggleMenu()
-    assert.equal(component.ul.style.display, 'inline-block')
+    assert.equal(ul.style.display, 'inline-block')
     component.toggleFocus()
     component.toggleMenu()
-    const uls = component.shadowRoot.querySelectorAll('ul')
+    const uls = component.querySelectorAll('ul')
     for (let i = 0; i < uls.length; i++) {
       assert.equal(uls[i].style.display, 'none')
     }
