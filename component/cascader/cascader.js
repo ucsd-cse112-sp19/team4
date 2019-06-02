@@ -193,6 +193,7 @@ class CascaderComponent extends HTMLElement {
     this.menus = this.shadowRoot.querySelector('.el-cascader-menus')
     this.submenus = []
     this.submenu2s = []
+    this.setAttribute('shownMenu', this.ul)
     for (let i = 1; i < 10; i++) {
       if (this.getAttribute('option') === ('options' + i)) {
         // eslint-disable-next-line no-eval
