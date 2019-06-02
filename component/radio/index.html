@@ -5,9 +5,19 @@
         <title>Components</title>
     </head>
     <body>
-      <radio-component></radio-component>
-      <radio-component></radio-component>
-      <radio-component></radio-component> 
+      <p>Please select your gender:</p>
+      <radio-component name="gender">
+        <radio-option value="male" label="Male"></radio-option>
+        <radio-option value="female" label="Female"></radio-option>
+        <radio-option value="other" label="Other"></radio-option>
+      </radio-component>
+      <br>
+      <p>Please select your favorite color:</p>
+      <radio-component name="color">
+        <radio-option border value="red" label="Red"></radio-option>
+        <radio-option border value="yellow" label="Yellow"></radio-option>
+        <radio-option border value="green" label="Green"></radio-option>
+      </radio-component>
     </body>
     <script src="radio-component.js"></script>
 </html>
