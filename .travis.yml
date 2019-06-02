@@ -16,7 +16,6 @@ install:
 
 script:
   - npm run test
-  - npm run snapshot
-
+  
 addons:
   sauce_connect: true
