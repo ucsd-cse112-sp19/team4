@@ -2,6 +2,15 @@
 beforeEach(async () => {
   await browser.url('/')
 })
+/* global percySnapshot uses percy to take snap shots of pages */
+const { percySnapshot } = require('@percy/webdriverio')
+
+describe('Integration test with visual testing', function() {
+  it('Loads the example.com site', async function() {
+    await browser.url('https://example.com/')
+    await percySnapshot(browser, this.test.fullTitle())
+  })
+})
 
 describe('Example', () => {
   it('should save some screenshots', () => {

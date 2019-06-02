@@ -277,6 +277,10 @@ exports.config = {
     should = require('chai').should
     // eslint-disable-next-line no-undef
     toEqual = require('chai').toEqual
+    // Import percySnapshot function
+    const { percySnapshot } = require('@percy/webdriverio');
+    // Make percySnapshot available as a global variable in all wdio tests
+    global.percySnapshot = percySnapshot;
   }
   /**
    * Runs before a WebdriverIO command gets executed.
