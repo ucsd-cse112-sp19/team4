@@ -168,20 +168,20 @@ template.innerHTML = `
       color: #409eff;
     }
   &lt;/style>
-    &lt;div style="position: relative">
-      &lt;span class="el-cascader">
-        &lt;div class="el-input">
-          &lt;input type="text" placeholder="Please select" class="el-input_inner">
-            &lt;span class="el-input_suffix">
-              &lt;i class="fas fa-angle-down el-input_icon">&lt;/i>
-            &lt;/span>
-        &lt;/div>
-        &lt;span class="el-cascader_label">&lt;/span>
-      &lt;/span>
-        &lt;div class="el-cascader-menus el-popper" style="position: absolute; left: 2%; width: auto; height: auto;">
-          &lt;ul class="el-cascader-menu" style="display: none">&lt;/ul>
-        &lt;/div>
+  &lt;div style="position: relative">
+    &lt;span class="el-cascader">
+      &lt;div class="el-input">
+        &lt;input type="text" placeholder="Please select" class="el-input_inner">
+          &lt;span class="el-input_suffix">
+            &lt;i class="fas fa-angle-down el-input_icon">&lt;/i>
+          &lt;/span>
+      &lt;/div>
+      &lt;span class="el-cascader_label">&lt;/span>
+    &lt;/span>
+    &lt;div class="el-cascader-menus el-popper" style="position: absolute; left: 2%; width: auto; height: auto;">
+      &lt;ul class="el-cascader-menu" style="display: none">&lt;/ul>
     &lt;/div>
+  &lt;/div>
 `
 
 /* global HTMLElement */
@@ -228,40 +228,9 @@ class CascaderComponent extends HTMLElement {
         break
       }
     }
-    for (let i = 0; i &lt; this.options.length; i++) {
-      let newli = document.createElement('li')
-      if (this.options[i].children === undefined) {
-        newli.innerHTML = '&lt;span>' + this.options[i].label + '&lt;/span>'
-        newli.addEventListener('click', () => {
-          this.activeOptions.push(newli.textContent)
-          this.setUpInput()
-        })
-      } else {
-        newli.innerHTML = '&lt;span>' + this.options[i].label + '&lt;/span> &lt;i class="fas fa-angle-right el-input_child_icon">&lt;/i>'
-        let newSubMenu = document.createElement('ul')
-        newSubMenu.setAttribute('id', 'submenu' + i)
-        newSubMenu.style.display = 'none'
-        newSubMenu.classList.add('el-cascader-menu')
-        this.addToSubMenu(this.options[i], newSubMenu)
-        this.submenus.push(newSubMenu)
-        newli.addEventListener('click', () => {
-          this.showSubMenus(newSubMenu)
-          this.closeSubMenu2s()
-          if (this.activeOptions.length === 1) {
-            this.activeOptions.pop()
-          }
-          this.activeOptions.push(newli.textContent)
-        })
-      }
-      newli.classList.add('el-cascader-menu_item')
-      newli.addEventListener('mouseover', () => {
-        newli.classList.add('is-active')
-      })
-      newli.addEventListener('mouseout', () => {
-        newli.classList.remove('is-active')
-      })
-      this.ul.appendChild(newli)
-    }
+
+    this.addToSubMenu(this.options, this.ul, 0)
+
     for (let i = 0; i &lt; this.submenus.length; i++) {
       this.menus.appendChild(this.submenus[i])
     }
@@ -325,18 +294,18 @@ class CascaderComponent extends HTMLElement {
     }
   }
 
-  /**
-   * Method to show the selected submenu in the 3rd level.&lt;br>
-   */
-  showSubMenu2s (submenu2) {
-    for (let i = 0; i &lt; this.submenu2s.length; i++) {
-      if (this.submenu2s[i] === submenu2) {
-        this.submenu2s[i].style.display = 'inline-block'
-      } else {
-        this.submenu2s[i].style.display = 'none'
-      }
-    }
-  }
+  // /**
+  //  * Method to show the selected submenu in the 3rd level.&lt;br>
+  //  */
+  // showSubMenu2s (submenu2) {
+  //   for (let i = 0; i &lt; this.submenu2s.length; i++) {
+  //     if (this.submenu2s[i] === submenu2) {
+  //       this.submenu2s[i].style.display = 'inline-block'
+  //     } else {
+  //       this.submenu2s[i].style.display = 'none'
+  //     }
+  //   }
+  // }
 
   /**
    * Method to show all the submenu in the 3rd level.&lt;br>
@@ -367,30 +336,38 @@ class CascaderComponent extends HTMLElement {
   /**
    * Method to add the option to the new submenu.&lt;br>
    */
-  addToSubMenu (option, submenu) {
-    var newoptions = option.children
-    for (let i = 0; i &lt; newoptions.length; i++) {
+  addToSubMenu (option, submenu, count) {
+    for (let i = 0; i &lt; option.length; i++) {
       let newli = document.createElement('li')
       // eslint-disable-next-line no-undef
-      if (newoptions[i].children === undefined) {
+      if (option[i].children === undefined) {
         // eslint-disable-next-line no-undef
-        newli.innerHTML = '&lt;span>' + newoptions[i].label + '&lt;/span>'
+        newli.innerHTML = '&lt;span>' + option[i].label + '&lt;/span>'
         newli.addEventListener('click', () => {
           this.activeOptions.push(newli.textContent)
           this.setUpInput()
         })
       } else {
         // eslint-disable-next-line no-undef
-        newli.innerHTML = '&lt;span>' + newoptions[i].label + '&lt;/span> &lt;i class="fas fa-angle-right el-input_child_icon">&lt;/i>'
-        let newSubMenu2 = document.createElement('ul')
-        newSubMenu2.setAttribute('id', 'submenu2' + i)
-        newSubMenu2.style.display = 'none'
-        newSubMenu2.classList.add('el-cascader-menu')
+        newli.innerHTML = '&lt;span>' + option[i].label + '&lt;/span> &lt;i class="fas fa-angle-right el-input_child_icon">&lt;/i>'
+        let newSubMenu = document.createElement('ul')
+        newSubMenu.style.display = 'none'
+        newSubMenu.classList.add('el-cascader-menu')
         // eslint-disable-next-line no-undef
-        this.addToSubMenu(newoptions[i], newSubMenu2)
-        this.submenu2s.push(newSubMenu2)
+        this.addToSubMenu(option[i].children, newSubMenu, count + 1)
+        if (count === 0) {
+          this.submenus.push(newSubMenu)
+        } else {
+          this.submenu2s.push(newSubMenu)
+        }
         newli.addEventListener('click', () => {
-          this.showSubMenu2s(newSubMenu2)
+          this.closeSubMenu2s()
+          if (count === 0) {
+            this.showSubMenus(newSubMenu)
+          } else {
+            newSubMenu.style.display = 'inline-block'
+          }
+
           if (this.activeOptions.length === 2) {
             this.activeOptions.pop()
           }
