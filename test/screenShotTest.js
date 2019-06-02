@@ -3,6 +3,15 @@ beforeEach(async () => {
   await browser.url('/')
 })
 
+/* global resolveAfter2Seconds */
+function resolveAfter2Seconds() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('resolved');
+    }, 2000);
+  });
+}
+
 describe('Integration test with visual testing', function() {
   it('Loads the example.com site', async function() {
     //await browser.url('/')
