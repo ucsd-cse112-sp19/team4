@@ -3,8 +3,6 @@ beforeEach(async () => {
   await browser.url('/')
 })
 
-}
-
 describe('Integration test with visual testing', function() {
   it('Loads the example.com site', async function() {
     //await browser.url('/')
