@@ -97,6 +97,7 @@ suite('cascader-component', function () {
     }]
     document.body.append(component)
     assert.isDefined(component)
-    assert.equal(component.MenuDisplay, 'none')
+    component.toggleMenu()
+    assert.equal(component.MenuDisplay, 'inline-block')
   })
 })
