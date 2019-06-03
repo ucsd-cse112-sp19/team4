@@ -97,7 +97,7 @@ suite('cascader-component', function () {
     }]
     document.body.append(component)
     assert.isDefined(component)
-
-    assert.equal(component.options, undefined)
+    component.setAttribute('type', 'default')
+    assert.equal(component.type, 'default')
   })
 })
