@@ -7,7 +7,7 @@
  * @param {string} attribute The attribute of component to test
  * @param {*} value The value that it should be equal to
  */
-function attributeEqual (component, attribute, value) {
+function attributeEqualHelloWorld (component, attribute, value) {
   assert.isDefined(component)
   assert.isString(attribute)
   assert.include(HelloWorldComponent.observedAttributes, attribute)
@@ -32,43 +32,43 @@ suite('hello-world-component', function () {
     const component = document.createElement('hello-world')
     document.body.append(component)
     assert.isDefined(component)
-    attributeEqual(component, 'language', 'en')
-    attributeEqual(component, 'rainbow', 'false')
+    attributeEqualHelloWorld(component, 'language', 'en')
+    attributeEqualHelloWorld(component, 'rainbow', 'false')
   })
   // Tests to see if the default language value is en
   test('default language is en', function () {
     const component = document.createElement('hello-world')
     document.body.append(component)
     assert.isDefined(component)
-    attributeEqual(component, 'language', 'en')
+    attributeEqualHelloWorld(component, 'language', 'en')
   })
   // Tests to see if the default rainbow value is false
   test('default rainbow is false', function () {
     const component = document.createElement('hello-world')
     document.body.append(component)
     assert.isDefined(component)
-    attributeEqual(component, 'rainbow', 'false')
+    attributeEqualHelloWorld(component, 'rainbow', 'false')
   })
   // Tests to see if it handles changing the language value
   test('changing language works', function () {
     const component = document.createElement('hello-world')
     document.body.append(component)
     assert.isDefined(component)
-    attributeEqual(component, 'language', 'en')
+    attributeEqualHelloWorld(component, 'language', 'en')
     safeSetHelloWorld(component, 'language', 'fr')
-    attributeEqual(component, 'language', 'fr')
+    attributeEqualHelloWorld(component, 'language', 'fr')
     safeSetHelloWorld(component, 'language', 'en')
-    attributeEqual(component, 'language', 'en')
+    attributeEqualHelloWorld(component, 'language', 'en')
   })
   // Tests to see if it handles changing the rainbow value
   test('changing rainbow works', function () {
     const component = document.createElement('hello-world')
     document.body.append(component)
     assert.isDefined(component)
-    attributeEqual(component, 'rainbow', 'false')
+    attributeEqualHelloWorld(component, 'rainbow', 'false')
     safeSetHelloWorld(component, 'rainbow', 'true')
-    attributeEqual(component, 'rainbow', 'true')
+    attributeEqualHelloWorld(component, 'rainbow', 'true')
     safeSetHelloWorld(component, 'rainbow', 'false')
-    attributeEqual(component, 'rainbow', 'false')
+    attributeEqualHelloWorld(component, 'rainbow', 'false')
   })
 })

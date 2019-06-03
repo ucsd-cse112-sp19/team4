@@ -7,7 +7,7 @@
  * @param {string} attribute The attribute of component to test
  * @param {*} value The value that it should be equal to
  */
-function attributeEqual (component, attribute, value) {
+function attributeEqualSlider (component, attribute, value) {
   assert.isDefined(component)
   assert.isString(attribute)
   assert.include(SliderComponent.observedAttributes, attribute)
@@ -38,8 +38,8 @@ suite('slider-component', function () {
     const component = document.createElement('slider-component')
     document.body.append(component)
     assert.isDefined(component)
-    attributeEqual(component, 'value', '50')
+    attributeEqualSlider(component, 'value', '50')
     safeSetSlider(component, 'value', '82')
-    attributeEqual(component, 'value', '82')
+    attributeEqualSlider(component, 'value', '82')
   })
 })
