@@ -97,5 +97,6 @@ suite('cascader-component', function () {
     }]
     document.body.append(component)
     assert.isDefined(component)
+    console.log(component.MenuDisplay)
   })
 })
