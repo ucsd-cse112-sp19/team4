@@ -175,7 +175,6 @@ class CascaderComponent extends HTMLElement {
     this.cascader.addEventListener('click', () => {
       this.toggleFocus()
       this.toggleMenu()
-      this.setAttribute('shownMenu', this.ul)
     })
   }
 
@@ -193,7 +192,7 @@ class CascaderComponent extends HTMLElement {
     this.menus = this.shadowRoot.querySelector('.el-cascader-menus')
     this.submenus = []
     this.submenu2s = []
-    this.setAttribute('shownMenu', this.ul)
+    this.setAttribute('MenuDisplay', 'none')
     for (let i = 1; i < 10; i++) {
       if (this.getAttribute('option') === ('options' + i)) {
         // eslint-disable-next-line no-eval
@@ -256,11 +255,13 @@ class CascaderComponent extends HTMLElement {
   toggleMenu () {
     if (this.ul.style.display === 'none') {
       this.ul.style.display = 'inline-block'
+      this.setAttribute('MenuDisplay', 'inline-block')
     } else {
       const uls = this.shadowRoot.querySelectorAll('ul')
       for (let i = 0; i < uls.length; i++) {
         uls[i].style.display = 'none'
       }
+      this.setAttribute('MenuDisplay', 'none')
     }
   }
 
