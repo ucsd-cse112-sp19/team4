@@ -97,15 +97,5 @@ suite('cascader-component', function () {
     }]
     document.body.append(component)
     assert.isDefined(component)
-    assert.equal(component.shownMenu.style.display, 'none')
-    component.toggleFocus()
-    component.toggleMenu()
-    assert.equal(component.shownMenu.style.display, 'inline-block')
-    component.toggleFocus()
-    component.toggleMenu()
-    // const uls = component.querySelectorAll('ul')
-    // for (let i = 0; i < uls.length; i++) {
-    //   assert.equal(uls[i].style.display, 'none')
-    // }
   })
 })
