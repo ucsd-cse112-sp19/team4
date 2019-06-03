@@ -97,6 +97,7 @@ suite('cascader-component', function () {
     }]
     document.body.append(component)
     assert.isDefined(component)
+    component.toggleFocus()
     component.toggleMenu()
     assert.equal(component.MenuDisplay, 'inline-block')
   })
