@@ -272,11 +272,11 @@ exports.config = {
    */
   before: function (capabilities, specs) {
     // eslint-disable-next-line no-undef
-    expect = require('chai').expect
+   // expect = require('chai').expect
     // eslint-disable-next-line no-undef
-    should = require('chai').should
+    //should = require('chai').should
     // eslint-disable-next-line no-undef
-    toEqual = require('chai').toEqual
+    //toEqual = require('chai').toEqual
     // Import percySnapshot function
     const { percySnapshot } = require('@percy/webdriverio');
     // Make percySnapshot available as a global variable in all wdio tests
