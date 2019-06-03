@@ -20,7 +20,7 @@ function attributeEqual (component, attribute, value) {
  * @param {string} attribute The attribute of component to set
  * @param {*} newValue The vew value to set
  */
-function safeSet (component, attribute, newValue) {
+function safeSetHelloWorld (component, attribute, newValue) {
   assert.isDefined(attribute)
   assert.isString(attribute)
   assert.include(HelloWorldComponent.observedAttributes, attribute)
@@ -55,9 +55,9 @@ suite('hello-world-component', function () {
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'language', 'en')
-    safeSet(component, 'language', 'fr')
+    safeSetHelloWorld(component, 'language', 'fr')
     attributeEqual(component, 'language', 'fr')
-    safeSet(component, 'language', 'en')
+    safeSetHelloWorld(component, 'language', 'en')
     attributeEqual(component, 'language', 'en')
   })
   // Tests to see if it handles changing the rainbow value
@@ -66,9 +66,9 @@ suite('hello-world-component', function () {
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'rainbow', 'false')
-    safeSet(component, 'rainbow', 'true')
+    safeSetHelloWorld(component, 'rainbow', 'true')
     attributeEqual(component, 'rainbow', 'true')
-    safeSet(component, 'rainbow', 'false')
+    safeSetHelloWorld(component, 'rainbow', 'false')
     attributeEqual(component, 'rainbow', 'false')
   })
 })

@@ -20,7 +20,7 @@ function attributeEqual (component, attribute, value) {
  * @param {string} attribute The attribute of component to set
  * @param {*} newValue The vew value to set
  */
-function safeSet (component, attribute, newValue) {
+function safeSetSlider (component, attribute, newValue) {
   assert.isDefined(attribute)
   assert.isString(attribute)
   assert.include(SliderComponent.observedAttributes, attribute)
@@ -39,7 +39,7 @@ suite('slider-component', function () {
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'value', '50')
-    safeSet(component, 'value', '82')
+    safeSetSlider(component, 'value', '82')
     attributeEqual(component, 'value', '82')
   })
 })

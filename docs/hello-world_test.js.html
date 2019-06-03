@@ -48,7 +48,7 @@ function attributeEqual (component, attribute, value) {
  * @param {string} attribute The attribute of component to set
  * @param {*} newValue The vew value to set
  */
-function safeSet (component, attribute, newValue) {
+function safeSetHelloWorld (component, attribute, newValue) {
   assert.isDefined(attribute)
   assert.isString(attribute)
   assert.include(HelloWorldComponent.observedAttributes, attribute)
@@ -83,9 +83,9 @@ suite('hello-world-component', function () {
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'language', 'en')
-    safeSet(component, 'language', 'fr')
+    safeSetHelloWorld(component, 'language', 'fr')
     attributeEqual(component, 'language', 'fr')
-    safeSet(component, 'language', 'en')
+    safeSetHelloWorld(component, 'language', 'en')
     attributeEqual(component, 'language', 'en')
   })
   // Tests to see if it handles changing the rainbow value
@@ -94,9 +94,9 @@ suite('hello-world-component', function () {
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'rainbow', 'false')
-    safeSet(component, 'rainbow', 'true')
+    safeSetHelloWorld(component, 'rainbow', 'true')
     attributeEqual(component, 'rainbow', 'true')
-    safeSet(component, 'rainbow', 'false')
+    safeSetHelloWorld(component, 'rainbow', 'false')
     attributeEqual(component, 'rainbow', 'false')
   })
 })
@@ -110,7 +110,7 @@ suite('hello-world-component', function () {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ButtonComponent.html">ButtonComponent</a></li><li><a href="HelloWorldComponent.html">HelloWorldComponent</a></li><li><a href="SliderComponent.html">SliderComponent</a></li></ul><h3>Global</h3><ul><li><a href="global.html#attributeEqual">attributeEqual</a></li><li><a href="global.html#safeSet">safeSet</a></li><li><a href="global.html#settings">settings</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ButtonComponent.html">ButtonComponent</a></li><li><a href="HelloWorldComponent.html">HelloWorldComponent</a></li><li><a href="SliderComponent.html">SliderComponent</a></li></ul><h3>Global</h3><ul><li><a href="global.html#attributeEqual">attributeEqual</a></li><li><a href="global.html#safeSetButton">safeSetButton</a></li><li><a href="global.html#safeSetHelloWorld">safeSetHelloWorld</a></li><li><a href="global.html#safeSetSlider">safeSetSlider</a></li><li><a href="global.html#settings">settings</a></li></ul>
 </nav>
 
 <br class="clear">

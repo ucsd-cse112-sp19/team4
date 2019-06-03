@@ -20,7 +20,7 @@ function attributeEqual (component, attribute, value) {
  * @param {string} attribute The attribute of component to set
  * @param {*} newValue The vew value to set
  */
-function safeSet (component, attribute, newValue) {
+function safeSetButton (component, attribute, newValue) {
   assert.isDefined(attribute)
   assert.isString(attribute)
   assert.include(ButtonComponent.observedAttributes, attribute)
@@ -35,8 +35,8 @@ suite('button-component', function () {
       assert.include(ButtonComponent.observedAttributes, attributes[i])
     }
     const component = document.createElement('button-component')
-    safeSet(component, 'size', 'medium')
-    safeSet(component, 'type', 'primary')
+    safeSetButton(component, 'size', 'medium')
+    safeSetButton(component, 'type', 'primary')
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'size', 'medium')
@@ -49,8 +49,8 @@ suite('button-component', function () {
   // Tests to see if the default plain attribute is false
   test('default plain is false', function () {
     const component = document.createElement('button-component')
-    safeSet(component, 'size', 'medium')
-    safeSet(component, 'type', 'primary')
+    safeSetButton(component, 'size', 'medium')
+    safeSetButton(component, 'type', 'primary')
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'plain', false)
@@ -58,8 +58,8 @@ suite('button-component', function () {
   // Tests to see if the default round attribute is false
   test('default round is false', function () {
     const component = document.createElement('button-component')
-    safeSet(component, 'size', 'medium')
-    safeSet(component, 'type', 'primary')
+    safeSetButton(component, 'size', 'medium')
+    safeSetButton(component, 'type', 'primary')
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'round', false)
@@ -67,8 +67,8 @@ suite('button-component', function () {
   // Tests to see if the default circle attribute is false
   test('default circle is false', function () {
     const component = document.createElement('button-component')
-    safeSet(component, 'size', 'medium')
-    safeSet(component, 'type', 'primary')
+    safeSetButton(component, 'size', 'medium')
+    safeSetButton(component, 'type', 'primary')
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'circle', false)
@@ -76,8 +76,8 @@ suite('button-component', function () {
   // Tests to see if the default disabled attribute is false
   test('default disabled is false', function () {
     const component = document.createElement('button-component')
-    safeSet(component, 'size', 'medium')
-    safeSet(component, 'type', 'primary')
+    safeSetButton(component, 'size', 'medium')
+    safeSetButton(component, 'type', 'primary')
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'disabled', false)
@@ -85,42 +85,42 @@ suite('button-component', function () {
   // Tests to see if it handles changing the size value
   test('changing size works', function () {
     const component = document.createElement('button-component')
-    safeSet(component, 'size', 'medium')
-    safeSet(component, 'type', 'primary')
+    safeSetButton(component, 'size', 'medium')
+    safeSetButton(component, 'type', 'primary')
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'size', 'medium')
-    safeSet(component, 'size', 'small')
+    safeSetButton(component, 'size', 'small')
     attributeEqual(component, 'size', 'small')
-    safeSet(component, 'size', 'mini')
+    safeSetButton(component, 'size', 'mini')
     attributeEqual(component, 'size', 'mini')
-    safeSet(component, 'size', 'medium')
+    safeSetButton(component, 'size', 'medium')
     attributeEqual(component, 'size', 'medium')
   })
   // Tests to see if it handles changing the type value
   test('changing type works', function () {
     const component = document.createElement('button-component')
-    safeSet(component, 'size', 'medium')
-    safeSet(component, 'type', 'primary')
+    safeSetButton(component, 'size', 'medium')
+    safeSetButton(component, 'type', 'primary')
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'type', 'primary')
-    safeSet(component, 'type', 'success')
+    safeSetButton(component, 'type', 'success')
     attributeEqual(component, 'type', 'success')
-    safeSet(component, 'type', 'warning')
+    safeSetButton(component, 'type', 'warning')
     attributeEqual(component, 'type', 'warning')
-    safeSet(component, 'type', 'danger')
+    safeSetButton(component, 'type', 'danger')
     attributeEqual(component, 'type', 'danger')
-    safeSet(component, 'type', 'info')
+    safeSetButton(component, 'type', 'info')
     attributeEqual(component, 'type', 'info')
-    safeSet(component, 'type', 'primary')
+    safeSetButton(component, 'type', 'primary')
     attributeEqual(component, 'type', 'primary')
   })
   // Tests to see if it handles changing the plain value
   test('changing plain works', function () {
     const component = document.createElement('button-component')
-    safeSet(component, 'size', 'medium')
-    safeSet(component, 'type', 'primary')
+    safeSetButton(component, 'size', 'medium')
+    safeSetButton(component, 'type', 'primary')
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'plain', false)
@@ -132,8 +132,8 @@ suite('button-component', function () {
   // Tests to see if it handles changing the round value
   test('changing round works', function () {
     const component = document.createElement('button-component')
-    safeSet(component, 'size', 'medium')
-    safeSet(component, 'type', 'primary')
+    safeSetButton(component, 'size', 'medium')
+    safeSetButton(component, 'type', 'primary')
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'round', false)
@@ -145,8 +145,8 @@ suite('button-component', function () {
   // Tests to see if it handles changing the circle value
   test('changing circle works', function () {
     const component = document.createElement('button-component')
-    safeSet(component, 'size', 'medium')
-    safeSet(component, 'type', 'primary')
+    safeSetButton(component, 'size', 'medium')
+    safeSetButton(component, 'type', 'primary')
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'circle', false)
@@ -158,8 +158,8 @@ suite('button-component', function () {
   // Tests to see if it handles changing the disabled value
   test('changing circle works', function () {
     const component = document.createElement('button-component')
-    safeSet(component, 'size', 'medium')
-    safeSet(component, 'type', 'primary')
+    safeSetButton(component, 'size', 'medium')
+    safeSetButton(component, 'type', 'primary')
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'disabled', false)
@@ -171,9 +171,9 @@ suite('button-component', function () {
   // Tests to see if button's theme is bootsrap
   test('testing bootsrap works', function () {
     const component = document.createElement('button-component')
-    safeSet(component, 'size', 'medium')
-    safeSet(component, 'type', 'primary')
-    safeSet(component, 'theme', 'bootstrap')
+    safeSetButton(component, 'size', 'medium')
+    safeSetButton(component, 'type', 'primary')
+    safeSetButton(component, 'theme', 'bootstrap')
     document.body.append(component)
     assert.isDefined(component)
     attributeEqual(component, 'theme', 'bootstrap')
