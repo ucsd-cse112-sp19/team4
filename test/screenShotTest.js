@@ -5,7 +5,7 @@ beforeEach(async () => {
 
 describe('Integration test with visual testing', function() {
   it('Loads the example.com site', async function() {
-    //await browser.url('/')
+    await browser.url('/')
     await browser.pause()
     await percySnapshot(browser, this.test.fullTitle())
   })
