@@ -9,10 +9,7 @@ describe('Integration test with visual testing', function() {
     await percySnapshot(browser, this.test.fullTitle())
   })
 })
-if(document.readyState === 'complete') {
-  // good to go!
-  percySnapshot(browser, this.test.fullTitle())
-}
+
 // describe('Example', () => {
 //   it('should save some screenshots', () => {
 //     // Save a screen
