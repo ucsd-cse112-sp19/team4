@@ -38,7 +38,7 @@ suite('slider-component', function () {
     const component = document.createElement('slider-component')
     document.body.append(component)
     assert.isDefined(component)
-    attributeEqualSlider(component, 'value', '0')
+    attributeEqualSlider(component, 'value', '50')
     safeSetSlider(component, 'value', '82')
     attributeEqualSlider(component, 'value', '82')
   })
