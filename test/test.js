@@ -1,6 +1,6 @@
 const { Eyes, Target } = require('@applitools/eyes.webdriverio')
 const eyes = new Eyes()
-eyes.setApiKey('ZF8uqAvnWAOYd78QJti6Ntbw7DKSZv7afCgusna7mLs110')
+eyes.setApiKey(process.env.APPLITOOLS_KEY)
 
 /* global beforeEach describe it $ */
 beforeEach(async () => {
