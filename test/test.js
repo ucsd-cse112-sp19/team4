@@ -1,12 +1,15 @@
+const { Eyes, Target } = require('@applitools/eyes.webdriverio')
+const eyes = new Eyes()
+eyes.setApiKey('ZF8uqAvnWAOYd78QJti6Ntbw7DKSZv7afCgusna7mLs110')
+
 /* global beforeEach describe it $ */
 beforeEach(async () => {
   await browser.url('/')
 })
 
 describe('Testing functionallity for buttons ', () => {
-  it.only('Testing the top row checking if the button\'s interact correctly', () => {
-    browser.pause(200)
-
+  it.only('Testing the top row checking if the button\'s interact correctly', async () => {
+    browser.pause(300)
     // the $(selector) looks in the document to find the unique id
     const res1 = $('#uno')
     const res2 = $('#dos')
@@ -15,26 +18,46 @@ describe('Testing functionallity for buttons ', () => {
     const res5 = $('#cin')
     const res6 = $('#ses')
     const res7 = $('#clicker')
+    const viewportSize = browser.getViewportSize()
+    // browser.pause(200)
+    // browser.takeSnapshot('button page')
+
+    try {
+      await eyes.open(browser, 'hello button page', 'testing the button page', viewportSize)
+      await eyes.check('Button Page', Target.window())
+      browser.pause(200)
+      res7.click()
+      browser.pause(200)
+      await eyes.check('click', Target.window())
+      await eyes.close()
+    } finally {
+      // If the test was aborted before eyes.close was called ends the test as aborted.
+      await eyes.abortIfNotClosed()
+    }
+
+
+
 
     // browser.pause(200)
     // browser.moveToObject(res1,1,1)
     // res1.moveTo(1,1)
     // browser.pause(200)
 
-    res1.click()
-    browser.pause(200)
-    res2.click()
-    browser.pause(200)
-    res3.click()
-    browser.pause(200)
-    res4.click()
-    browser.pause(200)
-    res5.click()
-    browser.pause(200)
-    res6.click()
-    browser.pause(300)
-    res7.click()
-    browser.pause(300)
+    // res1.click()
+    // browser.pause(200)
+    // res2.click()
+    // browser.pause(200)
+    // res3.click()
+    // browser.pause(200)
+    // res4.click()
+    // browser.pause(200)
+    // res5.click()
+    // browser.pause(200)
+    // res6.click()
+    // browser.pause(300)
+    // res7.click()
+    // browser.pause(300)
+
 
     // res1.moveTo()
     // browser.pause(125)
