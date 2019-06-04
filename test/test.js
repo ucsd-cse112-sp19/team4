@@ -34,8 +34,9 @@ describe('Testing functionallity for buttons ', () => {
       await eyes.check('click', Target.window())
       console.log('closing eyes')
       await eyes.close()
-    } finally {
-      console.log('inside finally')
+    } catch(error) {
+      console.error(error)
+      console.log('inside catch')
 
       // If the test was aborted before eyes.close was called ends the test as aborted.
       await eyes.abortIfNotClosed()
