@@ -114,7 +114,7 @@ optionTemplate.innerHTML = `
       cursor: not-allowed;
       border-color: #ebeef5;
     }
-    
+
     radio-option[disabled] input[type="radio"],
       radio-option[disabled] span {
       pointer-events: none;
@@ -176,46 +176,86 @@ class RadioOption extends HTMLElement {
   disconnectedCallback () {
   }
 
+  /**
+   * Getter for value attribute.
+   */
   get value () {
     return this.getAttribute('value')
   }
 
+  /**
+   * Setter for valye attribute.
+   * @param {string} newVal - The new value
+   */
   set value (newVal) {
     this.setAttribute('value', newVal)
   }
 
+  /**
+   * Getter for label attribute.
+   */
   get label () {
     return this.getAttribute('label')
   }
 
+  /**
+   * Setter for label attribute.
+   * @param {string} newVal - The new value for label attr
+   */
   set label (newVal) {
     this.setAttribute('label', newVal)
   }
 
+  /**
+   * Getter for disabled attribute.
+   */
   get disabled () {
     return this.getAttribute('disabled')
   }
 
+  /**
+   * Setter for disabled attribute.
+   * @param {string} newVal - The new value for disabled attr
+   */
   set disabled (newVal) {
-    this.setAttribute('disabled', newVal)
+    this.setAttribute('disabled', '')
   }
 
+  /**
+   * Getter for border attribute.
+   */
   get border () {
     return this.getAttribute('border')
   }
 
+  /**
+   * Setter for border attribute.
+   * @param {string} newVal - The new value for border attr
+   */
   set border (newVal) {
     this.setAttribute('border', '')
   }
 
+  /**
+   * Getter for size attribute.
+   */
   get size () {
     return this.getAttribute('size')
   }
 
+  /**
+   * Setter for size attribute.
+   * @param {string} newVal - The new value for size attr
+   */
   set size (newVal) {
     this.setAttribute('size', newVal)
   }
 
+  /**
+   * Custom method for handling the border style for selected
+   * radio option
+   * @param {*} option - the radio option
+   */
   handleRadioOption (option) {
     option.setAttribute('value', this.getAttribute('value'))
     option.setAttribute('name', this.getRootNode().host.getAttribute('name'))
@@ -242,6 +282,11 @@ class RadioOption extends HTMLElement {
   attributeChangedCallback (attrName, oldVal, newVal) {
   }
 
+  /**
+   * Handle onClick event for radio button group
+   * Make current radio option active and deselect other
+   * @param {*} event the onclick event
+   */
   _onClick (event) {
     if (this.hasAttribute('button') && !this.hasAttribute('disabled')) {
       this.style.backgroundColor = '#007bff'
@@ -261,5 +306,8 @@ class RadioOption extends HTMLElement {
   }
 }
 
+/**
+ * defining the component
+ */
 window.customElements.define('radio-component', RadioComponent)
 window.customElements.define('radio-option', RadioOption)
