@@ -23,26 +23,10 @@ describe('Testing functionallity for buttons ', () => {
     browser.pause(250)
     browser.takeSnapshot('button page')
     // browser.pause(200)
-
-    try {
-      // await eyes.open(browser, 'hello button page', 'testing the button page', { 'width': 1440, 'height': 900 })
-      // await eyes.check('Button Page', Target.window())
-      browser.pause(200)
-      res7.click()
-      console.log('clicked on button')
-      browser.pause(200)
-      browser.takeSnapshot('clicked button')
-      // await eyes.check('click', Target.window())
-      // console.log('closing eyes')
-      // await eyes.close()
-    } catch(error) {
-      console.error(error)
-      console.log('inside catch')
-
-      // If the test was aborted before eyes.close was called ends the test as aborted.
-      // await eyes.abortIfNotClosed()
-    }
-    console.log('outside finally block')
+    browser.pause(250)
+    res7.click()
+    browser.pause(400)
+    browser.takeSnapshot('clicked button')
 
     // browser.pause(200)
     // browser.moveToObject(res1,1,1)
