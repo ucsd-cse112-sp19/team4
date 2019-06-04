@@ -40,6 +40,8 @@ describe('Testing functionallity for buttons ', () => {
       // If the test was aborted before eyes.close was called ends the test as aborted.
       await eyes.abortIfNotClosed()
     }
+    console.log('outside finally block')
+
     // browser.pause(200)
     // browser.moveToObject(res1,1,1)
     // res1.moveTo(1,1)
