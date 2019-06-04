@@ -102,5 +102,6 @@ suite('cascader-component', function () {
     // test before opening menu
     assert.equal(component.getAttribute('type'), 'default')
     assert.equal(component.getAttribute('menudisplay'), 'none')
+    assert.isDefined(component.getAttribute('options'))
   })
 })
