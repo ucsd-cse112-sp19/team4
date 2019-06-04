@@ -98,6 +98,7 @@ suite('cascader-component', function () {
     document.body.append(component)
     assert.isDefined(component)
     // test before opening menu
+    assert.equal(component.getAttribute('type'), 'default')
     assert.equal(component.getAttribute('menudisplay'), 'none')
   })
 })
