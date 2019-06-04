@@ -23,7 +23,6 @@ describe('Testing functionallity for buttons ', () => {
     browser.pause(250)
     browser.takeSnapshot('button page')
     // browser.pause(200)
-    // browser.takeSnapshot('button page')
 
     try {
       // await eyes.open(browser, 'hello button page', 'testing the button page', { 'width': 1440, 'height': 900 })
