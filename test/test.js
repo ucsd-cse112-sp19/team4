@@ -18,18 +18,25 @@ describe('Testing functionallity for buttons ', () => {
     const res5 = $('#cin')
     const res6 = $('#ses')
     const res7 = $('#clicker')
+    console.log('got all selectors')
+    browser.pause(250)
     // browser.pause(200)
     // browser.takeSnapshot('button page')
 
     try {
+      console.log('inside try block')
       await eyes.open(browser, 'hello button page', 'testing the button page', { 'width': 1440, 'height': 900 })
       await eyes.check('Button Page', Target.window())
       browser.pause(200)
       res7.click()
+      console.log('clicked on button')
       browser.pause(200)
       await eyes.check('click', Target.window())
+      console.log('closing eyes')
       await eyes.close()
     } finally {
+      console.log('inside finally')
+
       // If the test was aborted before eyes.close was called ends the test as aborted.
       await eyes.abortIfNotClosed()
     }
