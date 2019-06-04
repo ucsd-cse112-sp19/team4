@@ -1,7 +1,7 @@
-const { Eyes, Target } = require('@applitools/eyes.webdriverio')
-const eyes = new Eyes()
-eyes.setApiKey(process.env.APPLITOOLS_API_KEY)
-console.log(eyes)
+// const { Eyes, Target } = require('@applitools/eyes.webdriverio')
+// const eyes = new Eyes()
+// eyes.setApiKey(process.env.APPLITOOLS_API_KEY)
+// console.log(eyes)
 
 /* global beforeEach describe it $ */
 beforeEach(async () => {
@@ -21,26 +21,28 @@ describe('Testing functionallity for buttons ', () => {
     const res7 = $('#clicker')
     console.log('got all selectors')
     browser.pause(250)
+    browser.takeSnapshot('button page')
     // browser.pause(200)
     // browser.takeSnapshot('button page')
 
     try {
-      console.log('inside try block')
-      await eyes.open(browser, 'hello button page', 'testing the button page', { 'width': 1440, 'height': 900 })
-      await eyes.check('Button Page', Target.window())
+      // console.log('inside try block')
+      // await eyes.open(browser, 'hello button page', 'testing the button page', { 'width': 1440, 'height': 900 })
+      // await eyes.check('Button Page', Target.window())
       browser.pause(200)
       res7.click()
       console.log('clicked on button')
       browser.pause(200)
-      await eyes.check('click', Target.window())
-      console.log('closing eyes')
-      await eyes.close()
+      browser.takeSnapshot('clicked button')
+      // await eyes.check('click', Target.window())
+      // console.log('closing eyes')
+      // await eyes.close()
     } catch(error) {
       console.error(error)
       console.log('inside catch')
 
       // If the test was aborted before eyes.close was called ends the test as aborted.
-      await eyes.abortIfNotClosed()
+      // await eyes.abortIfNotClosed()
     }
     console.log('outside finally block')
 
