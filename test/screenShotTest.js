@@ -6,11 +6,13 @@ beforeEach(async () => {
 describe('Integration test with visual testing', function() {
   it('Loads the example.com site', async function() {
     await browser.url('/')
-    window.onload = function () { alert("It's loaded!") }
     await percySnapshot(browser, this.test.fullTitle())
   })
 })
-
+if(document.readyState === 'complete') {
+  // good to go!
+  percySnapshot(browser, this.test.fullTitle())
+}
 // describe('Example', () => {
 //   it('should save some screenshots', () => {
 //     // Save a screen
