@@ -95,15 +95,22 @@ suite('cascader-component', function () {
         label: 'Green'
       }]
     }]
-    component.setAttribute('type', 'default')
     component.setAttribute('menudisplay', 'none')
     document.body.append(component)
     assert.isDefined(component)
     // test before opening menu
-    assert.equal(component.getAttribute('type'), 'default')
     assert.equal(component.getAttribute('menudisplay'), 'none')
     // test open menu now
     component.setAttribute('menudisplay', 'inline-block')
     assert.equal(component.getAttribute('menudisplay'), 'inline-block')
+  })
+  // Tests changing cascader type attribute
+  test('changing type attribute works', function () {
+    const component = document.createElement('cascader-component')
+    document.body.append(component)
+    assert.isDefined(component)
+    assert.equal(component.getAttribute('type'), 'default')
+    component.setAttribute('type', 'none')
+    assert.equal(component.getAttribute('type'), 'none')
   })
 })
