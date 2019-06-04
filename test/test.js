@@ -9,15 +9,15 @@ beforeEach(async () => {
 })
 
 describe('Testing functionallity for buttons ', () => {
-  it.only('Testing the top row checking if the button\'s interact correctly', async () => {
+  it.only('Testing the top row checking if the button\'s interact correctly', () => {
     browser.pause(300)
     // the $(selector) looks in the document to find the unique id
-    const res1 = $('#uno')
-    const res2 = $('#dos')
-    const res3 = $('#tre')
-    const res4 = $('#qua')
-    const res5 = $('#cin')
-    const res6 = $('#ses')
+    // const res1 = $('#uno')
+    // const res2 = $('#dos')
+    // const res3 = $('#tre')
+    // const res4 = $('#qua')
+    // const res5 = $('#cin')
+    // const res6 = $('#ses')
     const res7 = $('#clicker')
     console.log('got all selectors')
     browser.pause(250)
@@ -95,17 +95,17 @@ describe('Testing functionallity for buttons ', () => {
   it('Testing the middle row checking if the button\'s interact correctly', () => {
     browser.pause(500)
 
-    const res1 = $('#sluno')
-    const res2 = $('#sldos')
-    // const res3 = $('#tre1')
-    // const res4 = $('#qua1')
-    // const res5 = $('#cin1')
-    // const res6 = $('#ses1')
+    // const res1 = $('#sluno')
+    // const res2 = $('#sldos')
+    // // const res3 = $('#tre1')
+    // // const res4 = $('#qua1')
+    // // const res5 = $('#cin1')
+    // // const res6 = $('#ses1')
 
-    res1.click()
-    browser.pause(200)
-    res2.click()
-    browser.pause(200)
+    // res1.click()
+    // browser.pause(200)
+    // res2.click()
+    // browser.pause(200)
 
     // res1.dragAndDrop(res1, 200)
     // browser.pause(125)
