@@ -5,6 +5,9 @@ node_js:
 cache:
   directories:
     - "node_modules"
+
+script:
+  - export APPLITOOLS_BATCH_ID=`echo ${TRAVIS_PULL_REQUEST_SHA:=$TRAVIS_COMMIT}`
     
 notifications:
   slack: cse112-sp19-team4:Ni7i8GfaOAv6L7mitfqEkRcn
