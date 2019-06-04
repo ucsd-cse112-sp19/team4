@@ -102,6 +102,8 @@ suite('cascader-component', function () {
     // test before opening menu
     assert.equal(component.getAttribute('type'), 'default')
     assert.equal(component.getAttribute('menudisplay'), 'none')
-    assert.isDefined(component.getAttribute('options'))
+    // test open menu now
+    component.setAttribute('menudisplay', 'inline-block')
+    assert.equal(component.getAttribute('menudisplay', 'inline-block'))
   })
 })
