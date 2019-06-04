@@ -88,39 +88,40 @@ exports.config = {
     // it is possible to configure which logTypes to include/exclude.
     // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
     // excludeDriverLogs: ['bugreport', 'server'],
-  }, {
-    maxInstances: 1,
-    browserName: 'firefox',
-    version: '66.0',
-    platform: 'Windows 10',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    name: 'integration',
-    build: process.env.TRAVIS_BUILD_NUMBER
-  }, {
-    maxInstances: 1,
-    browserName: 'safari',
-    version: '12.0',
-    platform: 'macOS 10.13',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    name: 'integration',
-    build: process.env.TRAVIS_BUILD_NUMBER
-  }, {
-    maxInstances: 1,
-    browserName: 'MicrosoftEdge',
-    version: '16.16299',
-    platform: 'Windows 10',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    name: 'integration',
-    build: process.env.TRAVIS_BUILD_NUMBER
-  }, {
-    maxInstances: 1,
-    browserName: 'internet explorer',
-    version: '11.0',
-    platform: 'Windows 8.1',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    name: 'integration',
-    build: process.env.TRAVIS_BUILD_NUMBER
-  }
+  }, 
+  // {
+  //   maxInstances: 1,
+  //   browserName: 'firefox',
+  //   version: '66.0',
+  //   platform: 'Windows 10',
+  //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+  //   name: 'integration',
+  //   build: process.env.TRAVIS_BUILD_NUMBER
+  // }, {
+  //   maxInstances: 1,
+  //   browserName: 'safari',
+  //   version: '12.0',
+  //   platform: 'macOS 10.13',
+  //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+  //   name: 'integration',
+  //   build: process.env.TRAVIS_BUILD_NUMBER
+  // }, {
+  //   maxInstances: 1,
+  //   browserName: 'MicrosoftEdge',
+  //   version: '16.16299',
+  //   platform: 'Windows 10',
+  //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+  //   name: 'integration',
+  //   build: process.env.TRAVIS_BUILD_NUMBER
+  // }, {
+  //   maxInstances: 1,
+  //   browserName: 'internet explorer',
+  //   version: '11.0',
+  //   platform: 'Windows 8.1',
+  //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+  //   name: 'integration',
+  //   build: process.env.TRAVIS_BUILD_NUMBER
+  // }
   // }, {
   //   maxInstances: 1,
   //   browserName: 'internet explorer',
@@ -194,8 +195,10 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ['sauce'],
+  services: ['sauce', 'applitools'],
   sauceConnect: false,
+  applitoolsKey: 'ZF8uqAvnWAOYd78QJti6Ntbw7DKSZv7afCgusna7mLs110', // can be passed here or via environment
+  // applitoolsServerUrl: 'APPLITOOLS_Server_URL', // optional
   //
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
