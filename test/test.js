@@ -1,6 +1,6 @@
 const { Eyes, Target } = require('@applitools/eyes.webdriverio')
 const eyes = new Eyes()
-eyes.setApiKey(process.env.APPLITOOLS_KEY)
+eyes.setApiKey(process.env.APPLITOOLS_API_KEY)
 
 /* global beforeEach describe it $ */
 beforeEach(async () => {
@@ -33,10 +33,6 @@ describe('Testing functionallity for buttons ', () => {
       // If the test was aborted before eyes.close was called ends the test as aborted.
       await eyes.abortIfNotClosed()
     }
-
-
-
-
     // browser.pause(200)
     // browser.moveToObject(res1,1,1)
     // res1.moveTo(1,1)
