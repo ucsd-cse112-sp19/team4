@@ -95,6 +95,8 @@ suite('cascader-component', function () {
         label: 'Green'
       }]
     }]
+    component.setAttribute('type', 'default')
+    component.setAttribute('menudisplay', 'none')
     document.body.append(component)
     assert.isDefined(component)
     // test before opening menu
