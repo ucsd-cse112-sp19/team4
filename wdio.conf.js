@@ -195,9 +195,9 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ['sauce', 'applitools'],
+  services: ['sauce'],
   sauceConnect: false,
-  applitoolsKey: 'APPLITOOLS_API_KEY', // can be passed here or via environment
+  // applitoolsKey: 'APPLITOOLS_API_KEY', // can be passed here or via environment
   // applitoolsServerUrl: 'APPLITOOLS_Server_URL', // optional
   //
   // Framework you want to run your specs with.
