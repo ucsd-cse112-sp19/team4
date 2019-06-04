@@ -26,7 +26,6 @@ describe('Testing functionallity for buttons ', () => {
     // browser.takeSnapshot('button page')
 
     try {
-      // console.log('inside try block')
       // await eyes.open(browser, 'hello button page', 'testing the button page', { 'width': 1440, 'height': 900 })
       // await eyes.check('Button Page', Target.window())
       browser.pause(200)
