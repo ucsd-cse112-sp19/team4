@@ -18,12 +18,11 @@ describe('Testing functionallity for buttons ', () => {
     const res5 = $('#cin')
     const res6 = $('#ses')
     const res7 = $('#clicker')
-    const viewportSize = browser.getViewportSize()
     // browser.pause(200)
     // browser.takeSnapshot('button page')
 
     try {
-      await eyes.open(browser, 'hello button page', 'testing the button page', viewportSize)
+      await eyes.open(browser, 'hello button page', 'testing the button page', { 'width': 1440, 'height': 900 })
       await eyes.check('Button Page', Target.window())
       browser.pause(200)
       res7.click()

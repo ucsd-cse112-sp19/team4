@@ -197,7 +197,7 @@ exports.config = {
   // commands. Instead, they hook themselves up into the test process.
   services: ['sauce', 'applitools'],
   sauceConnect: false,
-  applitoolsKey: 'ZF8uqAvnWAOYd78QJti6Ntbw7DKSZv7afCgusna7mLs110', // can be passed here or via environment
+  applitoolsKey: 'APPLITOOLS_KEY', // can be passed here or via environment
   // applitoolsServerUrl: 'APPLITOOLS_Server_URL', // optional
   //
   // Framework you want to run your specs with.

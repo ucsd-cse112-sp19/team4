@@ -19,7 +19,7 @@ async function main () {
   // Initialize the eyes SDK and set your private API key.
   const { Eyes, Target } = require('@applitools/eyes.webdriverio')
   let eyes = new Eyes()
-  eyes.setApiKey('ZF8uqAvnWAOYd78QJti6Ntbw7DKSZv7afCgusna7mLs110')
+  eyes.setApiKey(process.env.APPLITOOLS_KEY)
 
   try {
     // Start the test and set the browser's viewport size to 800x600.
