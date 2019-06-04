@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "@percy/agent": "^0.5.2",
     "@percy/storybook": "^3.0.2",
     "@percy/webdriverio": "^1.0.2",
     "@storybook/html": "^5.0.11",
