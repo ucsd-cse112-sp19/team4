@@ -281,7 +281,7 @@ class CascaderComponent extends HTMLElement {
    * Method returns a list of attributes supported by this component.<br>
    */
   static get observedAttributes () {
-    return ['options', 'type']
+    return ['options', 'type', 'MenuDisplay']
   }
 
   /**

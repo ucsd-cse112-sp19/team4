@@ -95,17 +95,21 @@ suite('cascader-component', function () {
         label: 'Green'
       }]
     }]
+    component.setAttribute('menudisplay', 'none')
     document.body.append(component)
     assert.isDefined(component)
-    assert.equal(component.shownMenu.style.display, 'none')
-    component.toggleFocus()
-    component.toggleMenu()
-    assert.equal(component.shownMenu.style.display, 'inline-block')
-    component.toggleFocus()
-    component.toggleMenu()
-    // const uls = component.querySelectorAll('ul')
-    // for (let i = 0; i < uls.length; i++) {
-    //   assert.equal(uls[i].style.display, 'none')
-    // }
+    // test before opening menu
+    assert.equal(component.getAttribute('menudisplay'), 'none')
+    // test open menu now
+    component.setAttribute('menudisplay', 'inline-block')
+    assert.equal(component.getAttribute('menudisplay'), 'inline-block')
+  })
+  // Tests changing cascader type attribute
+  test('changing type attribute works', function () {
+    const component = document.createElement('cascader-component')
+    document.body.append(component)
+    assert.isDefined(component)
+    component.setAttribute('type', 'default')
+    assert.equal(component.getAttribute('type'), 'default')
   })
 })
