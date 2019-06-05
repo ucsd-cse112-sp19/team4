@@ -88,15 +88,16 @@ exports.config = {
     // it is possible to configure which logTypes to include/exclude.
     // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
     // excludeDriverLogs: ['bugreport', 'server'],
-  }, {
-    maxInstances: 1,
-    browserName: 'firefox',
-    version: '66.0',
-    platform: 'Windows 10',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    name: 'integration',
-    build: process.env.TRAVIS_BUILD_NUMBER
   }
+  // {
+  //   maxInstances: 1,
+  //   browserName: 'firefox',
+  //   version: '66.0',
+  //   platform: 'Windows 10',
+  //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+  //   name: 'integration',
+  //   build: process.env.TRAVIS_BUILD_NUMBER
+  // }
   // {
   //   maxInstances: 1,
   //   browserName: 'safari',
