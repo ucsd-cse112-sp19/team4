@@ -9,12 +9,8 @@ describe('Testing functionallity for sliders ', () => {
 
     const res1 = $('#sluno')
     const res2 = $('#sldos')
-
-    // res1.click()
     browser.pause(200)
-    // res2.click()
+    browser.takeSnapshot('slider page')
     browser.pause(200)
-
-    // the $(selector) looks in the document to find the unique id
   })
 })
