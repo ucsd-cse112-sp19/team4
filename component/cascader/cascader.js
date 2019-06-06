@@ -19,8 +19,7 @@ template.innerHTML = `
 
     }
     :host{
-      height: 200px;
-      padding: 30px 0;
+      height: 280px;
       display: block;
     }
     /* CSS classes for type attribute */
@@ -227,7 +226,7 @@ template.innerHTML = `
       background-color: #f5f7fa;
     }
   </style>
-  <div style="position: relative">
+  <div style="position: relative;">
     <span class="el-cascader">
       <div class="el-input">
         <input type="text" placeholder="Please select" class="el-input_inner">
