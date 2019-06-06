@@ -10,7 +10,7 @@ describe('Testing functionallity for sliders ', () => {
     // const res1 = $('#sluno')
     // const res2 = $('#sldos')
     browser.pause(200)
-    browser.takeSnapshot('slider page')
+    // browser.takeSnapshot('slider page')
     browser.pause(200)
   })
 })
