@@ -8,7 +8,7 @@ describe('Testing functionallity for cascader ', () => {
     browser.pause(200)
 
     const res1 = $('#uno')
-    // const res2 = $('#dos')
+    const res2 = $('#dos')
     browser.pause(200)
     res1.click()
     // browser.takeSnapshot('cascader page')
