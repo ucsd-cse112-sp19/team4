@@ -9,7 +9,7 @@ beforeEach(async () => {
 })
 
 describe('Testing functionallity for buttons ', () => {
-  it.only('Testing the top row checking if the button\'s interact correctly', () => {
+  it('Testing the top row checking if the button\'s interact correctly', () => {
     browser.pause(300)
     // the $(selector) looks in the document to find the unique id
     // const res1 = $('#uno')
@@ -18,15 +18,9 @@ describe('Testing functionallity for buttons ', () => {
     // const res4 = $('#qua')
     // const res5 = $('#cin')
     // const res6 = $('#ses')
-    const res7 = $('#clicker')
-    console.log('got all selectors')
-    browser.pause(250)
     browser.takeSnapshot('button page')
     // browser.pause(200)
-    browser.pause(250)
-    res7.click()
-    browser.pause(1000)
-    browser.takeSnapshot('clicked button page')
+    
 
     // browser.pause(200)
     // browser.moveToObject(res1,1,1)
@@ -93,14 +87,18 @@ describe('Testing functionallity for buttons ', () => {
   })
 
   it('Testing the middle row checking if the button\'s interact correctly', () => {
-    browser.pause(500)
-
     // const res1 = $('#sluno')
     // const res2 = $('#sldos')
     // // const res3 = $('#tre1')
     // // const res4 = $('#qua1')
     // // const res5 = $('#cin1')
     // // const res6 = $('#ses1')
+    const res7 = $('#clicker')
+    browser.pause(250)
+    res7.click()
+    browser.pause(1000)
+    browser.takeSnapshot('clicked button page')
+
 
     // res1.click()
     // browser.pause(200)
