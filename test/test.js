@@ -1,6 +1,6 @@
 /* global beforeEach describe it $ */
 beforeEach(async () => {
-  await browser.url('/button/')
+  await browser.url('/')
 })
 
 describe('Testing functionallity for buttons ', () => {
