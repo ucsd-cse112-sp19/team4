@@ -13,13 +13,4 @@ describe('Testing functionallity for buttons ', () => {
     browser.pause(300)
     browser.takeSnapshot('button page')
   })
-
-  it('Testing the middle row checking if the button\'s interact correctly', () => {
-    
-    const res7 = $('#clicker')
-    browser.pause(250)
-    res7.click()
-    browser.pause(1000)
-    
-  })
 })
