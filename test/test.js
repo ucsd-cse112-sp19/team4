@@ -21,7 +21,7 @@ describe('Testing functionallity for buttons ', () => {
     const res7 = $('#clicker')
     console.log('got all selectors')
     browser.pause(250)
-    // browser.takeSnapshot('button page')
+    browser.takeSnapshot('button page')
     // browser.pause(200)
     browser.pause(250)
     res7.click()
