@@ -97,7 +97,7 @@ describe('Testing functionallity for buttons ', () => {
     browser.pause(250)
     res7.click()
     browser.pause(1000)
-    browser.takeSnapshot('clicked button page')
+    //browser.takeSnapshot('clicked button page')
 
 
     // res1.click()
