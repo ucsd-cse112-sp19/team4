@@ -156,7 +156,7 @@ suite('button-component', function () {
     attributeEqulButton(component, 'circle', false)
   })
   // Tests to see if it handles changing the disabled value
-  test('changing circle works', function () {
+  test('changing disabled works', function () {
     const component = document.createElement('button-component')
     safeSetButton(component, 'size', 'medium')
     safeSetButton(component, 'type', 'primary')
