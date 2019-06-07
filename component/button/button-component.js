@@ -447,7 +447,7 @@ template.innerHTML = `
     }
 
     :host([icon='icon-edit']){
-      content: url('../images/edit.png');
+	  content: url('../images/edit.png');
     }
 
     :host([icon='icon-search']){
