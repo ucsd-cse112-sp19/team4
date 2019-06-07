@@ -113,8 +113,8 @@ class SliderComponent extends HTMLElement {
         this.applyFill(this.slider)
         this.setAttribute('value', this.slider.value)
       })
+      this.applyFill(this.slider)
     }
-    this.applyFill(this.slider)
   }
 
   /**
@@ -151,8 +151,10 @@ class SliderComponent extends HTMLElement {
   attributeChangedCallback (attrName, oldVal, newVal) {
     if (!isNaN(newVal) && newVal >= 0 && newVal <= 100) {
       var slider = this.shadowRoot.querySelector('input')
-      slider.value = newVal
-      this.applyFill(slider)
+      if (slider != null) {
+        slider.value = newVal
+        this.applyFill(slider)
+      }
     }
   }
 
