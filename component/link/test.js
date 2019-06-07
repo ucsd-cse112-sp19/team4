@@ -39,7 +39,7 @@ suite('link-component', function () {
     document.body.append(component)
     assert.isDefined(component)
     attributeEqulLink(component, 'type', 'primary')
-    attributeEqulLink(component, 'href', false)
+    attributeEqulLink(component, 'href', null)
     attributeEqulLink(component, 'disabled', false)
     attributeEqulLink(component, 'underline', true)
   })
@@ -99,7 +99,7 @@ suite('link-component', function () {
     attributeEqulLink(component, 'underline', true)
     component.underline = false
     attributeEqulLink(component, 'underline', false)
-    component.circle = true
+    component.underline = true
     attributeEqulLink(component, 'underline', true)
   })
   // Tests to see if it handles changing the disabled value

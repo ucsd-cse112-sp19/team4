@@ -270,25 +270,6 @@ class LinkComponent extends HTMLElement {
   }
 
   /**
-   * Getter for theme attribute.
-   */
-  get theme () {
-    return this.hasAttribute('theme')
-  }
-
-  /**
-   * Setter for theme attribute.
-   * @param {string} newVal - The new value for theme
-   */
-  set theme (newVal) {
-    if (newVal) {
-      this.setAttribute('theme', '')
-    } else {
-      this.removeAttribute('theme')
-    }
-  }
-
-  /**
    * Callback for when the supported attributes change its value.
    * Currently not using this since most of the logic can be handle in the css
    * @param {string} attrName - the name of the attribute.
