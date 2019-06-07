@@ -132,7 +132,9 @@ class SliderComponent extends HTMLElement {
     if (!this.hasAttribute('value')) {
       this.setAttribute('value', '50')
     }
-    this.slider.setAttribute('value', this.getAttribute('value'))
+    if (this.slider !== null) {
+      this.slider.setAttribute('value', this.getAttribute('value'))
+    }
   }
 
   /**
