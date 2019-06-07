@@ -129,7 +129,7 @@ template.innerHTML = `
 /* global HTMLElement */
 /**
  * This is a custom button component
- * Ported from https://element.eleme.io/#/en-US/component/button
+ * Ported from https://element.eleme.io/#/en-US/component/link
  */
 class LinkComponent extends HTMLElement {
   /**
@@ -159,6 +159,9 @@ class LinkComponent extends HTMLElement {
     }
     if (!this.hasAttribute('type')) {
       this.setAttribute('type', 'default')
+    }
+    if (!this.hasAttribute('underline')) {
+      this.setAttribute('underline', true)
     }
     console.log('Component connected!')
   }
