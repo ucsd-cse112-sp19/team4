@@ -13,13 +13,13 @@ template.innerHTML = `
   }
 
   :host([theme='bootstrap']) {
-	/* Common Theme */
-	--link-color-default: #6c757d;
-	--link-color-warning: #ffc107;
-	--link-color-success: #28a745;
-	--link-color-danger: #dc3545;
-	--link-color-primary: #007bff;
-	--link-color-info: #17a2b8;
+    /* Common Theme */
+    --link-color-default: #6c757d;
+    --link-color-warning: #ffc107;
+    --link-color-success: #28a745;
+    --link-color-danger: #dc3545;
+    --link-color-primary: #007bff;
+    --link-color-info: #17a2b8;
   }
 
 
@@ -85,36 +85,36 @@ template.innerHTML = `
 
   /* CSS classes for link with icon */
   :host([icon]){
-	-webkit-touch-callout: none; /* iOS Safari */
-	-webkit-user-select: none; /* Safari */
-	-khtml-user-select: none; /* Konqueror HTML */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* Internet Explorer/Edge */
-	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
   }
 
   :host([icon='icon-delete']) a:before{
-	content: url('../images/garbage.png');
+    content: url('../images/garbage.png');
   }
 
   :host([icon='icon-star-off']) a:before{
-	content: url('../images/star.png');
+    content: url('../images/star.png');
   }
 
   :host([icon='icon-message']) a:before{
-	content: url('../images/mail.png');
+    content: url('../images/mail.png');
   }
 
   :host([icon='icon-check']) a:before{
-	content: url('../images/tick.png');
+    content: url('../images/tick.png');
   }
 
   :host([icon='icon-edit']) a:before{
-	content: url('../images/edit.png');
+    content: url('../images/edit.png');
   }
 
   :host([icon='icon-search']) a:before{
-	content: url('../images/search.png');
+    content: url('../images/search.png');
   }
 
   a, a:visited, a:hover, a:active {
