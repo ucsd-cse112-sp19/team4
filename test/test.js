@@ -1,12 +1,13 @@
-/* global beforeEach describe it $ */
+/* global beforeEach describe it */
 beforeEach(async () => {
   await browser.url('/')
 })
 
-describe('Testing functionallity for buttons ', () => {
-  it('Testing the top row checking if the button\'s interact correctly', () => {
+// this will test the button component to ensure that it is visable in different browswers
+describe('Testing integration for buttons ', () => {
+  it('Checking if the buttons are displayed correctly on the browser', () => {
     browser.pause(300)
-    browser.takeSnapshot('button page')
+    // browser.takeSnapshot('button page')
     browser.pause(200)
   })
 })
