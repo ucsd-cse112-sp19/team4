@@ -37,7 +37,6 @@
     "npm": "^6.9.0"
   },
   "devDependencies": {
-    "@applitools/eyes.webdriverio": "^2.5.1",
     "@wdio/applitools-service": "^5.9.3",
     "@wdio/cli": "^5.9.1",
     "@wdio/dot-reporter": "^5.7.8",
