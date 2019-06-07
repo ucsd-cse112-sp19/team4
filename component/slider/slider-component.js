@@ -153,7 +153,7 @@ class SliderComponent extends HTMLElement {
   attributeChangedCallback (attrName, oldVal, newVal) {
     if (!isNaN(newVal) && newVal >= 0 && newVal <= 100) {
       var slider = this.shadowRoot.querySelector('input')
-      if (slider != null) {
+      if (slider !== null) {
         slider.value = newVal
         this.applyFill(slider)
       }
