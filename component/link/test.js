@@ -61,15 +61,6 @@ suite('link-component', function () {
     assert.isDefined(component)
     attributeEqulLink(component, 'disabled', false)
   })
-  // Tests to see if the default theme is false
-  test('default disabled is false', function () {
-    const component = document.createElement('link-component')
-    safeSetLink(component, 'type', 'primary')
-    safeSetLink(component, 'href', 'https://element.eleme.io/#/en-US/component/link')
-    document.body.append(component)
-    assert.isDefined(component)
-    attributeEqulLink(component, 'theme', false)
-  })
   // Tests to see if it handles changing the type value
   test('changing type works', function () {
     const component = document.createElement('link-component')
