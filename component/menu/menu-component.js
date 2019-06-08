@@ -11,6 +11,12 @@ menu.innerHTML = `
       margin: 0;
       padding: 0;
     }
+    :host([dark]){
+      background-color: white;
+    }
+    :host([dark]) menu-item{
+      color: black;
+    }
   </style>
   <div>
   </div>
@@ -28,7 +34,6 @@ class MenuComponent extends HTMLElement {
    */
   constructor () {
     super()
-    // this.attachShadow({ mode: 'open' }).appendChild(menu.content.cloneNode(true))
     var shadowRoot = this.attachShadow({ mode: 'open' })
     shadowRoot.innerHTML = this.innerHTML
     shadowRoot.appendChild(menu.content.cloneNode(true))
@@ -92,6 +97,13 @@ menuItem.innerHTML = `
     menu-item[right]{
       float: right;
     }
+    menu-item a{
+      color: white;
+    }
+    .active {
+      color: rgb(255, 208, 75);
+      border-bottom-color: rgb(255, 208, 75);
+    }
   </style>  
 `
 
@@ -108,13 +120,14 @@ class MenuItem extends HTMLElement {
   constructor () {
     super()
     this.appendChild(menuItem.content.cloneNode(true))
+    this.addEventListener('click', this._onClick)
   }
 
   /**
    * Method returns a list of attributes supported by this component.<br>
    */
   static get observedAttributes () {
-    return []
+    return ['left', 'right', 'default-active']
   }
 
   /**
@@ -137,7 +150,25 @@ class MenuItem extends HTMLElement {
    * @param {*} newVal - the new value of the attribute.
   */
   attributeChangedCallback (attrName, oldVal, newVal) {
+    if (attrName === 'default-active') {
+      this.classList.add('active')
+    }
+  }
 
+  /**
+   * Handle onClick event for menu item
+   * Make item active and deselect other
+   * @param {*} event the onclick event
+   */
+  _onClick (event) {
+    this.classList.add('active')
+    var sibling = this.parentNode.firstChild
+    while (sibling) {
+      if (sibling.nodeType === 1 && sibling !== this) {
+        sibling.classList.remove('active')
+      }
+      sibling = sibling.nextSibling
+    }
   }
 }
 
