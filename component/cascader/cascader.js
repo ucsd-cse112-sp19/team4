@@ -1,8 +1,5 @@
 var template = document.createElement('template')
 template.innerHTML = `
-  <head>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  </head>
   <style>
     :host{
 
@@ -136,17 +133,21 @@ template.innerHTML = `
       transition: all .3s;
       pointer-events: none;
       position: absolute;
+      margin-right: 10px;
     }
     .el-input_icon{
-      width: 25px;
+      width: 16px;
       line-height: 40px;
+      text-align: center;
+      margin: 1em 0;
     }
     .el-input_child_icon{
-      font-size: 14px;
-      color: #bfcbd9;
       position: absolute;
       right: 15px;
       top: 11px;
+      width: 16px;
+      line-height: 40px;
+      text-align: center;
     }
     .el-input_icon::after{
       content: "";
@@ -231,7 +232,7 @@ template.innerHTML = `
       <div class="el-input">
         <input type="text" placeholder="Please select" class="el-input_inner">
           <span class="el-input_suffix">
-            <i class="fas fa-angle-down el-input_icon"></i>
+            <img src="../images/angle-down-24.png" class="el-input_icon">
           </span>
       </div>
       <span class="el-cascader_label"></span>
@@ -408,7 +409,7 @@ class CascaderComponent extends HTMLElement {
           this.setUpInput()
         })
       } else {
-        newli.innerHTML = '<span>' + option[i].label + '</span> <i class="fas fa-angle-right el-input_child_icon"></i>'
+        newli.innerHTML = '<span>' + option[i].label + '</span> <img src="../images/angle-right-24.png" class="el-input_child_icon">'
         let newSubMenu = document.createElement('ul')
         newSubMenu.style.display = 'none'
         newSubMenu.classList.add('el-cascader-menu')

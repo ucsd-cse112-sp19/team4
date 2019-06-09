@@ -28,9 +28,6 @@
         <article>
             <pre class="prettyprint source linenums"><code>var template = document.createElement('template')
 template.innerHTML = `
-  &lt;head>
-    &lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  &lt;/head>
   &lt;style>
     :host{
 
@@ -164,17 +161,21 @@ template.innerHTML = `
       transition: all .3s;
       pointer-events: none;
       position: absolute;
+      margin-right: 10px;
     }
     .el-input_icon{
-      width: 25px;
+      width: 16px;
       line-height: 40px;
+      text-align: center;
+      margin: 1em 0;
     }
     .el-input_child_icon{
-      font-size: 14px;
-      color: #bfcbd9;
       position: absolute;
       right: 15px;
       top: 11px;
+      width: 16px;
+      line-height: 40px;
+      text-align: center;
     }
     .el-input_icon::after{
       content: "";
@@ -259,7 +260,7 @@ template.innerHTML = `
       &lt;div class="el-input">
         &lt;input type="text" placeholder="Please select" class="el-input_inner">
           &lt;span class="el-input_suffix">
-            &lt;i class="fas fa-angle-down el-input_icon">&lt;/i>
+            &lt;img src="../images/angle-down-24.png" class="el-input_icon">
           &lt;/span>
       &lt;/div>
       &lt;span class="el-cascader_label">&lt;/span>
@@ -436,7 +437,7 @@ class CascaderComponent extends HTMLElement {
           this.setUpInput()
         })
       } else {
-        newli.innerHTML = '&lt;span>' + option[i].label + '&lt;/span> &lt;i class="fas fa-angle-right el-input_child_icon">&lt;/i>'
+        newli.innerHTML = '&lt;span>' + option[i].label + '&lt;/span> &lt;img src="../images/angle-right-24.png" class="el-input_child_icon">'
         let newSubMenu = document.createElement('ul')
         newSubMenu.style.display = 'none'
         newSubMenu.classList.add('el-cascader-menu')
@@ -509,7 +510,7 @@ window.customElements.define('cascader-component', CascaderComponent)
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ButtonComponent.html">ButtonComponent</a></li><li><a href="CascaderComponent.html">CascaderComponent</a></li><li><a href="HelloWorldComponent.html">HelloWorldComponent</a></li><li><a href="SliderComponent.html">SliderComponent</a></li></ul><h3>Global</h3><ul><li><a href="global.html#attributeEqualHelloWorld">attributeEqualHelloWorld</a></li><li><a href="global.html#attributeEqualSlider">attributeEqualSlider</a></li><li><a href="global.html#attributeEqulButton">attributeEqulButton</a></li><li><a href="global.html#safeSetButton">safeSetButton</a></li><li><a href="global.html#safeSetHelloWorld">safeSetHelloWorld</a></li><li><a href="global.html#safeSetSlider">safeSetSlider</a></li><li><a href="global.html#settings">settings</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ButtonComponent.html">ButtonComponent</a></li><li><a href="CascaderComponent.html">CascaderComponent</a></li><li><a href="HelloWorldComponent.html">HelloWorldComponent</a></li><li><a href="LinkComponent.html">LinkComponent</a></li><li><a href="SliderComponent.html">SliderComponent</a></li></ul><h3>Global</h3><ul><li><a href="global.html#attributeEqualHelloWorld">attributeEqualHelloWorld</a></li><li><a href="global.html#attributeEqualSlider">attributeEqualSlider</a></li><li><a href="global.html#attributeEqulButton">attributeEqulButton</a></li><li><a href="global.html#attributeEqulLink">attributeEqulLink</a></li><li><a href="global.html#safeSetButton">safeSetButton</a></li><li><a href="global.html#safeSetHelloWorld">safeSetHelloWorld</a></li><li><a href="global.html#safeSetLink">safeSetLink</a></li><li><a href="global.html#safeSetSlider">safeSetSlider</a></li><li><a href="global.html#settings">settings</a></li></ul>
 </nav>
 
 <br class="clear">
