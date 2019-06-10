@@ -1,0 +1,11 @@
+{
+  "name": "iteam-icomponent",
+  "version": "1.0.0",
+  "description": "UCSD CSE 112 Team 4 project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "The iTeam",
+  "license": "ISC"
+}
