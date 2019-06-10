@@ -3,17 +3,18 @@
 suite('radio-component', function () {
   test('temp', function () {
     const component = document.createElement('radio-component')
-    component.value = 1
-    component.label = 'option 1'
-    component.size = 'medium'
-    component.name = 'firstRadio'
+    const optionA = document.createElement('radio-option')
+    const optionB = document.createElement('radio-option')
+
+    optionA.value = 'optionA'
+    optionA.label = 'optionA'
+    optionB.value = 'optionB'
+    optionB.label = 'optionB'
+    component.appendChild(optionA)
+    component.appendChild(optionB)
+    component.name = 'option1'
     document.body.append(component)
     assert.isDefined(component)
-    assert.equal(component.value, 1)
-    assert.equal(component.label, 'option 1')
-    assert.equal(component.size, 'medium')
-    assert.equal(component.name, 'firstRadio')
-    assert.equal(component.disabled, false)
-    assert.equal(component.border, false)
+    assert.equal(component.name, 'option1')
   })
 })
