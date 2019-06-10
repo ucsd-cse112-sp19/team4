@@ -4,7 +4,11 @@
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/BartholomewTam.svg)](https://saucelabs.com/u/BartholomewTam)
 
-### Button Componenet
+### How to Install
+  Simply run `npm install team-a-icomponent`, you should be able to find a folder called "team-a-icomponent" in the "node_module" folder under the same directory where you ran the command.
+
+### Button Component
+  To add our button component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/button/button-component.js"></script>` in your html file.
   Below is a demo of our button components and the codes generating them:
 
 ![Demo](/images/button.gif)
@@ -12,7 +16,8 @@
 ![code](/images/button_code_2.png)
 ![code](/images/button_code_3.png)
 
-### Slider Componenet
+### Slider Component  
+  To add our button component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/slider/slider-component.js"></script>` in your html file.
   Our slider component is ported from [Element.io](https://element.eleme.io/#/en-US/component/slider). Users can define the initial value, the min/max values, and the boostrap theme by simply changing the attribute values of the tag. Below is a quick demo:
 
 ![Demo](/images/slider_demo.gif)

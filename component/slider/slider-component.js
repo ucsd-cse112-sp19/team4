@@ -104,15 +104,17 @@ class SliderComponent extends HTMLElement {
     this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true))
     this.slider = this.shadowRoot.querySelector('input')
     // listener when sliding
-    this.slider.addEventListener('input', () => {
+    if (this.slider !== null) {
+      this.slider.addEventListener('input', () => {
+        this.applyFill(this.slider)
+      })
+      // listener when sliding event finished
+      this.slider.addEventListener('change', () => {
+        this.applyFill(this.slider)
+        this.setAttribute('value', this.slider.value)
+      })
       this.applyFill(this.slider)
-    })
-    // listener when sliding event finished
-    this.slider.addEventListener('change', () => {
-      this.applyFill(this.slider)
-      this.setAttribute('value', this.slider.value)
-    })
-    this.applyFill(this.slider)
+    }
   }
 
   /**
@@ -130,7 +132,9 @@ class SliderComponent extends HTMLElement {
     if (!this.hasAttribute('value')) {
       this.setAttribute('value', '50')
     }
-    this.slider.setAttribute('value', this.getAttribute('value'))
+    if (this.slider !== null) {
+      this.slider.setAttribute('value', this.getAttribute('value'))
+    }
   }
 
   /**
@@ -149,8 +153,10 @@ class SliderComponent extends HTMLElement {
   attributeChangedCallback (attrName, oldVal, newVal) {
     if (!isNaN(newVal) && newVal >= 0 && newVal <= 100) {
       var slider = this.shadowRoot.querySelector('input')
-      slider.value = newVal
-      this.applyFill(slider)
+      if (slider !== null) {
+        slider.value = newVal
+        this.applyFill(slider)
+      }
     }
   }
 
