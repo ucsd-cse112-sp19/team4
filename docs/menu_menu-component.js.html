@@ -32,12 +32,20 @@ menu.innerHTML = `
     /*  Default CSS style for menu*/
     :host {
       display: block;
-      background-color: rgb(84, 92, 100);
       border-bottom: 1px solid #e6e6e6;
+      background-color: rgb(84, 92, 100);
       border-right: none;
       height: 60px;
       margin: 0;
       padding: 0;
+      position: relative;
+    }
+    :host::before {
+      display: table;
+      content: "";
+    }
+    :host::after {
+      clear: both;
     }
     :host([dark]){
       background-color: white;
