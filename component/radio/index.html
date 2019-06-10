@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Components</title>
+    </head>
+    <body>
+      <p>Please select your gender:</p>
+      <radio-component name="gender">
+        <radio-option value="male" label="Male"></radio-option>
+        <radio-option value="female" label="Female"></radio-option>
+        <radio-option value="other" label="Other"></radio-option>
+        <radio-option value="disabled" label="Disabled" disabled></radio-option>
+      </radio-component>
+      <br>
+      <p>Please select your favorite color:</p>
+      <radio-component name="color">
+        <radio-option border value="red" label="Red"></radio-option>
+        <radio-option border value="yellow" label="Yellow"></radio-option>
+        <radio-option border value="green" label="Green"></radio-option>
+        <radio-option border value="other" label="Other" disabled></radio-option>
+      </radio-component>
+      <br>
+      <p>Medium Size</p>
+      <radio-component name="option1">
+          <radio-option border value="option 1" label="Option A" size="medium"></radio-option>
+          <radio-option border value="option 2" label="Option B" size="medium"></radio-option>
+        </radio-component>
+        <br>
+        <p>Small Size</p>
+        <radio-component name="option2">
+          <radio-option border value="option 1" label="Option A" size="small"></radio-option>
+          <radio-option border value="option 2" label="Option B" size="small"></radio-option>
+        </radio-component>
+        <br>
+        <p>Mini Size</p>
+        <radio-component name="option3">
+          <radio-option border value="option 1" label="Option A" size="mini"></radio-option>
+          <radio-option border value="option 2" label="Option B" size="mini"></radio-option>
+        </radio-component>
+      <br>
+      <p>Please select your language:</p>
+      <radio-component name="language">
+        <radio-option button value="english" label="English"></radio-option>
+        <radio-option button value="spanish" label="Spanish"></radio-option>
+        <radio-option button value="french" label="French"></radio-option>
+        <radio-option button value="other" label="Other" disabled></radio-option>
+      </radio-component>
+      <br>
+      <p>Medimun Size</p>
+      <radio-component name="option1">
+        <radio-option button value="option 1" label="Option A" size="medium"></radio-option>
+        <radio-option button value="option 2" label="Option B" size="medium"></radio-option>
+      </radio-component>
+      <br>
+      <p>Small Size</p>
+      <radio-component name="option2">
+        <radio-option button value="option 1" label="Option A" size="small"></radio-option>
+        <radio-option button value="option 2" label="Option B" size="small"></radio-option>
+      </radio-component>
+      <br>
+      <p>Mini Size</p>
+      <radio-component name="option3">
+        <radio-option button value="option 1" label="Option A" size="mini"></radio-option>
+        <radio-option button value="option 2" label="Option B" size="mini"></radio-option>
+      </radio-component>
+
+    </body>
+    <script src="radio-component.js"></script>
+</html>
