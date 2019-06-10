@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: menu/menu-component.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: menu/menu-component.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var menu = document.createElement('template')
+menu.innerHTML = `
+  &lt;style>
+    /*  Default CSS style for menu*/
+    :host {
+      display: block;
+      border-bottom: 1px solid #e6e6e6;
+      background-color: rgb(84, 92, 100);
+      border-right: none;
+      height: 60px;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    :host::before {
+      display: table;
+      content: "";
+    }
+    :host::after {
+      clear: both;
+    }
+    :host([dark]){
+      background-color: white;
+    }
+    :host([dark]) menu-item{
+      color: black;
+    }
+  &lt;/style>
+  &lt;div>
+  &lt;/div>
+`
+
+/* global HTMLElement */
+/**
+ * This is a custom menu component
+ * Ported from https://element.eleme.io/#/en-US/component/menu
+ */
+class MenuComponent extends HTMLElement {
+  /**
+   * MenuComponent constructor.
+   * @constructor
+   */
+  constructor () {
+    super()
+    var shadowRoot = this.attachShadow({ mode: 'open' })
+    shadowRoot.innerHTML = this.innerHTML
+    shadowRoot.appendChild(menu.content.cloneNode(true))
+    this.innerHTML = ''
+  }
+
+  /**
+   * Method returns a list of attributes supported by this component.&lt;br>
+   */
+  static get observedAttributes () {
+    return []
+  }
+
+  /**
+   * Callback when the component get created.
+   */
+  connectedCallback () {
+  }
+
+  /**
+   * Callback when the component get disconnected.
+   */
+  disconnectedCallback () {
+    console.log('Component disconnect!')
+  }
+
+  /**
+   * Callback for when the supported attributes change its value.
+   * @param {string} attrName - the name of the attribute.
+   * @param {*} oldVal - the old value of the attribute.
+   * @param {*} newVal - the new value of the attribute.
+  */
+  attributeChangedCallback (attrName, oldVal, newVal) {
+
+  }
+}
+
+var menuItem = document.createElement('template')
+menuItem.innerHTML = `
+  &lt;style>
+    /*  Default CSS style for menuitem*/
+    menu-item {
+      float: left;
+      height: 60px;
+      line-height: 60px;
+      margin: 0;
+      border-bottom: 2px solid transparent;
+      font-size: 15px;
+      padding: 0 20px;
+      list-style: none;
+      cursor: pointer;
+      position: relative;
+      box-sizing: border-box;
+      white-space: nowrap;
+      color: #fff;
+      border-bottom-color: transparent;
+    }
+    menu-item:hover{
+      background-color: rgb( 67, 74, 80);
+    }
+    menu-item[right]{
+      float: right;
+    }
+    menu-item a{
+      color: white;
+    }
+    .active {
+      color: rgb(255, 208, 75);
+      border-bottom-color: rgb(255, 208, 75);
+    }
+  &lt;/style>  
+`
+
+/* global HTMLElement */
+/**
+ * This is a custom menu component
+ * Ported from https://element.eleme.io/#/en-US/component/menu
+ */
+class MenuItem extends HTMLElement {
+  /**
+   * MenuComponent constructor.
+   * @constructor
+   */
+  constructor () {
+    super()
+    this.appendChild(menuItem.content.cloneNode(true))
+    this.addEventListener('click', this._onClick)
+  }
+
+  /**
+   * Method returns a list of attributes supported by this component.&lt;br>
+   */
+  static get observedAttributes () {
+    return ['left', 'right', 'default-active']
+  }
+
+  /**
+   * Callback when the component get created.
+   */
+  connectedCallback () {
+  }
+
+  /**
+   * Callback when the component get disconnected.
+   */
+  disconnectedCallback () {
+    console.log('Component disconnect!')
+  }
+
+  /**
+   * Callback for when the supported attributes change its value.
+   * @param {string} attrName - the name of the attribute.
+   * @param {*} oldVal - the old value of the attribute.
+   * @param {*} newVal - the new value of the attribute.
+  */
+  attributeChangedCallback (attrName, oldVal, newVal) {
+    if (attrName === 'default-active') {
+      this.classList.add('active')
+    }
+  }
+
+  /**
+   * Handle onClick event for menu item
+   * Make item active and deselect other
+   * @param {*} event the onclick event
+   */
+  _onClick (event) {
+    this.classList.add('active')
+    var sibling = this.parentNode.firstChild
+    while (sibling) {
+      if (sibling.nodeType === 1 &amp;&amp; sibling !== this) {
+        sibling.classList.remove('active')
+      }
+      sibling = sibling.nextSibling
+    }
+  }
+}
+
+window.customElements.define('menu-component', MenuComponent)
+window.customElements.define('menu-item', MenuItem)
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ButtonComponent.html">ButtonComponent</a></li><li><a href="CascaderComponent.html">CascaderComponent</a></li><li><a href="HelloWorldComponent.html">HelloWorldComponent</a></li><li><a href="MenuComponent.html">MenuComponent</a></li><li><a href="MenuItem.html">MenuItem</a></li><li><a href="SliderComponent.html">SliderComponent</a></li></ul><h3>Global</h3><ul><li><a href="global.html#attributeEqualHelloWorld">attributeEqualHelloWorld</a></li><li><a href="global.html#attributeEqualSlider">attributeEqualSlider</a></li><li><a href="global.html#attributeEqulButton">attributeEqulButton</a></li><li><a href="global.html#safeSetButton">safeSetButton</a></li><li><a href="global.html#safeSetHelloWorld">safeSetHelloWorld</a></li><li><a href="global.html#safeSetSlider">safeSetSlider</a></li><li><a href="global.html#settings">settings</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

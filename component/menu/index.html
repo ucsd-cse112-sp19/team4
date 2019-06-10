@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Components</title>
+    </head>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+    
+    </style>
+    <body>
+      <menu-component >
+        <menu-item default-active >Web components</menu-item>
+        <menu-item>Documentation</menu-item>
+        <menu-item><a href="https://github.com/ucsd-cse112/team4" target="_blank">Github</a></menu-item>
+        <menu-item>
+          <cascader-component option="options1"></cascader-component>
+        </menu-item>
+        <menu-item right>Contact</menu-item>
+        <menu-item right>About us</menu-item>
+      </menu-component>
+    </body>
+    <script src="menu-component.js"></script>
+    <script>
+        var options1 =  [
+          {
+            value: 'Button',
+            label: 'Button'
+          },
+          {
+            value: 'Slider',
+            label: 'Slider'
+          },
+          {
+            value: 'Cascader',
+            label: 'Cascader'
+          },
+          {
+            value: 'Link',
+            label: 'Link'
+          },
+          {
+            value: 'Radio',
+            label: 'Radio'
+          },
+          {
+            value: 'Menu',
+            label: 'Menu'
+          }
+        ]
+    </script>
+    <script src="../cascader/cascader.js"></script>
+</html>
