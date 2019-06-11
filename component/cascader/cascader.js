@@ -232,7 +232,7 @@ template.innerHTML = `
       <div class="el-input">
         <input type="text" placeholder="Please select" class="el-input_inner">
           <span class="el-input_suffix">
-            <img src="images/angle-down-24.png" class="el-input_icon">
+            <img src="https://ucsd-cse112.github.io/team4/component/cascader/images/angle-down-24.png" class="el-input_icon">
           </span>
       </div>
       <span class="el-cascader_label"></span>
@@ -409,7 +409,7 @@ class CascaderComponent extends HTMLElement {
           this.setUpInput()
         })
       } else {
-        newli.innerHTML = '<span>' + option[i].label + '</span> <img src="images/angle-right-24.png" class="el-input_child_icon">'
+        newli.innerHTML = '<span>' + option[i].label + '</span> <img src="https://ucsd-cse112.github.io/team4/component/cascader/images/angle-right-24.png" class="el-input_child_icon">'
         let newSubMenu = document.createElement('ul')
         newSubMenu.style.display = 'none'
         newSubMenu.classList.add('el-cascader-menu')
