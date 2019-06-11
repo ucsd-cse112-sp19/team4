@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Web Components</title>
+        <link rel="shortcut icon" href="./images/logo_new_32.png" />
     </head>
     <style>
       html, body {
@@ -49,6 +50,11 @@
         display: block;
         margin-bottom: 20px;
       }
+      #contact .content textarea {
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px; 
+      }
       .action {
         width: 100%;
         text-align: center;
@@ -70,7 +76,7 @@
             <menu-item right>Languages</menu-item>
             <menu-item onclick="showConactDialog()" right>Contact</menu-item>
             <menu-item onclick="setIframeSrc('team4/about-us.html')" right>About us</menu-item>
-            <menu-item onclick="setIframeSrc('team4/version.html')" right>Version 1.3</menu-item>
+            <menu-item onclick="setIframeSrc('team4/version.html')" right>Version 1.3.0</menu-item>
           </menu-component>
       </div>
       <div>
@@ -90,7 +96,7 @@
                   <radio-option size="small" border value="question" label="Question"></radio-option>
                   <radio-option size="small" border value="other" label="Other"></radio-option>
                 </radio-component>
-                <label for="comment">Comment:</label><br>
+                <label for="comment">Comment:</label>
                 <textarea rows="5" cols="75">
                 </textarea>
             </form>
