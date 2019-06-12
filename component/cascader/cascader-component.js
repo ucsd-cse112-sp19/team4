@@ -241,18 +241,6 @@ template.innerHTML = `
   </div>
 `
 
-const bootstrapTheme = {
-  /* Bootstrap Theme */
-  primary: '#007bff',
-  secondary: '#6c757d',
-  success: '#28a745',
-  info: '#17a2b8',
-  warning: '#ffc107',
-  danger: '#dc3545',
-  default: '#6c757d',
-  black: '#fff'
-}
-
 /* global HTMLElement */
 /**
  * This is a custom cascader component
