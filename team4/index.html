@@ -63,15 +63,15 @@
     </style>
     <body>
       <div id="menu">
-        <menu-component >
+        <menu-component>
             <menu-item onclick="setIframeSrc('team4/main.html')" default-active>
               <img align="middle" src="./images/logo_new_32.png" alt="">
             </menu-item>
-            <menu-item onclick="setIframeSrc('component/button/index.html')">Features</menu-item>
+            <menu-item onclick="setIframeSrc('component/button/index.html')" id="features">Features</menu-item>
             <menu-item><a href="https://ucsd-cse112.github.io/team4/docs/index.html" target="_blank">Docs</a></menu-item>
             <menu-item><a href="https://github.com/ucsd-cse112/team4" target="_blank">Github</a></menu-item>
-            <menu-item>
-              <cascader-component option="options1"></cascader-component>
+            <menu-item id="menuItem1">
+              <cascader-component option="options1" onchange="changeOption" id="cascader1"></cascader-component>
             </menu-item>
             <menu-item right>Languages</menu-item>
             <menu-item onclick="showConactDialog()" right>Contact</menu-item>
@@ -114,7 +114,7 @@
       function setIframeSrc(src){
         const baseURL = 'http://localhost:5500/'
         document.getElementById('frame').src = baseURL + src;
-        document.title = document.getElementById('frame').contentDocument.title
+        // document.title = document.getElementById('frame').contentDocument.title
       }
 
       function showConactDialog(){
@@ -126,12 +126,19 @@
       function closeContactDialog(){
         var dialog = document.getElementById("contact");
         dialog.close()
-      }
+	  }
+	  function changeOption(){
+		var cascaderComponent = document.querySelector("menu-component").shadowRoot.querySelector("#menuItem1").querySelector("#cascader1")
+		var newLink = "setIframeSrc('component/" + cascaderComponent.value + "/index.html')"
+		var menuItemComponent = document.querySelector("menu-component").shadowRoot.querySelector("#features")
+		menuItemComponent.setAttribute('onclick', newLink)
+	  }
     </script>
     <script src="../component/radio/radio-component.js"></script>
     <script src="../component/button/button-component.js"></script>
     <script src="../component/menu/menu-component.js"></script>
     <script>
+
       var options1 =  [
         {
           value: 'Button',
@@ -159,6 +166,5 @@
         }
       ]
     </script>
-    <script src="https://ucsd-cse112.github.io/team4/component/cascader/cascader.js"></script>
-
+	<script src="https://ucsd-cse112.github.io/team4/component/cascader/cascader.js"></script>
 </html>
