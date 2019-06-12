@@ -4,7 +4,7 @@
  * - rainbow {boolean} - true if you want the text to have rainbow color, false otherwise.<br>
  * - language {string} - string value of the language (for example: en, sp, fr, or ch).
  */
-class HelloWorldComponent extends HTMLElement {}
+class HelloWorldComponent extends HTMLElement {
   /**
    * HelloWorldComponent constructor.
    * @constructor
