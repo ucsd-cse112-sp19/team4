@@ -83,8 +83,8 @@ exports.config = {
   }, {
     maxInstances: 2,
     browserName: 'safari',
-    version: '12.0',
-    platform: 'macOS 10.14',
+    version: '12.1',
+    platform: 'macOS 10.13',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER
@@ -96,7 +96,7 @@ exports.config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: 'trace',
+  logLevel: 'silent',
   //
   // Set specific log levels per logger
   // loggers:
