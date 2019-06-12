@@ -15,7 +15,7 @@ template.innerHTML = `
 
     }
     :host{
-      display: block;
+      display: inline-block;
     }
     /* CSS classes for type attribute */
     :host([type='default']) ::placeholder{
@@ -92,7 +92,7 @@ template.innerHTML = `
       color: #ffc107;
     }
     .el-cascader{
-      width: 222px;
+      width: 242px;
       display: inline-block;
       position: relative;
       font-size: 14px;

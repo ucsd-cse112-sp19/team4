@@ -4,71 +4,135 @@
 		<meta charset="UTF-8">
 		<title>Components</title>
 		<link rel="stylesheet" type="text/css" href="index.css"> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body>
-	  <div id="element">
-		<h3>Element Theme</h3>
-		  <h4>Without link</h4>
+	  <div class="container">
+	  <h2>Link</h2>
+	  <h3>Basic Usage</h3>
+		<div class="block">
+		  <p class="description">Use type attribute such as warning, success, danger, primary, and info to style the
+			link<br>Also added support for bootstrap theme</p>
+		  <div class="card">
+			<span class="show-code-btn" onclick="toggleCode('link-code-type')">
+			  <i class="fa fa-code" style="font-size:24px"></i>
+			</span>
 			<link-component>Default</link-component>
 			<link-component type="warning">Warning</link-component>
 			<link-component type="success">Success</link-component>
 			<link-component type="danger">Danger</link-component>
 			<link-component type="primary">Primary</link-component>
-			<link-component type="info">Info</link-component>
-			<br><br>
-		  <h4>With link</h4>
-			<link-component href="https://element.eleme.io/#/en-US/component/link">Default</link-component>
-			<link-component href="https://element.eleme.io/#/en-US/component/link" type="warning">Warning</link-component>
-			<link-component href="https://element.eleme.io/#/en-US/component/link" type="success">Success</link-component>
-			<link-component href="https://element.eleme.io/#/en-US/component/link" type="danger">Danger</link-component>
-			<link-component href="https://element.eleme.io/#/en-US/component/link" type="primary">Primary</link-component>
-			<link-component href="https://element.eleme.io/#/en-US/component/link" type="info">Info</link-component>
-			<br><br>
-		  <h4>Disabled link</h4>
-		    <link-component href="https://element.eleme.io/#/en-US/component/link" disabled>Default</link-component>
-		    <link-component href="https://element.eleme.io/#/en-US/component/link" type="warning" disabled>Warning</link-component>
-		    <link-component href="https://element.eleme.io/#/en-US/component/link" type="success" disabled>Success</link-component>
-		    <link-component href="https://element.eleme.io/#/en-US/component/link" type="danger" disabled>Danger</link-component>
-		    <link-component href="https://element.eleme.io/#/en-US/component/link" type="primary" disabled>Primary</link-component>
-			<link-component href="https://element.eleme.io/#/en-US/component/link" type="info" disabled>Info</link-component>
-		    <br><br>
-		  <h4>With link && underline</h4>
-		    <link-component href="https://element.eleme.io/#/en-US/component/link">WithLink</link-component>
-		    <link-component href="https://element.eleme.io/#/en-US/component/link" underline="false">WithoutLink</link-component>
-			<br><br>
-	  </div>
-
-	  <div id="bootstrap">
-		<h3>Bootstrap Theme</h3>
-		  <h4>Without link</h4>
+			<link-component type="info">Info</link-component><br><br>
 			<link-component theme="bootstrap">Default</link-component>
 			<link-component theme="bootstrap" type="warning">Warning</link-component>
 			<link-component theme="bootstrap" type="success">Success</link-component>
 			<link-component theme="bootstrap" type="danger">Danger</link-component>
 			<link-component theme="bootstrap" type="primary">Primary</link-component>
 			<link-component theme="bootstrap" type="info">Info</link-component>
-			<br><br>
-		  <h4>With link</h4>
-			<link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link">Default</link-component>
-			<link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="warning">Warning</link-component>
-			<link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="success">Success</link-component>
-			<link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="danger">Danger</link-component>
-			<link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="primary">Primary</link-component>
-			<link-component theme="bootstrap"href="https://element.eleme.io/#/en-US/component/link" type="info">Info</link-component>
-			<br><br>
-		  <h4>Disabled link</h4>
-		    <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" disabled>Default</link-component>
-		    <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="warning" disabled>Warning</link-component>
-		    <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="success" disabled>Success</link-component>
-		    <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="danger" disabled>Danger</link-component>
-		    <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="primary" disabled>Primary</link-component>
-			<link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="info" disabled>Info</link-component>
-		    <br><br>
-		  <h4>With link && underline</h4>
-		    <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link">WithLink</link-component>
-		    <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" underline="false">WithoutLink</link-component>
-			<br><br>
+		  </div>
+		  <div class="code" id="link-code-type">
+		    &lt;link-component type="primary"&gt;Primary&lt;/link-component&gt;<br>
+		    &lt;link-component type="primary" theme="bootstrap"&gt;Primary&lt;/link-component&gt;
+		    <span class="copy-code" onclick="copyToClipboard()">
+		  	<i style="color:rgb(72, 176, 245);" class="fa fa-clone"></i>
+		    </span>
+		  </div>
+	    </div>
+		
+		<div class="block">
+		  <p class="description">Add href to link</p>
+			<div class="card">
+			  <span class="show-code-btn" onclick="toggleCode('link-code-href')">
+				<i class="fa fa-code" style="font-size:24px"></i>
+			  </span>
+			  <link-component href="https://element.eleme.io/#/en-US/component/link">Default</link-component>
+			  <link-component href="https://element.eleme.io/#/en-US/component/link" type="warning">Warning</link-component>
+			  <link-component href="https://element.eleme.io/#/en-US/component/link" type="success">Success</link-component>
+			  <link-component href="https://element.eleme.io/#/en-US/component/link" type="danger">Danger</link-component>
+			  <link-component href="https://element.eleme.io/#/en-US/component/link" type="primary">Primary</link-component>
+			  <link-component href="https://element.eleme.io/#/en-US/component/link" type="info">Info</link-component>
+			  <br><br>
+			  <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link">Default</link-component>
+			  <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="warning">Warning</link-component>
+			  <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="success">Success</link-component>
+			  <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="danger">Danger</link-component>
+			  <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="primary">Primary</link-component>
+			  <link-component theme="bootstrap"href="https://element.eleme.io/#/en-US/component/link" type="info">Info</link-component>
+			</div>
+			<div class="code" id="link-code-href">
+				&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="primary"&gt;Primary&lt;/link-component&gt;<br>
+				&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="primary" theme="bootstrap"&gt;Primary&lt;/link-component&gt;
+				<span class="copy-code" onclick="copyToClipboard()">
+				  <i style="color:rgb(72, 176, 245);" class="fa fa-clone"></i>
+				</span>
+			</div>
+		</div>
+
+		<div class="block">
+		  <p class="description">Disabled link</p>
+			<div class="card">
+			  <span class="show-code-btn" onclick="toggleCode('link-code-disabled')">
+				<i class="fa fa-code" style="font-size:24px"></i>
+			  </span>
+			    <link-component href="https://element.eleme.io/#/en-US/component/link" disabled>Default</link-component>
+			    <link-component href="https://element.eleme.io/#/en-US/component/link" type="warning" disabled>Warning</link-component>
+			    <link-component href="https://element.eleme.io/#/en-US/component/link" type="success" disabled>Success</link-component>
+			    <link-component href="https://element.eleme.io/#/en-US/component/link" type="danger" disabled>Danger</link-component>
+			    <link-component href="https://element.eleme.io/#/en-US/component/link" type="primary" disabled>Primary</link-component>
+			    <link-component href="https://element.eleme.io/#/en-US/component/link" type="info" disabled>Info</link-component>
+			    <br><br>
+				<link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" disabled>Default</link-component>
+		        <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="warning" disabled>Warning</link-component>
+		        <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="success" disabled>Success</link-component>
+		        <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="danger" disabled>Danger</link-component>
+		        <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="primary" disabled>Primary</link-component>
+			    <link-component theme="bootstrap" href="https://element.eleme.io/#/en-US/component/link" type="info" disabled>Info</link-component>
+			</div>
+			<div class="code" id="link-code-disabled">
+			  &lt;link-component type="success" disabled&gt;Success&lt;/link-component&gt;
+				<span class="copy-code" onclick="copyToClipboard()">
+				  <i style="color:rgb(72, 176, 245);" class="fa fa-clone"></i>
+				</span>
+			</div>
+		</div>
+		<div class="block">
+		  <p class="description">Underline/NoUnderline Link</p>
+			<div class="card">
+			  <span class="show-code-btn" onclick="toggleCode('link-code-underline')">
+				<i class="fa fa-code" style="font-size:24px"></i>
+			  </span>
+			  <link-component href="https://element.eleme.io/#/en-US/component/link">WithUnderline</link-component>
+			  <link-component href="https://element.eleme.io/#/en-US/component/link" underline="false">WithoutUnderline</link-component>
+			</div>
+			<div class="code" id="link-code-underline">
+			  &lt;link-component underline="false"&gt;WithoutUnderline&lt;/link-component&gt;
+			  <span class="copy-code" onclick="copyToClipboard()">
+				<i style="color:rgb(72, 176, 245);" class="fa fa-clone"></i>
+			  </span>
+			</div>
+		</div>
 	  </div>
 	</body>
+	<script>
+		function toggleCode(id) {
+		  var code = document.getElementById(id);
+		  if (code.style.display === "none")
+			code.style.display = "inline-block"
+		  else
+			code.style.display = "none"
+		}
+		function copyToClipboard(imgId){
+		  const el = document.createElement('textarea');
+		  el.value = "<button-component>Default</button-component>";
+		  el.setAttribute('readonly', '');
+		  el.style.position = 'absolute';
+		  el.style.left = '-9999px';
+		  document.body.appendChild(el);
+		  el.select();
+		  document.execCommand('copy');
+		  document.body.removeChild(el);
+		  alert('Copied to clipboard!')
+		}
+	</script>
 	<script src="link-component.js"></script>
 </html>

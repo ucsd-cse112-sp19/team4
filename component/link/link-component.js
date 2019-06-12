@@ -36,7 +36,7 @@ template.innerHTML = `
     outline: none;
     cursor: pointer;
     padding: 0;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
   
   }
