@@ -1,7 +1,7 @@
 /* global beforeEach describe it */
 beforeEach(async () => {
   // this will set the endpoint to be the button component page
-  await browser.url('/button/')
+  await browser.url('/button')
 })
 
 // this will test the button component to ensure that it is visable in different browswers
