@@ -80,7 +80,6 @@ exports.config = {
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER
-  }
   }, {
     maxInstances: 2,
     browserName: 'safari',
