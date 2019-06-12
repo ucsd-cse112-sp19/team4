@@ -1,15 +1,3 @@
-var baseUrl
-
-// if server is equal to production at runtime
-if (process.env.SERVER === 'prod') {
-  baseUrl = 'https://www.google.com'
-} else {
-  baseUrl = 'https://ericksotoe.github.io'
-}
-
-// if we set debug mode to true we will run long time if not 10 secs
-var timeout = process.env.DEBUG ? 99999999 : 20000
-
 exports.config = {
   //
   // ====================
@@ -18,7 +6,7 @@ exports.config = {
   //
   // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
   // on a remote machine).
-  runner: 'local',
+  runner: 'remote',
   //
   // =================
   // Service Providers
@@ -77,76 +65,35 @@ exports.config = {
     // maxInstances can get overwritten per capability. So if you have an in-house Selenium
     // grid with only 5 firefox instances available you can make sure that not more than
     // 5 instances get started at a time.
-    maxInstances: 1,
+    maxInstances: 2,
     browserName: 'chrome',
     version: '74.0',
     platform: 'Windows 10',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    name: 'integration',
-    build: process.env.TRAVIS_BUILD_NUMBER
-  }, {
-    maxInstances: 1,
-    browserName: 'firefox',
-    version: '66.0',
-    platform: 'Windows 10',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    name: 'integration',
-    build: process.env.TRAVIS_BUILD_NUMBER
-  }, {
-    maxInstances: 1,
-    browserName: 'safari',
-    version: '12.0',
-    platform: 'macOS 10.13',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    name: 'integration',
-    build: process.env.TRAVIS_BUILD_NUMBER
-  }, {
-    maxInstances: 1,
-    browserName: 'chrome',
-    version: '74.0',
-    platform: 'macOS 10.13',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER
   }
-  // {
-  //   maxInstances: 1,
-  //   browserName: 'MicrosoftEdge',
-  //   version: '16.16299',
+  // , {
+  //   maxInstances: 2,
+  //   browserName: 'firefox',
+  //   version: '66.0',
   //   platform: 'Windows 10',
   //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
   //   name: 'integration',
   //   build: process.env.TRAVIS_BUILD_NUMBER
   // }, {
-  //   maxInstances: 1,
-  //   browserName: 'internet explorer',
-  //   version: '11.0',
-  //   platform: 'Windows 8.1',
-  //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-  //   name: 'integration',
-  //   build: process.env.TRAVIS_BUILD_NUMBER
-  // }
-  // }, {
-  //   maxInstances: 1,
-  //   browserName: 'internet explorer',
-  //   version: '11.0',
-  //   platform: 'Windows 8.1',
+  //   maxInstances: 2,
+  //   browserName: 'safari',
+  //   version: '12.0',
+  //   platform: 'macOS 10.13',
   //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
   //   name: 'integration',
   //   build: process.env.TRAVIS_BUILD_NUMBER
   // }, {
-  //   maxInstances: 1,
-  //   browserName: 'internet explorer',
-  //   version: '11.285',
-  //   platform: 'Windows 10',
-  //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-  //   name: 'integration',
-  //   build: process.env.TRAVIS_BUILD_NUMBER
-  // }, {
-  //   maxInstances: 1,
-  //   browserName: 'MicrosoftEdge',
-  //   version: '16.16299',
-  //   platform: 'Windows 10',
+  //   maxInstances: 2,
+  //   browserName: 'chrome',
+  //   version: '74.0',
+  //   platform: 'macOS 10.13',
   //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
   //   name: 'integration',
   //   build: process.env.TRAVIS_BUILD_NUMBER
@@ -183,7 +130,8 @@ exports.config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  baseUrl: baseUrl,
+  // baseUrl: 'https://ucsd-cse112.github.io/team4/team4/',
+  baseUrl: 'https://ericksotoe.github.io',
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 30000,
@@ -226,7 +174,7 @@ exports.config = {
   // See the full list at http://mochajs.org/
   mochaOpts: {
     ui: 'bdd',
-    timeout: timeout
+    timeout: 20000
   },
   //
   // =====
@@ -258,6 +206,7 @@ exports.config = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
+  // here we import the expect and should def from chai
   before: function (capabilities, specs) {
     // eslint-disable-next-line no-undef
     expect = require('chai').expect
@@ -352,6 +301,7 @@ exports.config = {
   // onReload: function(oldSessionId, newSessionId) {
   // }
 }
+// this last section of code is what tells travic ci where to look for var names
 var config = exports.config
 
 if (process.env.CI) {
