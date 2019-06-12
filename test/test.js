@@ -10,7 +10,7 @@ describe('Testing integration for buttons ', () => {
 
     browser.pause(300)
     res.click()
-    // browser.takeSnapshot('button page')
+    browser.takeSnapshot('button page')
     browser.pause(200)
   })
 })
