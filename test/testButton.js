@@ -8,7 +8,7 @@ beforeEach(async () => {
 describe('Testing integration for buttons ', () => {
   it('Checking if the buttons are displayed correctly on the browser', () => {
     // this pause is used to ensure that the webpage is loaded before starting ui test
-    browser.pause(300)
+    browser.pause(1000)
     browser.takeSnapshot('button page')
     browser.pause(200)
   })
