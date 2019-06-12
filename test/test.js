@@ -7,9 +7,12 @@ beforeEach(async () => {
 describe('Testing integration for buttons ', () => {
   it('Checking if the buttons are displayed correctly on the browser', () => {
     const res = $('#uno')
+    const res1 = $('#dos')
+
     browser.pause(300)
-    res.moveTo()
+    res.click()
     // browser.takeSnapshot('button page')
     browser.pause(200)
+    res1.click()
   })
 })
