@@ -9,51 +9,51 @@
 }
   
 .card, .code {
-	border: 1px solid lightgray;
-	padding: 20px 0px 20px 10px;
-	position: relative;
-	width: 100%;
-	text-align: center;
+  border: 1px solid lightgray;
+  padding: 20px 0px 20px 10px;
+  position: relative;
+  width: 100%;
+  text-align: center;
 }
   
-  .code {
-	border-radius: 0 0 4px 4px;
-	width: 100%;  
-  }
+.code {
+  border-radius: 0 0 4px 4px;
+  width: 100%;  
+}
   
-  .show-code-btn{
-	position: absolute;
-	top: 0;
-	right: 5px;
-  }
+.show-code-btn{
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
   
-  .code {
-	background-color: rgb(221, 221, 221); 
-	color: #000;
-	display: none;
-	opacity: 0.7;
-	font-weight: bold;
-  }
+.code {
+  background-color: rgb(221, 221, 221); 
+  color: #000;
+  display: none;
+  opacity: 0.7;
+  font-weight: bold;
+}
   
-  .copy-code {
-	position: absolute;
-	right: 5px;
-	top: 33%;
-  }
+.copy-code {
+  position: absolute;
+  right: 5px;
+  top: 33%;
+}
   
-  .show-code-btn :hover, .copy-code:hover {
-	cursor: pointer;
-  }
+.show-code-btn :hover, .copy-code:hover {
+  cursor: pointer;
+}
   
-  .description {
-	opacity: 0.7;
-  }
+.description {
+  opacity: 0.7;
+}
   
-  .block {
-	margin-bottom: 40px;
-  }
+.block {
+  margin-bottom: 40px;
+}
 
-  link-component{
-	  margin: 0 10px 0 10px;
-  }
+link-component{
+  margin: 0 10px 0 10px;
+}
   
