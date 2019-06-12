@@ -6,7 +6,7 @@ exports.config = {
   //
   // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
   // on a remote machine).
-  runner: 'remote',
+  runner: 'local',
   //
   // =================
   // Service Providers
@@ -65,22 +65,23 @@ exports.config = {
     // maxInstances can get overwritten per capability. So if you have an in-house Selenium
     // grid with only 5 firefox instances available you can make sure that not more than
     // 5 instances get started at a time.
+  //   maxInstances: 2,
+  //   browserName: 'chrome',
+  //   version: '74.0',
+  //   platform: 'Windows 10',
+  //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+  //   name: 'integration',
+  //   build: process.env.TRAVIS_BUILD_NUMBER
+  // }
+  // , {
     maxInstances: 2,
-    browserName: 'chrome',
-    version: '74.0',
+    browserName: 'firefox',
+    version: '66.0',
     platform: 'Windows 10',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER
   }
-  // , {
-  //   maxInstances: 2,
-  //   browserName: 'firefox',
-  //   version: '66.0',
-  //   platform: 'Windows 10',
-  //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-  //   name: 'integration',
-  //   build: process.env.TRAVIS_BUILD_NUMBER
   // }, {
   //   maxInstances: 2,
   //   browserName: 'safari',
