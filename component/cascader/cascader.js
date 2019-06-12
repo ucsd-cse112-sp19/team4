@@ -16,7 +16,6 @@ template.innerHTML = `
 
     }
     :host{
-      height: 280px;
       display: block;
     }
     /* CSS classes for type attribute */
@@ -232,7 +231,7 @@ template.innerHTML = `
       <div class="el-input">
         <input type="text" placeholder="Please select" class="el-input_inner">
           <span class="el-input_suffix">
-            <img src="images/angle-down-24.png" class="el-input_icon">
+            <img src="https://ucsd-cse112.github.io/team4/component/cascader/images/angle-down-24.png" class="el-input_icon">
           </span>
       </div>
       <span class="el-cascader_label"></span>
@@ -281,7 +280,7 @@ class CascaderComponent extends HTMLElement {
    * Method returns a list of attributes supported by this component.<br>
    */
   static get observedAttributes () {
-    return ['options', 'type', 'MenuDisplay']
+    return ['options', 'type', 'onchange', 'value']
   }
 
   /**
@@ -291,9 +290,11 @@ class CascaderComponent extends HTMLElement {
     this.menus = this.shadowRoot.querySelector('.el-cascader-menus')
     this.submenus = []
     this.submenu2s = []
-    this.setAttribute('MenuDisplay', 'none')
     if (!this.hasAttribute('type')) {
       this.setAttribute('type', 'default')
+    }
+    if (!this.hasAttribute('value')) {
+      this.setAttribute('value', '')
     }
     for (let i = 1; i < 10; i++) {
       if (this.getAttribute('option') === ('options' + i)) {
@@ -327,13 +328,11 @@ class CascaderComponent extends HTMLElement {
   toggleMenu () {
     if (this.ul.style.display === 'none') {
       this.ul.style.display = 'inline-block'
-      this.setAttribute('MenuDisplay', 'inline-block')
     } else {
       const uls = this.shadowRoot.querySelectorAll('ul')
       for (let i = 0; i < uls.length; i++) {
         uls[i].style.display = 'none'
       }
-      this.setAttribute('MenuDisplay', 'none')
     }
   }
 
@@ -390,6 +389,7 @@ class CascaderComponent extends HTMLElement {
         this.shadowRoot.querySelector('input').placeholder += '/ '
       }
     }
+    this.value = this.activeOptions[0]
     this.closeSubMenus()
     this.closeSubMenu2s()
     this.activeOptions = []
@@ -407,9 +407,12 @@ class CascaderComponent extends HTMLElement {
         newli.addEventListener('click', () => {
           this.activeOptions.push(newli.textContent)
           this.setUpInput()
+          if (this.hasAttribute('onchange')) {
+            window[this.getAttribute('onchange')]()
+          }
         })
       } else {
-        newli.innerHTML = '<span>' + option[i].label + '</span> <img src="images/angle-right-24.png" class="el-input_child_icon">'
+        newli.innerHTML = '<span>' + option[i].label + '</span> <img src="https://ucsd-cse112.github.io/team4/component/cascader/images/angle-right-24.png" class="el-input_child_icon">'
         let newSubMenu = document.createElement('ul')
         newSubMenu.style.display = 'none'
         newSubMenu.classList.add('el-cascader-menu')
