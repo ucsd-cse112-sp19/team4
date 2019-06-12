@@ -1,7 +1,7 @@
 /* global beforeEach describe it */
 beforeEach(async () => {
   // this will set the endpoint to be the link component page
-  await browser.url('/link/')
+  await browser.url('/team4/team4/link/')
 })
 
 // this suite will test the link component to ensure that it is visable in different browswers

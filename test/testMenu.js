@@ -1,7 +1,7 @@
 /* global beforeEach describe it */
 beforeEach(async () => {
   // this will set the endpoint to be the menu component page
-  await browser.url('/menu/')
+  await browser.url('/team4/team4/menu/')
 })
 
 // this suite will test the menu component to ensure that it is visable in different browswers

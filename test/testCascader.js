@@ -1,7 +1,7 @@
 /* global beforeEach describe it */
 beforeEach(async () => {
   // this will set the endpoint to be the cascader component page
-  await browser.url('/cascader/')
+  await browser.url('/team4/team4/cascader/')
 })
 
 // this suite will test the cascader component to ensure that it is visable in different browswers

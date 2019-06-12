@@ -1,7 +1,7 @@
 /* global beforeEach describe it */
 beforeEach(async () => {
   // this will set the endpoint to be the radio component page
-  await browser.url('/radio/')
+  await browser.url('/team4/team4/radio/')
 })
 
 // this suite will test the radio component to ensure that it is visable in different browswers

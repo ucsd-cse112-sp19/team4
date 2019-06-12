@@ -1,7 +1,7 @@
 /* global beforeEach describe it */
 beforeEach(async () => {
   // this will set the endpoint to be the slider component page
-  await browser.url('/slider/')
+  await browser.url('/team4/team4/slider/')
 })
 
 // this suite will test the slider component to ensure that it is visable in different browswers
