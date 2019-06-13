@@ -83,11 +83,12 @@ exports.config = {
   // },
     maxInstances: 2,
     browserName: 'safari',
-    version: '11.1',
+    version: '12.1',
     platform: 'macOS 10.13',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
-    build: process.env.TRAVIS_BUILD_NUMBER
+    build: process.env.TRAVIS_BUILD_NUMBER,
+    seleniumVersion: '3.4.0'
   }],
   //
   // ===================
