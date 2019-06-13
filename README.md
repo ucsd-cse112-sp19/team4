@@ -4,23 +4,46 @@
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/BartholomewTam.svg)](https://saucelabs.com/u/BartholomewTam)
 
+### Getting Started
+  Please visit our [home page](https://ucsd-cse112.github.io/team4/team4/index.html) which shows you our beautiful components family along with tutorials, documentations, and more about our components as well as how you can contribute to our projects! (PS: our home page is built purely with our components!)
+
 ### How to Install
   Simply run `npm install team-a-icomponent`, you should be able to find a folder called "team-a-icomponent" in the "node_module" folder under the same directory where you ran the command.
 
 ### Button Component
-  To add our button component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/button/button-component.js"></script>` in your html file.
-  Below is a demo of our button components and the codes generating them:
+  To add our button component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/button/button-component.js"></script>` in your html file. See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).
+  Below is a demo of our button components:
 
 ![Demo](/images/button.gif)
-![code](/images/button_code_1.png)
-![code](/images/button_code_2.png)
-![code](/images/button_code_3.png)
 
 ### Slider Component  
   To add our button component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/slider/slider-component.js"></script>` in your html file.
-  Our slider component is ported from [Element.io](https://element.eleme.io/#/en-US/component/slider). Users can define the initial value, the min/max values, and the boostrap theme by simply changing the attribute values of the tag. Below is a quick demo:
+  Our slider component is ported from [Element.io](https://element.eleme.io/#/en-US/component/slider). Users can define the initial value, the min/max values, and the boostrap theme by simply changing the attribute values of the tag. 
+  See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).
+  Below is a quick demo:
 
 ![Demo](/images/slider_demo.gif)
+
+### Cascader Component
+  To add our cascader component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/cascader/cascader-component.js"></script>` in your html file.
+  See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).
+  Below is a quick demo:
+
+![Demo](/images/cascader_demo.gif)
+
+### Link Component
+  To add our link component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/link/link-component.js"></script>` in your html file.
+  See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).
+  Below is a quick demo:
+
+![Demo](/images/link_demo.gif)
+
+### Radio Component
+  To add our radio component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/radio/radio-component.js"></script>` in your html file.
+  See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).
+  Below is a quick demo:
+
+![Demo](/images/radio_demo.gif)
 
 ### Onboarding
 
