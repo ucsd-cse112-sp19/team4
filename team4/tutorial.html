@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Components</title>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+            }
+            p {
+                color:#519aba;
+                font-family: "Consolas";
+            }
+            .indent {
+                text-indent: 2em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>iButton</h1>
+        <div id="button">
+            <div class="button">
+                <h2>Basic Usage</h2>
+                <ul>
+                    <li>Default</li><br>
+                    <button-component>Default</button-component>
+                    <p>&lt;button-component&gt;<font color="black">Default</font>&lt;/button-component&gt;</p>
+
+                    <li>Primary</li><br>
+                    <button-component type="Primary">Primary</button-component>
+                    <p>&lt;button-component type="Primary"&gt;<font color="black">Primary</font>&lt;/button-component&gt;</p>
+
+                    <li>Success</li><br>
+                    <button-component type="Success">Success</button-component>
+                    <p>&lt;button-component type="Success"&gt;<font color="black">Success</font>&lt;/button-component&gt;</p>
+
+                    <li>Info</li><br>
+                    <button-component type="Info">Info</button-component>
+                    <p>&lt;button-component type="Info"&gt;<font color="black">Info</font>&lt;/button-component&gt;</p>
+                    
+                    <li>Warning</li><br>
+                    <button-component type="Warning">Warning</button-component>
+                    <p>&lt;button-component type="Warning"&gt;<font color="black">Warning</font>&lt;/button-component&gt;</p>
+                    
+                    <li>Danger</li><br>
+                    <button-component type="Danger">Danger</button-component>
+                    <p>&lt;button-component type="Danger"&gt;<font color="black">Danger</font>&lt;/button-component&gt;</p>
+                </ul>
+            </div>
+            <br>
+            <div class="button">
+                <h2>Plain</h2>
+                <ul>
+                    <li>
+                        <button-component Plain>Plain</button-component>
+                        <button-component type="Primary" Plain>Primary</button-component>
+                        <button-component type="Success" Plain>Success</button-component>
+                        <button-component type="Info" Plain>Info</button-component>
+                        <button-component type="Warning" Plain>Warning</button-component>
+                        <button-component type="Danger" Plain>Danger</button-component>
+                    </li>
+                    <p>&lt;button-component Plain&gt;<font color="black">Default</font>&lt;/button-component&gt;</p>
+                    <p>&lt;button-component type="Primary" Plain&gt;<font color="black">Primary</font>&lt;/button-component&gt;</p>
+                    <p>&lt;button-component type="Success" Plain&gt;<font color="black">Success</font>&lt;/button-component&gt;</p>
+                    <p>&lt;button-component type="Info" Plain&gt;<font color="black">Info</font>&lt;/button-component&gt;</p>
+                    <p>&lt;button-component type="Warning" Plain&gt;<font color="black">Warning</font>&lt;/button-component&gt;</p>
+                    <p>&lt;button-component type="Danger" Plain&gt;<font color="black">Danger</font>&lt;/button-component&gt;</p>
+                </ul>
+
+            </div>
+            <br>
+            <div class="button">
+                <h2>Disabled</h2>
+                <ul>
+                    <li>
+                        <button-component disabled>Default</button-component>
+                        <button-component type="Primary" disabled>Primary</button-component>
+                        <button-component type="Success" disabled>Success</button-component>
+                        <button-component type="Info" disabled>Info</button-component>
+                        <button-component type="Warning" disabled>Warning</button-component>
+                        <button-component type="Danger" disabled>Danger</button-component>
+                    </li>
+                    <p>&lt;button-component disabled&gt;<font color="black">Default</font>&lt;/button-component&gt;</p>
+                    <p>&lt;button-component type="Primary" disabled&gt;<font color="black">Primary</font>&lt;/button-component&gt;</p>
+                    <p>&lt;button-component type="Success" disabled&gt;<font color="black">Success</font>&lt;/button-component&gt;</p>
+                    <p>&lt;button-component type="Info" disabled&gt;<font color="black">Info</font>&lt;/button-component&gt;</p>
+                    <p>&lt;button-component type="Warning" disabled&gt;<font color="black">Warning</font>&lt;/button-component&gt;</p>
+                    <p>&lt;button-component type="Danger" disabled&gt;<font color="black">Danger</font>&lt;/button-component&gt;</p>
+                    <li>
+                        <button-component Plain disabled>Plain</button-component>
+                        <button-component type="Primary" Plain disabled>Primary</button-component>
+                        <button-component type="Success" Plain disabled>Success</button-component>
+                        <button-component type="Info" Plain disabled>Info</button-component>
+                        <button-component type="Warning" Plain disabled>Warning</button-component>
+                        <button-component type="Danger" Plain disabled>Danger</button-component>
+                    </li>
+                    <p>&lt;button-component Plain disabled&gt;<font color="black">Default</font>&lt;/button-component&gt;</p>
+                    <p>&lt;button-component type="Primary" Plain disabled&gt;<font color="black">Primary</font>&lt;/button-component&gt;</p>
+                    <p>&lt;button-component type="Success" Plain disabled&gt;<font color="black">Success</font>&lt;/button-component&gt;</p>
+                    <p>&lt;button-component type="Info" Plain disabled&gt;<font color="black">Info</font>&lt;/button-component&gt;</p>
+                    <p>&lt;button-component type="Warning" Plain disabled&gt;<font color="black">Warning</font>&lt;/button-component&gt;</p>
+                    <p>&lt;button-component type="Danger" Plain disabled&gt;<font color="black">Danger</font>&lt;/button-component&gt;</p>
+                </ul>
+            </div>
+            <br>
+            <div class="button">
+                <h2>Round</h2>
+                <ul>
+                        <li>
+                            <button-component round>Default</button-component>
+                            <button-component type="Primary" round>Primary</button-component>
+                            <button-component type="Success" round>Success</button-component>
+                            <button-component type="Info" round>Info</button-component>
+                            <button-component type="Warning" round>Warning</button-component>
+                            <button-component type="Danger" round>Danger</button-component>
+                        </li>
+                        <p>&lt;button-component round&gt;<font color="black">Default</font>&lt;/button-component&gt;</p>
+                        <p>&lt;button-component type="Primary" round&gt;<font color="black">Primary</font>&lt;/button-component&gt;</p>
+                        <p>&lt;button-component type="Success" round&gt;<font color="black">Success</font>&lt;/button-component&gt;</p>
+                        <p>&lt;button-component type="Info" round&gt;<font color="black">Info</font>&lt;/button-component&gt;</p>
+                        <p>&lt;button-component type="Warning" round&gt;<font color="black">Warning</font>&lt;/button-component&gt;</p>
+                        <p>&lt;button-component type="Danger" round&gt;<font color="black">Danger</font>&lt;/button-component&gt;</p>
+                </ul>
+            </div>
+            <br>
+            <div class="button">
+                <h2>Circle</h2>
+                <ul>
+                        <li>
+                            <button-component circle>Default</button-component>
+                            <button-component type="Primary" circle>Primary</button-component>
+                            <button-component type="Success" circle>Success</button-component>
+                            <button-component type="Info" circle>Info</button-component>
+                            <button-component type="Warning" circle>Warning</button-component>
+                            <button-component type="Danger" circle>Danger</button-component>
+                        </li>
+                        <p>&lt;button-component circle&gt;<font color="black">Default</font>&lt;/button-component&gt;</p>
+                        <p>&lt;button-component type="Primary" circle&gt;<font color="black">Primary</font>&lt;/button-component&gt;</p>
+                        <p>&lt;button-component type="Success" circle&gt;<font color="black">Success</font>&lt;/button-component&gt;</p>
+                        <p>&lt;button-component type="Info" circle&gt;<font color="black">Info</font>&lt;/button-component&gt;</p>
+                        <p>&lt;button-component type="Warning" circle&gt;<font color="black">Warning</font>&lt;/button-component&gt;</p>
+                        <p>&lt;button-component type="Danger" circle&gt;<font color="black">Danger</font>&lt;/button-component&gt;</p>
+                </ul>
+            </div>
+            <br>
+            <div class="button">
+                <h2>Size</h2>
+                <ul>
+                        <li>
+                            <button-component size="medium">medium</button-component>
+                            <p>&lt;button-component size="medium"&gt;<font color="black">medium</font>&lt;/button-component&gt;</p>
+                        </li>
+                        <li>
+                                <button-component size="small">small</button-component>
+                                <p>&lt;button-component size="small"&gt;<font color="black">small</font>&lt;/button-component&gt;</p>
+                        </li>
+                        <li>
+                                <button-component size="mini">mini</button-component>
+                                <p>&lt;button-component size="mini"&gt;<font color="black">mini</font>&lt;/button-component&gt;</p>
+                        </li>
+                </ul>
+            </div>
+            <br>
+            <div class="button">
+                <h2>Bootstrap</h2>
+                <ul>
+                        <li>
+                            <button-component theme="bootstrap">Default</button-component>
+                            <button-component theme="bootstrap" type="Primary">Primary</button-component>
+                            <button-component theme="bootstrap" type="Success">Success</button-component>
+                            <button-component theme="bootstrap" type="Info">Info</button-component>
+                            <button-component theme="bootstrap" type="Warning">Warning</button-component>
+                            <button-component theme="bootstrap" type="Danger">Danger</button-component>
+                        </li>
+                        <p>&lt;button-component theme="bootstrap"&gt;<font color="black">Default</font>&lt;/button-component&gt;</p>
+                        <p>&lt;button-component theme="bootstrap" type="Primary"&gt;<font color="black">Primary</font>&lt;/button-component&gt;</p>
+                        <p>&lt;button-component theme="bootstrap" type="Success"&gt;<font color="black">Success</font>&lt;/button-component&gt;</p>
+                        <p>&lt;button-component theme="bootstrap" type="Info"&gt;<font color="black">Info</font>&lt;/button-component&gt;</p>
+                        <p>&lt;button-component theme="bootstrap" type="Warning"&gt;<font color="black">Warning</font>&lt;/button-component&gt;</p>
+                        <p>&lt;button-component theme="bootstrap" type="Danger"&gt;<font color="black">Danger</font>&lt;/button-component&gt;</p>
+                </ul>
+            </div>
+        </div>
+        <br>
+
+        <h1>iSlider</h1>
+        <div id="slider">
+            <div class="slider">
+                <h2>Basic Usage</h2>
+                <slider-component></slider-component>
+                <p align="center">&lt;slider-component&gt;&lt;/slider-component&gt;</p>
+            </div>
+            <div class="slider">
+                <h2>Initialized with default value</h2>
+                <slider-component value="88"></slider-component>
+                <p align="center">&lt;slider-component value="88"&gt;&lt;/slider-component&gt;</p>
+            </div>
+        </div>
+        <br>
+
+        <h1>iCascader</h1>
+        <div id="cascader">
+            <div class="cascader">
+                <h2>Basic Usage</h2>
+                <ul>
+                    <li>Option 1</li><br>
+                    <cascader-component option="options1"></cascader-component>
+                    <p>&lt;cascader-component option="options1"&gt;&lt;/cascader-component&gt;</p>
+                    <li>Option 2</li><br>
+                    <cascader-component option="options2"></cascader-component>
+                    <p>&lt;cascader-component option="options2"&gt;&lt;/cascader-component&gt;</p>
+                </ul>
+            </div>
+            <br>
+            <div class="cascader">
+                <h2>Different Types</h2>
+                <ul>
+                    <li>primary</li><br>
+                    <cascader-component option="options1" type="primary"></cascader-component>
+                    <p>&lt;cascader-component option="options1" type="primary"&gt;&lt;/cascader-component&gt;</p>
+                    <li>warning</li><br>
+                    <cascader-component option="options1" type="warning"></cascader-component>
+                    <p>&lt;cascader-component option="options1" type="warning"&gt;&lt;/cascader-component&gt;</p>
+                    <li>success</li><br>
+                    <cascader-component option="options1" type="success"></cascader-component>
+                    <p>&lt;cascader-component option="options1" type="success"&gt;&lt;/cascader-component&gt;</p>
+                    <li>info</li><br>
+                    <cascader-component option="options1" type="info"></cascader-component>
+                    <p>&lt;cascader-component option="options1" type="info"&gt;&lt;/cascader-component&gt;</p>
+                    <li>danger</li><br>
+                    <cascader-component option="options1" type="danger"></cascader-component>
+                    <p>&lt;cascader-component option="options1" type="danger"&gt;&lt;/cascader-component&gt;</p>
+                </ul>
+            </div>
+            <br>
+            <div class="cascader">
+                <h2>Bootstrap</h2>
+                <ul>
+                    <li>primary</li><br>
+                    <cascader-component option="options1" theme="bootstrap" type="primary"></cascader-component>
+                    <p>&lt;cascader-component option="options1" theme="bootstrap" type="primary"&gt;&lt;/cascader-component&gt;</p>
+                    <li>warning</li><br>
+                    <cascader-component option="options1" theme="bootstrap" type="warning"></cascader-component>
+                    <p>&lt;cascader-component option="options1" theme="bootstrap" type="warning"&gt;&lt;/cascader-component&gt;</p>
+                    <li>success</li><br>
+                    <cascader-component option="options1" theme="bootstrap" type="success"></cascader-component>
+                    <p>&lt;cascader-component option="options1" theme="bootstrap" type="success"&gt;&lt;/cascader-component&gt;</p>
+                    <li>info</li><br>
+                    <cascader-component option="options1" theme="bootstrap" type="info"></cascader-component>
+                    <p>&lt;cascader-component option="options1" theme="bootstrap" type="info"&gt;&lt;/cascader-component&gt;</p>
+                    <li>danger</li><br>
+                    <cascader-component option="options1" theme="bootstrap" type="danger"></cascader-component>
+                    <p>&lt;cascader-component option="options1" theme="bootstrap" type="danger"&gt;&lt;/cascader-component&gt;</p>
+                </ul>
+            </div>
+        </div>
+        <br>
+
+        <h1>iRadio</h1>
+        <div id="radio">
+            <div class="radio">
+                <h2>Basic Usage</h2>
+                <radio-component name="gender">
+                    <radio-option value="male" label="Male"></radio-option>
+                    <radio-option value="female" label="Female"></radio-option>
+                    <radio-option value="other" label="Other"></radio-option>
+                </radio-component>
+
+                <p>&lt;radio-component name="gender"><br></p>
+                <p class="indent">&lt;radio-option value="male" label="Male">&lt;/radio-option><br></p>
+                <p class="indent">&lt;radio-option value="female" label="Female">&lt;/radio-option><br></p>
+                <p class="indent">&lt;radio-option value="other" label="Other">&lt;/radio-option><br></p>
+                <p>&lt;/radio-component></p>
+            </div>
+            <br>
+
+            <div class="radio">
+                <h2>Disabled</h2>
+                <radio-component name="gender">
+                    <radio-option value="male" label="Male" disabled></radio-option>
+                    <radio-option value="female" label="Female" disabled></radio-option>
+                    <radio-option value="other" label="Other" disabled></radio-option>
+                </radio-component>
+
+                <p>&lt;radio-component name="gender"><br></p>
+                <p class="indent">&lt;radio-option value="male" label="Male" disabled>&lt;/radio-option><br></p>
+                <p class="indent">&lt;radio-option value="female" label="Female" disabled>&lt;/radio-option><br></p>
+                <p class="indent">&lt;radio-option value="other" label="Other" disabled>&lt;/radio-option><br></p>
+                <p>&lt;/radio-component></p>
+            </div>
+            <br>
+
+            <div class="radio">
+                <h2>Border</h2>
+                <radio-component name="gender">
+                    <radio-option border value="male" label="Male"></radio-option>
+                    <radio-option border value="female" label="Female"></radio-option>
+                    <radio-option border value="other" label="Other"></radio-option>
+                </radio-component>
+
+                <p>&lt;radio-component name="gender"><br></p>
+                <p class="indent">&lt;radio-option border value="male" label="Male">&lt;/radio-option><br></p>
+                <p class="indent">&lt;radio-option border value="female" label="Female">&lt;/radio-option><br></p>
+                <p class="indent">&lt;radio-option border value="other" label="Other">&lt;/radio-option><br></p>
+                <p>&lt;/radio-component></p>
+            </div>
+            <br>
+
+            <div class="radio">
+                <h2>Button</h2>
+                <radio-component name="gender">
+                    <radio-option Button value="male" label="Male"></radio-option>
+                    <radio-option Button value="female" label="Female"></radio-option>
+                    <radio-option Button value="other" label="Other"></radio-option>
+                </radio-component>
+
+                <p>&lt;radio-component name="gender"><br></p>
+                <p class="indent">&lt;radio-option Button value="male" label="Male">&lt;/radio-option><br></p>
+                <p class="indent">&lt;radio-option Button value="female" label="Female">&lt;/radio-option><br></p>
+                <p class="indent">&lt;radio-option Button value="other" label="Other">&lt;/radio-option><br></p>
+                <p>&lt;/radio-component></p>
+            </div>
+            <br>
+
+            <div class="radio">
+                <h2>Size</h2>
+                <radio-component name="gender">
+                    <radio-option border value="medium" label="Medium" size="medium"></radio-option>
+                    <radio-option border value="small" label="Small" size="small"></radio-option>
+                    <radio-option border value="mini" label="Mini" size="mini"></radio-option>
+                </radio-component>
+
+                <p>&lt;radio-component name="gender"><br></p>
+                <p class="indent">&lt;radio-option border value="male" label="Male" size="medium">&lt;/radio-option><br></p>
+                <p class="indent">&lt;radio-option border value="female" label="Female" size="small">&lt;/radio-option><br></p>
+                <p class="indent">&lt;radio-option border value="other" label="Other" size="mini">&lt;/radio-option><br></p>
+                <p>&lt;/radio-component></p>
+            </div>
+            <br>  
+        </div>
+        <br>
+
+        <h1>iLink</h1>
+        <div id="link">
+            <div class="link">
+                <h2>Basic Usage</h2>
+                <ul>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link">Default</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link"><font color="black">Default</font>&lt;/link-component></p>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" type="warning">Warning</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="warning"><font color="black">Warning</font>&lt;/link-component></p>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" type="success">Success</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="success"><font color="black">Success</font>&lt;/link-component></p>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" type="danger">Danger</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="danger"><font color="black">Danger</font>&lt;/link-component></p>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" type="primary">Primary</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="primary"><font color="black">Primary</font>&lt;/link-component></p>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" type="info">Info</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="info"><font color="black">Info</font>&lt;/link-component></p>
+                </ul>
+            </div>
+            <br>
+
+            <div class="link">
+                <h2>Disabled</h2>
+                <ul>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" disabled>Default</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" disabled><font color="black">Default</font>&lt;/link-component></p>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" type="warning" disabled>Warning</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="warning" disabled><font color="black">Warning</font>&lt;/link-component></p>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" type="success" disabled>Success</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="success" disabled><font color="black">Success</font>&lt;/link-component></p>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" type="danger" disabled>Danger</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="danger" disabled><font color="black">Danger</font>&lt;/link-component></p>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" type="primary" disabled>Primary</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="primary" disabled><font color="black">Primary</font>&lt;/link-component></p>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" type="info" disabled>Info</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="info" disabled><font color="black">Info</font>&lt;/link-component></p>
+                </ul>
+            </div>
+            <br>
+
+            <div class="link">
+                <h2>Without Underline</h2>
+                <ul>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" underline="false">Default</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" underline="false"><font color="black">Default</font>&lt;/link-component></p>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" type="warning" underline="false">Warning</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="warning" underline="false"><font color="black">Warning</font>&lt;/link-component></p>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" type="success" underline="false">Success</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="success" underline="false"><font color="black">Success</font>&lt;/link-component></p>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" type="danger" underline="false">Danger</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="danger" underline="false"><font color="black">Danger</font>&lt;/link-component></p>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" type="primary" underline="false">Primary</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="primary" underline="false"><font color="black">Primary</font>&lt;/link-component></p>
+                    <li><link-component href="https://element.eleme.io/#/en-US/component/link" type="info" underline="false">Info</link-component></li>
+                    <p>&lt;link-component href="https://element.eleme.io/#/en-US/component/link" type="info" underline="false"><font color="black">Info</font>&lt;/link-component></p>
+                </ul>
+            </div>
+            <br>
+
+            <div class="link">
+                <h2>Without Link</h2>
+                <ul>
+                    <li><link-component>Default</link-component></li>
+                    <p>&lt;link-component><font color="black">Default</font>&lt;/link-component></p>
+                    <li><link-component type="warning">Warning</link-component></li>
+                    <p>&lt;link-component type="warning"><font color="black">Warning</font>&lt;/link-component></p>
+                    <li><link-component type="success">Success</link-component></li>
+                    <p>&lt;link-component type="success"><font color="black">Success</font>&lt;/link-component></p>
+                    <li><link-component type="danger">Danger</link-component></li>
+                    <p>&lt;link-component type="danger"><font color="black">Danger</font>&lt;/link-component></p>
+                    <li><link-component type="primary">Primary</link-component></li>
+                    <p>&lt;link-component type="primary"><font color="black">Primary</font>&lt;/link-component></p>
+                    <li><link-component type="info">Info</link-component></li>
+                    <p>&lt;link-component type="info"><font color="black">Info</font>&lt;/link-component></p>
+                </ul>
+            </div>
+            <br>
+        </div>
+        <br>
+        
+        <h1>iMenu</h1>
+        <div id="radio">
+            <div class="radio">
+                <h2>Basic Usage</h2>
+                <menu-component >
+                    <menu-item>Web components</menu-item>
+                    <menu-item>Documentation</menu-item>
+                    <menu-item>Github</menu-item>
+                    <menu-item>Contact</menu-item>
+                    <menu-item>About us</menu-item>
+                </menu-component>
+                <p>&lt;menu-component><br></p>
+                <p class="indent">&lt;menu-item><font color="black">Web components</font>&lt;/menu-item><br></p>
+                <p class="indent">&lt;menu-item><font color="black">Documentation</font>&lt;/menu-item><br></p>
+                <p class="indent">&lt;menu-item><font color="black">Github</font>&lt;/menu-item><br></p>
+                <p class="indent">&lt;menu-item><font color="black">Contact</font>&lt;/menu-item><br></p>
+                <p class="indent">&lt;menu-item><font color="black">About us</font>&lt;/menu-item><br></p>
+                <p>&lt;/menu-component></p>
+            </div>
+            <br>
+
+            <div class="radio">
+                <h2>Align Right</h2>
+                <menu-component >
+                    <menu-item right>Web components</menu-item>
+                    <menu-item right>Documentation</menu-item>
+                    <menu-item right>Github</menu-item>
+                    <menu-item right>Contact</menu-item>
+                    <menu-item right>About us</menu-item>
+                </menu-component>
+                <p>&lt;menu-component><br></p>
+                <p class="indent">&lt;menu-item right><font color="black">Web components</font>&lt;/menu-item><br></p>
+                <p class="indent">&lt;menu-item right><font color="black">Documentation</font>&lt;/menu-item><br></p>
+                <p class="indent">&lt;menu-item right><font color="black">Github</font>&lt;/menu-item><br></p>
+                <p class="indent">&lt;menu-item right><font color="black">Contact</font>&lt;/menu-item><br></p>
+                <p class="indent">&lt;menu-item right><font color="black">About us</font>&lt;/menu-item><br></p>
+                <p>&lt;/menu-component></p>
+            </div>
+            <br>
+
+            <div class="radio">
+                <h2>With Link</h2>
+                <menu-component >
+                    <menu-item><a href="https://github.com/ucsd-cse112/team4" target="_blank">Github</a></menu-item>
+                </menu-component>
+                <p>&lt;menu-component><br></p>
+                <p class="indent">&lt;menu-item>&lt;a href="https://github.com/ucsd-cse112/team4" target="_blank"><font color="black">Github</font>&lt;/a>&lt;/menu-item><br></p>
+                <p>&lt;/menu-component></p>
+            </div>
+            <br>
+
+            <div class="radio">
+                    <h2>Default Active</h2>
+                    <menu-component >
+                        <menu-item default-active>Web components</menu-item>
+                        <menu-item>Documentation</menu-item>
+                        <menu-item>Github</menu-item>
+                        <menu-item>Contact</menu-item>
+                        <menu-item>About us</menu-item>
+                    </menu-component>
+                    <p>&lt;menu-component><br></p>
+                    <p class="indent">&lt;menu-item default-active><font color="black">Web components</font>&lt;/menu-item><br></p>
+                    <p class="indent">&lt;menu-item><font color="black">Documentation</font>&lt;/menu-item><br></p>
+                    <p class="indent">&lt;menu-item><font color="black">Github</font>&lt;/menu-item><br></p>
+                    <p class="indent">&lt;menu-item><font color="black">Contact</font>&lt;/menu-item><br></p>
+                    <p class="indent">&lt;menu-item><font color="black">About us</font>&lt;/menu-item><br></p>
+                    <p>&lt;/menu-component></p>
+                </div>
+                <br>
+        </div>
+        <br>
+        
+    </body>
+    <script>
+        var options1 =  [
+            {value: 'guide', 
+            label: 'Guide',
+            children: [
+                {value: 'disiplines', 
+                label: 'Disiplines',
+                children: [{
+                    value: 'consistency',
+                    label: 'Consistency'
+                }, {
+                    value: 'feedback',
+                    label: 'Feedback'
+                }, {
+                    value: 'efficiency',
+                    label: 'Efficiency'
+                }, {
+                    value: 'controllability',
+                    label: 'Controllability'
+                }]},
+                {value: 'navigation', 
+                label: 'Navigation',
+                children: [{
+                    value: 'side nav',
+                    label: 'Side Navigation'
+                }, {
+                    value: 'top nav',
+                    label: 'Top Navigation'
+                }]}
+            ]},{
+                value: 'component',
+                label: 'Component',
+                children: [
+                    {value: 'basic', 
+                     label: 'Basic', 
+                     children: [{
+                          value: 'layout',
+                          label: 'Layout'
+                     }, {
+                          value: 'color',
+                          label: 'Color'
+                     }, {
+                          value: 'typography',
+                          label: 'Typography'
+                     }, {
+                          value: 'icon',
+                          label: 'Icon'
+                     }, {
+                        value: 'button',
+                        label: 'Button'
+                     }]
+                    },
+                    {value: 'form', 
+                     label: 'Form', 
+                     children: [{
+                          value: 'radio',
+                          label: 'Radio'
+                     }, {
+                          value: 'checkbox',
+                          label: 'Checkbox'
+                     }, {
+                          value: 'input',
+                          label: 'Input'
+                     }, {
+                          value: 'input-number',
+                          label: 'InputNumber'
+                     }, {
+                          value: 'select',
+                          label: 'Select'
+                     }, {
+                          value: 'cascader',
+                          label: 'Cascader'
+                     }, {
+                          value: 'switch',
+                          label: 'Switch'
+                     }, {
+                          value: 'slider',
+                          label: 'Slider'
+                     }, {
+                          value: 'time-picker',
+                          label: 'TimePicker'
+                     }, {
+                          value: 'date-picker',
+                          label: 'DatePicker'
+                     }, {
+                          value: 'datetime-picker',
+                          label: 'DateTimePicker'
+                     }, {
+                          value: 'upload',
+                          label: 'Upload'
+                     }, {
+                          value: 'rate',
+                          label: 'Rate'
+                     }, {
+                          value: 'form',
+                          label: 'Form'
+                     }]
+                    },
+                    {value: 'data', 
+                     label: 'Data',
+                     children: [{
+                          value: 'table',
+                          label: 'Table'
+                     }, {
+                          value: 'tag',
+                          label: 'Tag'
+                     }, {
+                          value: 'progress',
+                          label: 'Progress'
+                     }, {
+                          value: 'tree',
+                          label: 'Tree'
+                     }, {
+                          value: 'pagination',
+                          label: 'Pagination'
+                     }, {
+                          value: 'badge',
+                          label: 'Badge'
+                     }]
+                    },
+                    {value: 'notice', 
+                     label: 'Notice',
+                     children: [{
+                          value: 'alert',
+                          label: 'Alert'
+                     }, {
+                          value: 'loading',
+                          label: 'Loading'
+                     }, {
+                          value: 'message',
+                          label: 'Message'
+                     }, {
+                          value: 'message-box',
+                          label: 'MessageBox'
+                     }, {
+                          value: 'notification',
+                          label: 'Notification'
+                     }]
+                    },
+                    {value: 'navigation', 
+                     label: 'Navigation',
+                     children: [{
+                          value: 'menu',
+                          label: 'NavMenu'
+                     }, {
+                          value: 'tabs',
+                          label: 'Tabs'
+                     }, {
+                          value: 'breadcrumb',
+                          label: 'Breadcrumb'
+                     }, {
+                          value: 'dropdown',
+                          label: 'Dropdown'
+                     }, {
+                          value: 'steps',
+                          label: 'Steps'
+                     }]
+                    },
+                    {value: 'others', 
+                     label: 'Others', 
+                     children: [{
+                          value: 'dialog',
+                          label: 'Dialog'
+                     }, {
+                          value: 'tooltip',
+                          label: 'Tooltip'
+                     }, {
+                          value: 'popover',
+                          label: 'Popover'
+                     }, {
+                          value: 'card',
+                          label: 'Card'
+                     }, {
+                          value: 'carousel',
+                          label: 'Carousel'
+                     }, {
+                          value: 'collapse',
+                          label: 'Collapse'
+                     }]}
+                ]
+            },{
+                value: 'resources',
+                label: 'Resources',
+                children: [
+                    {value: 'axure', label: 'Axure Components'},
+                    {value: 'sketch', label: 'Sketch Templates'},
+                    {value: 'design', label: 'Design Documentation'}
+                ]
+            }]
+            var options2 = [{value: 'rule',
+                            label: 'Rule',
+                            children: [{
+                                value: 'Never Say Never',
+                                label: 'Never Say Never',
+                            }]},{
+                                value:'rick',
+                                label:'Rick'
+                            }]
+    </script>
+    <script src="../component/button/button-component.js"></script>
+    <script src="../component/slider/slider-component.js"></script>
+    <script src="../component/cascader/cascader.js"></script>
+    <script src="../component/radio/radio-component.js"></script>
+    <script src="../component/link/link-component.js"></script>
+    <script src="../component/menu/menu-component.js"></script>
+</html>
