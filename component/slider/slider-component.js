@@ -225,10 +225,14 @@ class SliderComponent extends HTMLElement {
       var min = this.getAttribute('min')
       var max = this.getAttribute('max')
       if (!(isNaN(min) || isNaN(max))) {
-        this.shadowRoot.getElementById('min').textContent = min
-        this.shadowRoot.getElementById('max').textContent = max
-        this.shadowRoot.querySelector('input').setAttribute('min', min)
-        this.shadowRoot.querySelector('input').setAttribute('max', max)
+        if (this.shadowRoot.getElementById('min') !== null) {
+          this.shadowRoot.getElementById('min').textContent = min
+          this.shadowRoot.querySelector('input').setAttribute('min', min)
+        }
+        if (this.shadowRoot.getElementById('max') !== null) {
+          this.shadowRoot.getElementById('max').textContent = min
+          this.shadowRoot.querySelector('input').setAttribute('max', max)
+        }
       }
     }
   }
