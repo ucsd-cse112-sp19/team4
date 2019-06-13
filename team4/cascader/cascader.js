@@ -1,34 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>JSDoc: Source: cascader/cascader.js</title>
-
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
-</head>
-
-<body>
-
-<div id="main">
-
-    <h1 class="page-title">Source: cascader/cascader.js</h1>
-
-    
-
-
-
-    
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>var template = document.createElement('template')
+var template = document.createElement('template')
 template.innerHTML = `
-  &lt;style>
+  <style>
     :host{
 
       /* Default Element Theme */
@@ -254,21 +226,21 @@ template.innerHTML = `
     .is-active{
       background-color: #f5f7fa;
     }
-  &lt;/style>
-  &lt;div style="position: relative;">
-    &lt;span class="el-cascader">
-      &lt;div class="el-input">
-        &lt;input type="text" placeholder="Please select" class="el-input_inner">
-          &lt;span class="el-input_suffix">
-            &lt;img src="https://ucsd-cse112.github.io/team4/component/cascader/images/angle-down-24.png" class="el-input_icon">
-          &lt;/span>
-      &lt;/div>
-      &lt;span class="el-cascader_label">&lt;/span>
-    &lt;/span>
-    &lt;div class="el-cascader-menus el-popper" style="position: absolute; left: 2%; width: auto; height: auto;">
-      &lt;ul class="el-cascader-menu" style="display: none">&lt;/ul>
-    &lt;/div>
-  &lt;/div>
+  </style>
+  <div style="position: relative;">
+    <span class="el-cascader">
+      <div class="el-input">
+        <input type="text" placeholder="Please select" class="el-input_inner">
+          <span class="el-input_suffix">
+            <img src="https://ucsd-cse112.github.io/team4/component/cascader/images/angle-down-24.png" class="el-input_icon">
+          </span>
+      </div>
+      <span class="el-cascader_label"></span>
+    </span>
+    <div class="el-cascader-menus el-popper" style="position: absolute; left: 2%; width: auto; height: auto;">
+      <ul class="el-cascader-menu" style="display: none"></ul>
+    </div>
+  </div>
 `
 
 const bootstrapTheme = {
@@ -306,7 +278,7 @@ class CascaderComponent extends HTMLElement {
   }
 
   /**
-   * Method returns a list of attributes supported by this component.&lt;br>
+   * Method returns a list of attributes supported by this component.<br>
    */
   static get observedAttributes () {
     return ['options', 'type', 'MenuDisplay']
@@ -323,7 +295,7 @@ class CascaderComponent extends HTMLElement {
     if (!this.hasAttribute('type')) {
       this.setAttribute('type', 'default')
     }
-    for (let i = 1; i &lt; 10; i++) {
+    for (let i = 1; i < 10; i++) {
       if (this.getAttribute('option') === ('options' + i)) {
         // eslint-disable-next-line no-eval
         this.options = eval('options' + i)
@@ -333,10 +305,10 @@ class CascaderComponent extends HTMLElement {
 
     this.addToSubMenu(this.options, this.ul, 0)
 
-    for (let i = 0; i &lt; this.submenus.length; i++) {
+    for (let i = 0; i < this.submenus.length; i++) {
       this.menus.appendChild(this.submenus[i])
     }
-    for (let i = 0; i &lt; this.submenu2s.length; i++) {
+    for (let i = 0; i < this.submenu2s.length; i++) {
       this.menus.appendChild(this.submenu2s[i])
     }
     console.log('Component connected!')
@@ -350,7 +322,7 @@ class CascaderComponent extends HTMLElement {
   }
 
   /**
-   * Method used for toogle the 1st-level menus&lt;br>
+   * Method used for toogle the 1st-level menus<br>
    */
   toggleMenu () {
     if (this.ul.style.display === 'none') {
@@ -358,7 +330,7 @@ class CascaderComponent extends HTMLElement {
       this.setAttribute('MenuDisplay', 'inline-block')
     } else {
       const uls = this.shadowRoot.querySelectorAll('ul')
-      for (let i = 0; i &lt; uls.length; i++) {
+      for (let i = 0; i < uls.length; i++) {
         uls[i].style.display = 'none'
       }
       this.setAttribute('MenuDisplay', 'none')
@@ -366,7 +338,7 @@ class CascaderComponent extends HTMLElement {
   }
 
   /**
-   * Method used for toggle the focus.&lt;br>
+   * Method used for toggle the focus.<br>
    */
   toggleFocus () {
     this.input = this.shadowRoot.querySelector('input')
@@ -376,11 +348,11 @@ class CascaderComponent extends HTMLElement {
   }
 
   /**
-   * Method to show the selected submenu in the 2nd level.&lt;br>
+   * Method to show the selected submenu in the 2nd level.<br>
    */
   showSubMenus (submenu) {
     var i = 0
-    for (; i &lt; this.submenus.length; i++) {
+    for (; i < this.submenus.length; i++) {
       if (this.submenus[i] === submenu) {
         this.submenus[i].style.display = 'inline-block'
       } else {
@@ -390,29 +362,29 @@ class CascaderComponent extends HTMLElement {
   }
 
   /**
-   * Method to close all the submenu in the 2nd level.&lt;br>
+   * Method to close all the submenu in the 2nd level.<br>
    */
   closeSubMenus () {
-    for (let i = 0; i &lt; this.submenus.length; i++) {
+    for (let i = 0; i < this.submenus.length; i++) {
       this.submenus[i].style.display = 'none'
     }
   }
 
   /**
-   * Method to show all the submenu in the 3rd level.&lt;br>
+   * Method to show all the submenu in the 3rd level.<br>
    */
   closeSubMenu2s () {
-    for (let i = 0; i &lt; this.submenu2s.length; i++) {
+    for (let i = 0; i < this.submenu2s.length; i++) {
       this.submenu2s[i].style.display = 'none'
     }
   }
 
   /**
-   * Method to change text to the selected option.&lt;br>
+   * Method to change text to the selected option.<br>
    */
   setUpInput () {
     this.shadowRoot.querySelector('input').placeholder = ''
-    for (let i = 0; i &lt; this.activeOptions.length; i++) {
+    for (let i = 0; i < this.activeOptions.length; i++) {
       this.shadowRoot.querySelector('input').placeholder += this.activeOptions[i]
       if (i !== this.activeOptions.length - 1) {
         this.shadowRoot.querySelector('input').placeholder += '/ '
@@ -425,19 +397,19 @@ class CascaderComponent extends HTMLElement {
   }
 
   /**
-   * Method to add the option to the new submenu.&lt;br>
+   * Method to add the option to the new submenu.<br>
    */
   addToSubMenu (option, submenu, count) {
-    for (let i = 0; i &lt; option.length; i++) {
+    for (let i = 0; i < option.length; i++) {
       let newli = document.createElement('li')
       if (option[i].children === undefined) {
-        newli.innerHTML = '&lt;span>' + option[i].label + '&lt;/span>'
+        newli.innerHTML = '<span>' + option[i].label + '</span>'
         newli.addEventListener('click', () => {
           this.activeOptions.push(newli.textContent)
           this.setUpInput()
         })
       } else {
-        newli.innerHTML = '&lt;span>' + option[i].label + '&lt;/span> &lt;img src="https://ucsd-cse112.github.io/team4/component/cascader/images/angle-right-24.png" class="el-input_child_icon">'
+        newli.innerHTML = '<span>' + option[i].label + '</span> <img src="https://ucsd-cse112.github.io/team4/component/cascader/images/angle-right-24.png" class="el-input_child_icon">'
         let newSubMenu = document.createElement('ul')
         newSubMenu.style.display = 'none'
         newSubMenu.classList.add('el-cascader-menu')
@@ -500,26 +472,3 @@ class CascaderComponent extends HTMLElement {
   }
 }
 window.customElements.define('cascader-component', CascaderComponent)
-</code></pre>
-        </article>
-    </section>
-
-
-
-
-</div>
-
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ButtonComponent.html">ButtonComponent</a></li><li><a href="CascaderComponent.html">CascaderComponent</a></li><li><a href="HelloWorldComponent.html">HelloWorldComponent</a></li><li><a href="LinkComponent.html">LinkComponent</a></li><li><a href="MenuComponent.html">MenuComponent</a></li><li><a href="MenuItem.html">MenuItem</a></li><li><a href="RadioComponent.html">RadioComponent</a></li><li><a href="RadioOption.html">RadioOption</a></li><li><a href="SliderComponent.html">SliderComponent</a></li></ul><h3>Global</h3><ul><li><a href="global.html#attributeEqualHelloWorld">attributeEqualHelloWorld</a></li><li><a href="global.html#attributeEqualSlider">attributeEqualSlider</a></li><li><a href="global.html#attributeEqulButton">attributeEqulButton</a></li><li><a href="global.html#attributeEqulLink">attributeEqulLink</a></li><li><a href="global.html#safeSetButton">safeSetButton</a></li><li><a href="global.html#safeSetHelloWorld">safeSetHelloWorld</a></li><li><a href="global.html#safeSetLink">safeSetLink</a></li><li><a href="global.html#safeSetSlider">safeSetSlider</a></li><li><a href="global.html#settings">settings</a></li></ul>
-</nav>
-
-<br class="clear">
-
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a>
-</footer>
-
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
-</body>
-</html>

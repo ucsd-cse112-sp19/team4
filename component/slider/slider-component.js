@@ -230,7 +230,7 @@ class SliderComponent extends HTMLElement {
           this.shadowRoot.querySelector('input').setAttribute('min', min)
         }
         if (this.shadowRoot.getElementById('max') !== null) {
-          this.shadowRoot.getElementById('max').textContent = min
+          this.shadowRoot.getElementById('max').textContent = max
           this.shadowRoot.querySelector('input').setAttribute('max', max)
         }
       }
