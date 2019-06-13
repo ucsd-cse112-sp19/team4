@@ -4,7 +4,7 @@
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/BartholomewTam.svg)](https://saucelabs.com/u/BartholomewTam)
 
-![logo](/team4/images/logo_new_32.png)
+<img src="/team4/images/logo_new_32.png" width=200>
 ### iTeam
 
 ### Getting Started
@@ -31,10 +31,11 @@
   where `COMPONENT_NAME` is the name of the component to be included.
   
 ### Button Component
-  To add our button component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/button/button-component.js"></script>` in your html file. See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).<br>
+  To add our button component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/button/button-component.js"></script>` in your html file. <br>
+  See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).<br>
   Below is a demo of our button components:
 
-![Demo](/images/button.gif)
+<img src="/images/button.gif" width=500>
 
 ### Slider Component  
   To add our button component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/slider/slider-component.js"></script>` in your html file.<br>
@@ -42,28 +43,31 @@
   See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).<br>
   Below is a quick demo:
 
-![Demo](/images/slider_demo.gif)
+<img src="/images/slider_demo.gif" width=500>
 
 ### Cascader Component
   To add our cascader component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/cascader/cascader-component.js"></script>` in your html file.<br>
   See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).<br>
   Below is a quick demo:
 
-![Demo](/images/cascader_demo.gif)
+<img src="/images/cascader_demo.gif" width=500>
 
 ### Link Component
   To add our link component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/link/link-component.js"></script>` in your html file.<br>
   See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).<br>
   Below is a quick demo:
 
-![Demo](/images/link_demo.gif)
+<img src="/images/link_demo.gif" width=500>
 
 ### Radio Component
   To add our radio component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/radio/radio-component.js"></script>` in your html file.<br>
   See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).<br>
   Below is a quick demo:
 
-![Demo](/images/radio_demo.gif)
+<img src="/images/radio_demo.gif" width=500>
+
+### Menu Component
+  Our Menu Component provides you an easy way to include a nav bar in your website, check out our [home page](https://ucsd-cse112.github.io/team4/team4/index.html) to see how it looks!
 
 ### Onboarding
   Checkout our [Internal Documentation](https://docs.google.com/document/d/1YPPVVj0zGL9mlDcBUCZGDCyOEXh_KHbNI2EjDrWPjag/edit?usp=sharing)
