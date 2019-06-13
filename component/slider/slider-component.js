@@ -124,7 +124,10 @@ class SliderComponent extends HTMLElement {
     if (!this.hasAttribute('value')) {
       this.setAttribute('value', '50')
     }
-    this.shadowRoot.querySelector('input').setAttribute('value', this.getAttribute('value'))
+    var slider = this.shadowRoot.querySelector('input')
+    if (slider !== null) {
+      slider.setAttribute('value', this.getAttribute('value'))
+    }
     if (!this.hasAttribute('min')) {
       this.setAttribute('min', 0)
     }
