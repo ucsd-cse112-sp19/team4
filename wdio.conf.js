@@ -81,7 +81,7 @@ exports.config = {
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER,
-    seleniumVersion: '3.4.0'
+    seleniumVersion: '3.14.0'
   // },
     // maxInstances: 2,
     // browserName: 'safari',
