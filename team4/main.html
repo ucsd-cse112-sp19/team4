@@ -55,7 +55,12 @@
             <hello-world rainbow="true">, this is iComponent</hello-world>
             <h3>Web Components that think differently</h3>
             <button-component type="primary" theme="bootstrap">Getting Started</button-component>
-            <button-component type="plain">Tutorial ></button-component>
+            <button-component id="tutorial" type="plain" >Tutorial ></button-component>
+            <script>
+              document.getElementById("tutorial").onclick = function() {
+                location.href = "./tutorial.html";
+              }
+            </script>
         </div>
       </div>
       <div id="more">
