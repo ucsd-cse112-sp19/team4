@@ -54,11 +54,14 @@
         <div id="main">
             <hello-world rainbow="true">, this is iComponent</hello-world>
             <h3>Web Components that think differently</h3>
-            <button-component type="primary" theme="bootstrap">Getting Started</button-component>
-            <button-component id="tutorial" type="plain" >Tutorial ></button-component>
+            <button-component id="tutorial" type="primary" theme="bootstrap">Getting Started</button-component>
+            <button-component id="joinus" type="plain" >Learn how you can Join Us! ></button-component>
             <script>
               document.getElementById("tutorial").onclick = function() {
                 location.href = "./tutorial.html";
+              }
+              document.getElementById("joinus").onclick = function() {
+                location.href = "https://docs.google.com/document/d/1YPPVVj0zGL9mlDcBUCZGDCyOEXh_KHbNI2EjDrWPjag/edit?usp=sharing";
               }
             </script>
         </div>
