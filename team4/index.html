@@ -71,7 +71,7 @@
             <menu-item><a href="https://ucsd-cse112.github.io/team4/docs/index.html" target="_blank">Docs</a></menu-item>
             <menu-item><a href="https://github.com/ucsd-cse112/team4" target="_blank">Github</a></menu-item>
             <menu-item id="menuItem1">
-              <cascader-component option="options1" onchange="changeOption" id="cascader1"></cascader-component>
+              <cascader-component option="options1" onchange="changeOption" id="cascader1">Select component</cascader-component>
             </menu-item>
             <menu-item right>Languages</menu-item>
             <menu-item onclick="showConactDialog()" right>Contact</menu-item>
@@ -126,13 +126,12 @@
       function closeContactDialog(){
         var dialog = document.getElementById("contact");
         dialog.close()
-	  }
-	  function changeOption(){
-		var cascaderComponent = document.querySelector("menu-component").shadowRoot.querySelector("#menuItem1").querySelector("#cascader1")
-		var newLink = "setIframeSrc('component/" + cascaderComponent.value + "/index.html')"
-		var menuItemComponent = document.querySelector("menu-component").shadowRoot.querySelector("#features")
-		menuItemComponent.setAttribute('onclick', newLink)
-	  }
+	    }
+      function changeOption(){
+        var cascaderComponent = document.querySelector("menu-component").shadowRoot.querySelector("#menuItem1").querySelector("#cascader1")
+        var value = cascaderComponent.value
+        setIframeSrc('component/' + value + '/index.html')
+      }
     </script>
     <script src="../component/radio/radio-component.js"></script>
     <script src="../component/button/button-component.js"></script>

@@ -6,12 +6,12 @@
 }
 
 .card {
-  border-radius: 4px 4px 0 0; 
+  border-radius: 4px 4px 0 0;  
 }
 
 .card, .code {
   border: 1px solid lightgray;
-  padding: 40px 0px 40px 10px;  
+  padding: 20px 0px 20px 10px;
   position: relative;
   width: 100%;
   text-align: center;
@@ -19,9 +19,8 @@
 
 .code {
   border-radius: 0 0 4px 4px;
-  width: 100%; 
-  text-align: left; 
-  padding: 10px 0px 10px 10px; 
+  width: 100%;  
+  text-align: left;
 }
 
 .show-code-btn{
@@ -33,10 +32,8 @@
 .code {
   background-color: rgb(221, 221, 221); 
   color: #000;
-  display: none;
   opacity: 0.7;
   font-weight: bold;
-  overflow-wrap: break-word;
 }
 
 .copy-code {
@@ -55,6 +52,11 @@
 
 .block {
   margin-bottom: 40px;
+}
+
+menu-component {
+  margin-top: 20px;
+  margin-right: 10px;  
 }
 
 pre {

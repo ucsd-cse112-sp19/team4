@@ -38,7 +38,7 @@
 .copy-code {
   position: absolute;
   right: 5px;
-  top: 33%;
+  top: 10%;
 }
   
 .show-code-btn :hover, .copy-code:hover {
