@@ -149,8 +149,10 @@ class SliderComponent extends HTMLElement {
   attributeChangedCallback (attrName, oldVal, newVal) {
     if (attrName === 'value' && !isNaN(newVal) && newVal >= 0 && newVal <= 100) {
       var slider = this.shadowRoot.querySelector('input')
-      slider.value = newVal
-      this.applyFill(slider)
+      if (slider !== null) {
+        slider.value = newVal
+        this.applyFill(slider)
+      }
     }
     if (attrName === 'min' || attrName === 'max') {
       this.handleMinAndMax()
