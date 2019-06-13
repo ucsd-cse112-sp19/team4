@@ -65,24 +65,24 @@ exports.config = {
     // maxInstances can get overwritten per capability. So if you have an in-house Selenium
     // grid with only 5 firefox instances available you can make sure that not more than
     // 5 instances get started at a time.
-  //   maxInstances: 2,
-  //   browserName: 'chrome',
-  //   version: '75.0',
-  //   platform: 'Windows 10',
-  //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-  //   name: 'integration',
-  //   build: process.env.TRAVIS_BUILD_NUMBER,
-  //   seleniumVersion: '3.4.0'
-  // }, {
-  //   maxInstances: 2,
-  //   browserName: 'firefox',
-  //   version: '67.0',
-  //   platform: 'Windows 10',
-  //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-  //   name: 'integration',
-  //   build: process.env.TRAVIS_BUILD_NUMBER,
-  //   seleniumVersion: '3.4.0'
-  // }, {
+    maxInstances: 2,
+    browserName: 'chrome',
+    version: '75.0',
+    platform: 'Windows 10',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    name: 'integration',
+    build: process.env.TRAVIS_BUILD_NUMBER,
+    seleniumVersion: '3.4.0'
+  }, {
+    maxInstances: 2,
+    browserName: 'firefox',
+    version: '67.0',
+    platform: 'Windows 10',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    name: 'integration',
+    build: process.env.TRAVIS_BUILD_NUMBER,
+    seleniumVersion: '3.4.0'
+  }, {
     maxInstances: 2,
     browserName: 'safari',
     version: '12.0',
@@ -99,7 +99,7 @@ exports.config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: 'debug',
+  logLevel: 'silent',
   //
   // Set specific log levels per logger
   // loggers:

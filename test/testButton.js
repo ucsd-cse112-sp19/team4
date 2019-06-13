@@ -1,4 +1,4 @@
-/* global beforeEach describe it $ */
+/* global beforeEach describe it */
 beforeEach(async () => {
   // this will set the endpoint to be the button component page
   await browser.url('/team4/team4/button/')
