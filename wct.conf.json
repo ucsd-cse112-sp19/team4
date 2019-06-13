@@ -3,7 +3,10 @@
         "component/hello-world/hello-world-component.js",
         "component/button/button-component.js",
 		"component/slider/slider-component.js",
-		"component/link/link-component.js"
+        "component/link/link-component.js",
+        "component/cascader/cascader.js",
+        "component/radio/radio-component.js",
+        "component/menu/menu-component.js"
     ],
     "plugins": {
         "sauce": {
