@@ -4,48 +4,52 @@
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/BartholomewTam.svg)](https://saucelabs.com/u/BartholomewTam)
 
+![logo](/team4/images/logo_new_32.png)
+### iTeam
+
 ### Getting Started
-  Please visit our [home page](https://ucsd-cse112.github.io/team4/team4/index.html) which shows you our beautiful components family along with tutorials, documentations, and more about our components as well as how you can contribute to our projects! (PS: our home page is built purely with our components!)
+  Please visit our [home page](https://ucsd-cse112.github.io/team4/team4/index.html) which shows you our beautiful iComponents family along with tutorials, documentations, and more about our components as well as how you can contribute to our projects! (PS: our home page is built purely with our components!)
 
 ### How to Install
   Simply run `npm install team-a-icomponent`, you should be able to find a folder called "team-a-icomponent" in the "node_module" folder under the same directory where you ran the command.
 
 ### Button Component
-  To add our button component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/button/button-component.js"></script>` in your html file. See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).
+  To add our button component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/button/button-component.js"></script>` in your html file. See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).<br>
   Below is a demo of our button components:
 
 ![Demo](/images/button.gif)
 
 ### Slider Component  
-  To add our button component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/slider/slider-component.js"></script>` in your html file.
-  Our slider component is ported from [Element.io](https://element.eleme.io/#/en-US/component/slider). Users can define the initial value, the min/max values, and the boostrap theme by simply changing the attribute values of the tag. 
-  See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).
+  To add our button component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/slider/slider-component.js"></script>` in your html file.<br>
+  Our slider component is ported from [Element.io](https://element.eleme.io/#/en-US/component/slider). Users can define the initial value, the min/max values, and the boostrap theme by simply changing the attribute values of the tag. <br>
+  See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).<br>
   Below is a quick demo:
 
 ![Demo](/images/slider_demo.gif)
 
 ### Cascader Component
-  To add our cascader component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/cascader/cascader-component.js"></script>` in your html file.
-  See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).
+  To add our cascader component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/cascader/cascader-component.js"></script>` in your html file.<br>
+  See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).<br>
   Below is a quick demo:
 
 ![Demo](/images/cascader_demo.gif)
 
 ### Link Component
-  To add our link component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/link/link-component.js"></script>` in your html file.
-  See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).
+  To add our link component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/link/link-component.js"></script>` in your html file.<br>
+  See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).<br>
   Below is a quick demo:
 
 ![Demo](/images/link_demo.gif)
 
 ### Radio Component
-  To add our radio component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/radio/radio-component.js"></script>` in your html file.
-  See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).
+  To add our radio component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/radio/radio-component.js"></script>` in your html file.<br>
+  See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).<br>
   Below is a quick demo:
 
 ![Demo](/images/radio_demo.gif)
 
 ### Onboarding
+  Checkout our [Internal Documentation](https://docs.google.com/document/d/1YPPVVj0zGL9mlDcBUCZGDCyOEXh_KHbNI2EjDrWPjag/edit?usp=sharing)
 
 ### Things to keep in mind:
   Create a new branch with the name + number of the task on trello  
