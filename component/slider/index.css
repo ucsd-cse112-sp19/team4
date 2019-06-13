@@ -6,7 +6,7 @@
 }
 
 .card {
-  border-radius: 4px 4px 0 0; 
+  border-radius: 4px 4px 0 0;  
 }
 
 .card, .code {
@@ -20,9 +20,7 @@
 
 .code {
   border-radius: 0 0 4px 4px;
-  width: 100%; 
-  text-align: left; 
-  padding: 10px 0px 10px 10px; 
+  width: 100%;  
 }
 
 .show-code-btn{
@@ -37,7 +35,6 @@
   display: none;
   opacity: 0.7;
   font-weight: bold;
-  overflow-wrap: break-word;
 }
 
 .copy-code {

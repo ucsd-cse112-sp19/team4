@@ -3,54 +3,70 @@
     <head>
         <meta charset="UTF-8">
         <title>Components</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-      }
-    
-    </style>
     <body>
-      <menu-component >
-        <menu-item default-active >Web components</menu-item>
-        <menu-item>Documentation</menu-item>
-        <menu-item><a href="https://github.com/ucsd-cse112/team4" target="_blank">Github</a></menu-item>
-        <menu-item>
-          <cascader-component option="options1"></cascader-component>
-        </menu-item>
-        <menu-item right>Contact</menu-item>
-        <menu-item right>About us</menu-item>
-      </menu-component>
+      <div class="container">
+        <div class="block">
+          <h2>Button</h2>
+          <h3>Basic Usage</h3>
+          <p class="description">Use type attribute such as warning, success, danger, primary, and info to style the
+              button<br>Also added support for bootstrap theme</p>
+          <div class="card">
+            <span class="show-code-btn" onclick="toggleCode('btn-code-type')">
+              <i class="fa fa-code" style="font-size:24px"></i>
+            </span>
+            <menu-component >
+              <menu-item default-active >Default Active</menu-item>
+              <menu-item>Tab 2</menu-item>
+              <menu-item><a href="#" target="_blank">Link</a></menu-item>
+              <menu-item right>Align Right</menu-item>
+            </menu-component>
+          </div>
+          <div class="code" id="btn-code-type">
+            <pre>
+  &lt;menu-component &gt;
+      &lt;menu-item default-active &gt;Default Active&lt;/menu-item&gt;
+      &lt;menu-item&gt;Tab 2&lt;/menu-item&gt;
+      &lt;menu-item&gt;&lt;a href="#" target="_blank"&gt;Tab with link&lt;/a&gt;&lt;/menu-item&gt;
+      &lt;menu-item right&gt;Tab align right&lt;/menu-item&gt;
+  &lt;/menu-component&gt;
+            </pre>
+            <span class="copy-code" onclick="copyToClipboard()">
+              <i style="color:rgb(72, 176, 245);" class="fa fa-clone"></i>
+            </span>
+          </div>
+        </div>
+      </div>
     </body>
     <script src="menu-component.js"></script>
     <script>
-        var options1 =  [
-          {
-            value: 'Button',
-            label: 'Button'
-          },
-          {
-            value: 'Slider',
-            label: 'Slider'
-          },
-          {
-            value: 'Cascader',
-            label: 'Cascader'
-          },
-          {
-            value: 'Link',
-            label: 'Link'
-          },
-          {
-            value: 'Radio',
-            label: 'Radio'
-          },
-          {
-            value: 'Menu',
-            label: 'Menu'
-          }
-        ]
+      function toggleCode(id) {
+        var code = document.getElementById(id);
+        if (code.style.display === "none")
+          code.style.display = "inline-block"
+        else
+          code.style.display = "none"
+      }
+      function copyToClipboard(imgId){
+        const el = document.createElement('textarea');
+        //TODO
+        el.value = 
+            `<menu-component >
+              <menu-item default-active >Default Active</menu-item>
+              <menu-item>Tab 2</menu-item>
+              <menu-item><a href="#" target="_blank">Link</a></menu-item>
+              <menu-item right>Align Right</menu-item>
+            </menu-component>`;
+        el.setAttribute('readonly', '');
+        el.style.position = 'absolute';
+        el.style.left = '-9999px';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        alert('Copied to clipboard!')
+      }
     </script>
-    <script src="../cascader/cascader.js"></script>
 </html>
