@@ -33,7 +33,7 @@ exports.config = {
   // directory is where your package.json resides, so `wdio` will be called from there.
   //
   specs: [
-    './test/testButton.js'
+    './test/*.js'
   ],
   // Patterns to exclude.
   exclude: [
@@ -72,25 +72,25 @@ exports.config = {
   //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
   //   name: 'integration',
   //   build: process.env.TRAVIS_BUILD_NUMBER,
-  // seleniumVersion: '3.4.0'
+  //   seleniumVersion: '3.4.0'
+  // }, {
+  //   maxInstances: 2,
+  //   browserName: 'firefox',
+  //   version: '67.0',
+  //   platform: 'Windows 10',
+  //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+  //   name: 'integration',
+  //   build: process.env.TRAVIS_BUILD_NUMBER,
+  //   seleniumVersion: '3.4.0'
   // }, {
     maxInstances: 2,
-    browserName: 'firefox',
-    version: '67.0',
-    platform: 'Windows 10',
+    browserName: 'safari',
+    version: '12.0',
+    platform: 'macOS 10.14',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     name: 'integration',
     build: process.env.TRAVIS_BUILD_NUMBER,
-    seleniumVersion: '3.14.0'
-  // },
-    // maxInstances: 2,
-    // browserName: 'safari',
-    // version: '12.0',
-    // platform: 'macOS 10.14',
-    // 'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    // name: 'integration',
-    // build: process.env.TRAVIS_BUILD_NUMBER,
-    // seleniumVersion: '3.4.0'
+    seleniumVersion: '3.4.0'
   }],
   //
   // ===================
