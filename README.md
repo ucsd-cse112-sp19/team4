@@ -7,9 +7,26 @@
 ### Getting Started
   Please visit our [home page](https://ucsd-cse112.github.io/team4/team4/index.html) which shows you our beautiful components family along with tutorials, documentations, and more about our components as well as how you can contribute to our projects! (PS: our home page is built purely with our components!)
 
-### How to Install
-  Simply run `npm install team-a-icomponent`, you should be able to find a folder called "team-a-icomponent" in the "node_module" folder under the same directory where you ran the command.
-
+### Install from NPM
+  ```sh
+  npm install iteam-icomponents
+  ```
+  After installing, the folder "node_modules/iteam-icomponents/" will be the folder containing all iComponents. Each can then be included to your webpage with:
+  ```html
+  <script type="text/javascript" src="node_modules/iteam-icompontents/COMPONENT_NAME/COMPONENT_NAME.js"></script>
+  ```
+  where `COMPONENT_NAME` is the name of the component to be included.
+  
+### Installing from Source
+  ```sh
+  git clone https://github.com/ucsd-cse112/team4.git
+  ```
+  After cloning, you the folder "team4/component/" will be the folder containing all iComponents. Each can then be included to your webpage with:
+  ```html
+  <script type="text/javascript" src="team4/compontent/COMPONENT_NAME/COMPONENT_NAME.js"></script>
+  ```
+  where `COMPONENT_NAME` is the name of the component to be included.
+  
 ### Button Component
   To add our button component to your page, copy the "team_a_icomponent" folder to where your html file is located, and include `<script src="team-a-icomponent/button/button-component.js"></script>` in your html file. See usages at the tutorials page located at [home page](https://ucsd-cse112.github.io/team4/team4/index.html).
   Below is a demo of our button components:
