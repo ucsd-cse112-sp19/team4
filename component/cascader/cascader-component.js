@@ -4,57 +4,55 @@ template.innerHTML = `
     :host{
 
       /* Default Element Theme */
-      --btn-color-default: #606266;
-      --btn-color-warning: #e6a23c;
-      --btn-color-success: #67c23a;
-      --btn-color-danger: #f56c6c;
-      --btn-color-primary: #409eff;
-      --btn-color-info: #909399;
-      --btn-default-hover: rgba(64, 158, 255, 0.15);
-      --btn-default-border: #dcdfe6;
-      --btn-bg-primary-plain: rgba(64, 158, 255, 1.0);
+      --cas-color-default: #606266;
+      --cas-color-warning: #e6a23c;
+      --cas-color-success: #67c23a;
+      --cas-color-danger: #f56c6c;
+      --cas-color-primary: #409eff;
+      --cas-color-info: #909399;
+      --cas-default-hover: rgba(64, 158, 255, 0.15);
+      --cas-default-border: #dcdfe6;
 
     }
     :host{
-      height: 280px;
-      display: block;
+      display: inline-block;
     }
     /* CSS classes for type attribute */
     :host([type='default']) ::placeholder{
-      color: var(--btn-color-default);
+      color: var(--cas-color-default);
     }
     :host([type='default']) .el-cascader-menu_item{
-      color: var(--btn-color-default);
+      color: var(--cas-color-default);
     }
     :host([type='primary']) ::placeholder{
-      color: var(--btn-color-primary);
+      color: var(--cas-color-primary);
     }
     :host([type='primary']) .el-cascader-menu_item{
-      color: var(--btn-color-primary);
+      color: var(--cas-color-primary);
     }
     :host([type='success']) ::placeholder{
-      color: var(--btn-color-success);
+      color: var(--cas-color-success);
     }
     :host([type='success']) .el-cascader-menu_item{
-      color: var(--btn-color-success);
+      color: var(--cas-color-success);
     }
     :host([type='danger']) ::placeholder{
-      color: var(--btn-color-danger);
+      color: var(--cas-color-danger);
     }
     :host([type='danger']) .el-cascader-menu_item{
-      color: var(--btn-color-danger);
+      color: var(--cas-color-danger);
     }
     :host([type='info']) ::placeholder{
-      color: var(--btn-color-info);
+      color: var(--cas-color-info);
     }
     :host([type='info']) .el-cascader-menu_item{
-      color: var(--btn-color-info);
+      color: var(--cas-color-info);
     }
     :host([type='warning']) ::placeholder{
-      color: var(--btn-color-warning);
+      color: var(--cas-color-warning);
     }
     :host([type='warning']) .el-cascader-menu_item{
-      color: var(--btn-color-warning);;
+      color: var(--cas-color-warning);;
     }
     /*for Bootstrap*/
     :host([theme='bootstrap'][type='default']) ::placeholder{
@@ -94,7 +92,7 @@ template.innerHTML = `
       color: #ffc107;
     }
     .el-cascader{
-      width: 222px;
+      width: 242px;
       display: inline-block;
       position: relative;
       font-size: 14px;
@@ -232,7 +230,7 @@ template.innerHTML = `
       <div class="el-input">
         <input type="text" placeholder="Please select" class="el-input_inner">
           <span class="el-input_suffix">
-            <img src="images/angle-down-24.png" class="el-input_icon">
+            <img src="https://ucsd-cse112.github.io/team4/component/cascader/images/angle-down-24.png" class="el-input_icon">
           </span>
       </div>
       <span class="el-cascader_label"></span>
@@ -243,21 +241,9 @@ template.innerHTML = `
   </div>
 `
 
-const bootstrapTheme = {
-  /* Bootstrap Theme */
-  primary: '#007bff',
-  secondary: '#6c757d',
-  success: '#28a745',
-  info: '#17a2b8',
-  warning: '#ffc107',
-  danger: '#dc3545',
-  default: '#6c757d',
-  black: '#fff'
-}
-
 /* global HTMLElement */
 /**
- * This is a custom button component
+ * This is a custom cascader component
  * Ported from https://element.eleme.io/#/en-US/component/cascader
  */
 class CascaderComponent extends HTMLElement {
@@ -271,6 +257,7 @@ class CascaderComponent extends HTMLElement {
     this.cascader = this.shadowRoot.querySelector('.el-cascader')
     this.ul = this.shadowRoot.querySelector('.el-cascader-menu')
     this.activeOptions = []
+    // toggle the menu and focus effect when clicked on the input
     this.cascader.addEventListener('click', () => {
       this.toggleFocus()
       this.toggleMenu()
@@ -281,7 +268,7 @@ class CascaderComponent extends HTMLElement {
    * Method returns a list of attributes supported by this component.<br>
    */
   static get observedAttributes () {
-    return ['options', 'type', 'MenuDisplay']
+    return ['options', 'type', 'onchange', 'value']
   }
 
   /**
@@ -289,11 +276,19 @@ class CascaderComponent extends HTMLElement {
    */
   connectedCallback () {
     this.menus = this.shadowRoot.querySelector('.el-cascader-menus')
+    // the second level submenu
     this.submenus = []
+    // the third level submenu
     this.submenu2s = []
-    this.setAttribute('MenuDisplay', 'none')
+    // set default
     if (!this.hasAttribute('type')) {
       this.setAttribute('type', 'default')
+    }
+    if (!this.hasAttribute('value')) {
+      this.setAttribute('value', '')
+    }
+    if (this.textContent.length > 0) {
+      this.shadowRoot.querySelector('input').setAttribute('placeholder', this.textContent)
     }
     for (let i = 1; i < 10; i++) {
       if (this.getAttribute('option') === ('options' + i)) {
@@ -305,6 +300,7 @@ class CascaderComponent extends HTMLElement {
 
     this.addToSubMenu(this.options, this.ul, 0)
 
+    // construct all uls here
     for (let i = 0; i < this.submenus.length; i++) {
       this.menus.appendChild(this.submenus[i])
     }
@@ -327,13 +323,11 @@ class CascaderComponent extends HTMLElement {
   toggleMenu () {
     if (this.ul.style.display === 'none') {
       this.ul.style.display = 'inline-block'
-      this.setAttribute('MenuDisplay', 'inline-block')
     } else {
       const uls = this.shadowRoot.querySelectorAll('ul')
       for (let i = 0; i < uls.length; i++) {
         uls[i].style.display = 'none'
       }
-      this.setAttribute('MenuDisplay', 'none')
     }
   }
 
@@ -383,6 +377,7 @@ class CascaderComponent extends HTMLElement {
    * Method to change text to the selected option.<br>
    */
   setUpInput () {
+    // change the input placeholder
     this.shadowRoot.querySelector('input').placeholder = ''
     for (let i = 0; i < this.activeOptions.length; i++) {
       this.shadowRoot.querySelector('input').placeholder += this.activeOptions[i]
@@ -390,6 +385,7 @@ class CascaderComponent extends HTMLElement {
         this.shadowRoot.querySelector('input').placeholder += '/ '
       }
     }
+    this.value = this.activeOptions[0]
     this.closeSubMenus()
     this.closeSubMenu2s()
     this.activeOptions = []
@@ -402,14 +398,19 @@ class CascaderComponent extends HTMLElement {
   addToSubMenu (option, submenu, count) {
     for (let i = 0; i < option.length; i++) {
       let newli = document.createElement('li')
+      // no children found
       if (option[i].children === undefined) {
+        // no arrow-down image here
         newli.innerHTML = '<span>' + option[i].label + '</span>'
         newli.addEventListener('click', () => {
           this.activeOptions.push(newli.textContent)
           this.setUpInput()
+          if (this.hasAttribute('onchange')) {
+            window[this.getAttribute('onchange')]()
+          }
         })
-      } else {
-        newli.innerHTML = '<span>' + option[i].label + '</span> <img src="images/angle-right-24.png" class="el-input_child_icon">'
+      } else { // children found
+        newli.innerHTML = '<span>' + option[i].label + '</span> <img src="https://ucsd-cse112.github.io/team4/component/cascader/images/angle-right-24.png" class="el-input_child_icon">'
         let newSubMenu = document.createElement('ul')
         newSubMenu.style.display = 'none'
         newSubMenu.classList.add('el-cascader-menu')
@@ -441,33 +442,6 @@ class CascaderComponent extends HTMLElement {
         newli.classList.remove('is-active')
       })
       submenu.appendChild(newli)
-    }
-  }
-
-  handleTheme (theme) {
-    if (theme === 'bootstrap') {
-      var style = this.style
-      style.setProperty('--btn-color-default', bootstrapTheme.default)
-      style.setProperty('--btn-color-warning', bootstrapTheme.warning)
-      style.setProperty('--btn-color-success', bootstrapTheme.success)
-      style.setProperty('--btn-color-danger', bootstrapTheme.danger)
-      style.setProperty('--btn-color-primary', bootstrapTheme.primary)
-      style.setProperty('--btn-color-info', bootstrapTheme.info)
-      style.setProperty('--text-color', bootstrapTheme.black)
-      style.setProperty('--btn-default-border', bootstrapTheme.default)
-    }
-  }
-
-  /**
-   * Callback for when the supported attributes change its value.
-   * Currently not using this since most of the logic can be handle in the css
-   * @param {string} attrName - the name of the attribute.
-   * @param {*} oldVal - the old value of the attribute.
-   * @param {*} newVal - the new value of the attribute.
-   */
-  attributeChangedCallback (attrName, oldVal, newVal) {
-    if (attrName === 'theme') {
-      this.handleTheme(newVal)
     }
   }
 }

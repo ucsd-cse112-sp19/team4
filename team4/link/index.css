@@ -1,0 +1,11 @@
+#element {
+  display: inline-block;
+  width: 40%;
+  margin-left: 8%;
+}
+
+#bootstrap {
+  display: inline-block;
+  width: 40%;
+  margin-right: 8%;
+}

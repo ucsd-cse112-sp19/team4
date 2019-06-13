@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Documentation</title>
+        <style>
+          html, body {
+            width: 100%;
+          }
+          .container {
+            text-align: center;
+          }
+          #main{
+            height: 240px;
+            width: 500px;
+            display: inline-block;
+            box-shadow: -1px 7px 9px 0px rgba(150,147,150,1);
+            border: 1px solod grey;
+            border-radius: 4px;
+            margin-bottom: 40px;
+            background: -webkit-linear-gradient(to right, #8e9eab, #eef2f3); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #8e9eab, #eef2f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          }
+          #main h3{
+            margin-bottom: 50px;
+          }
+          h1 {
+            text-align: center;
+          }
+          #more {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+          }
+          #more .more-item {
+            padding: 0 2em 2em 2em;
+            width: 33%;
+            display: table-cell;
+          }
+          #more .more-item .attribute {
+            color: rgb(25, 118, 210);
+          }
+          #more .more-item p {
+            line-height: 1.7;
+            font-size: 16px;
+            font-family: Helvetica Neue,sans-serif;
+            opacity: 0.6;
+            margin: 0;
+          }
+        </style>
+    </head>
+    <body>
+      <div class="container">
+        <div id="main">
+            <hello-world rainbow="true">, this is iComponent</hello-world>
+            <h3>Web Components that think differently</h3>
+            <button-component type="primary" theme="bootstrap">Getting Started</button-component>
+            <button-component id="tutorial" type="plain" >Tutorial ></button-component>
+            <script>
+              document.getElementById("tutorial").onclick = function() {
+                location.href = "./tutorial.html";
+              }
+            </script>
+        </div>
+      </div>
+      <div id="more">
+        <div class="more-item">
+          <h3 class="attribute">MAJOR BROWSERS SUPPORT</h3>
+          <p>Here at the iTeam we are not browser discrimitve and support all browsers of all types and colors! We constantly are make additions to the browser support and currently we can proudly say that we're supporting Chrome, Safari, Internet Explore, Edge, and Firefox! </p>
+        </div>
+        <div class="more-item">
+          <h3 class="attribute">SPEED & PERFORMANCE</h3>
+          <p>In today's word, speed is king. iTeam is determine to maintain our high standards and give you the best speeds and performances on the web! With iComponents load times become a thing of the past! </p>
+        </div>
+        <div class="more-item">
+          <h3 class="attribute">COMPONENT-BASED</h3>
+          <p>We here at iTeam continue to add more components each and every moment. We will not stop until everything, and we mean everything on the web can be built using iComponents. The iTeam hopes to be the fist and last place you look in web development</p>
+        </div>
+      </div>
+    </body>
+    <script src="../component/hello-world/hello-world-component.js"></script>
+    <script src="../component/button/button-component.js"></script>
+</html>

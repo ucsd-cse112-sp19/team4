@@ -36,7 +36,7 @@ template.innerHTML = `
     outline: none;
     cursor: pointer;
     padding: 0;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
   
   }
@@ -91,30 +91,6 @@ template.innerHTML = `
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
-  }
-
-  :host([icon='icon-delete']) a:before{
-    content: url('../images/garbage.png');
-  }
-
-  :host([icon='icon-star-off']) a:before{
-    content: url('../images/star.png');
-  }
-
-  :host([icon='icon-message']) a:before{
-    content: url('../images/mail.png');
-  }
-
-  :host([icon='icon-check']) a:before{
-    content: url('../images/tick.png');
-  }
-
-  :host([icon='icon-edit']) a:before{
-    content: url('../images/edit.png');
-  }
-
-  :host([icon='icon-search']) a:before{
-    content: url('../images/search.png');
   }
 
   a, a:visited, a:hover, a:active {
