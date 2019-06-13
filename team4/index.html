@@ -112,7 +112,8 @@
       window.onload = function (){
       }
       function setIframeSrc(src){
-        const baseURL = 'http://localhost:5500/'
+        // const baseURL = 'http://localhost:5500/'
+        const baseURL = 'https://ucsd-cse112.github.io/team4/'
         document.getElementById('frame').src = baseURL + src;
         // document.title = document.getElementById('frame').contentDocument.title
       }
@@ -129,7 +130,8 @@
 	    }
       function changeOption(){
         var cascaderComponent = document.querySelector("menu-component").shadowRoot.querySelector("#menuItem1").querySelector("#cascader1")
-        var value = cascaderComponent.value
+        //TODO this is a quick fix, need to get the value instead of the label
+        var value = cascaderComponent.value.toLowerCase()
         setIframeSrc('component/' + value + '/index.html')
       }
     </script>
