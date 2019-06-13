@@ -122,8 +122,9 @@
 			code.style.display = "none"
 		}
 		function copyToClipboard(imgId){
-		  const el = document.createElement('textarea');
-		  el.value = "<button-component>Default</button-component>";
+			const el = document.createElement('textarea');
+			//TODO
+		  el.value = "<link-component type=\"warning\">Warning</link-component>";
 		  el.setAttribute('readonly', '');
 		  el.style.position = 'absolute';
 		  el.style.left = '-9999px';

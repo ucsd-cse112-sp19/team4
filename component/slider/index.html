@@ -87,7 +87,8 @@
       }
       function copyToClipboard(imgId){
         const el = document.createElement('textarea');
-        el.value = "<button-component>Default</button-component>";
+        //TODO
+        el.value = `<slider-component value="2015" min="2010" max="2020" type="info"></slider-component>`;
         el.setAttribute('readonly', '');
         el.style.position = 'absolute';
         el.style.left = '-9999px';
