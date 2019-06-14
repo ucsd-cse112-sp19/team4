@@ -2,7 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Components</title>
+        <title>Tutorials</title>
+        <link rel="icon" href="./images/logo_new_32.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
             html, body {
                 width: 100%;
@@ -15,13 +17,121 @@
             .indent {
                 text-indent: 2em;
             }
+            
+            .container {
+                position: relative;
+                width: 60%;
+                /* margin: auto;
+                padding-bottom: 50px; */
+            }
+
+            .card {
+            border-radius: 4px 4px 0 0;  
+            }
+
+            .code {
+            border: 1px solid lightgray;
+            /* padding: 20px 0px 20px 10px; */
+            position: relative;
+            width: 100%;
+            text-align: center;
+            }
+
+            .code {
+            border-radius: 0 0 4px 4px;
+            width: 100%;  
+            text-align: left;
+            }
+
+            .show-code-btn{
+            position: absolute;
+            top: 0;
+            right: 5px;
+            }
+
+            .code {
+            background-color: rgb(221, 221, 221); 
+            color: #000;
+            opacity: 0.7;
+            font-weight: bold;
+            }
+
+            .copy-code {
+            position: absolute;
+            right: 5px;
+            top: 10%;
+            }
+
+            .show-code-btn :hover, .copy-code:hover {
+            cursor: pointer;
+            }
+
+            .description {
+            opacity: 0.7;
+            }
+
+            menu-component {
+            margin-top: 20px;
+            margin-right: 10px;  
+            }
+
+            pre {
+            overflow-x: auto;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+            }
+
+            /* .block {
+                margin-bottom: 40px;
+            } */
         </style>
     </head>
     <body>
         <h1>Getting Started</h1>
         <h2>npm install</h2>
-        <p><font color="black">Simply run </font>npm install team-a-icomponent<font color="black">, you should be able to find a folder called "team-a-icomponent" in the "node_module" folder under the same directory where you ran the command.</font></p>
-        <p><font color="black">To add our components to your page, copy the "team_a_icomponent" folder to where your html file is located, and include </font>&lt;script src="team-a-icomponent/button/button-component.js"&gt;&lt;/script&gt; <font color="black">in your html file.</font></p>
+        <p><font color="black">Simply run the following command (assumed you have npm installed in your OS):</font></p>
+        <div class="container">
+            <div class="block">
+                <div class="code" id="btn-code-type">
+                <pre>npm install iteam-icomponents</pre>
+                <span class="copy-code" onclick="copyToClipboard()">
+                    <i style="color:rgb(72, 176, 245);" class="fa fa-clone"></i>
+                </span>
+                </div>
+            </div>
+        </div>
+        <script>
+            function copyToClipboard(imgId){
+                const el = document.createElement('textarea');
+                //TODO
+                el.value = 
+                    `npm install iteam-icomponents`;
+                el.setAttribute('readonly', '');
+                el.style.position = 'absolute';
+                el.style.left = '-9999px';
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                alert('Copied to clipboard!')
+            }
+        </script>
+        <p><font color="black">You should be able to find a folder called "iteam-icomponents" in the "node_module" folder under the same directory where you ran the command.</font></p>
+        <p><font color="black">To add our components to your page, copy the "iteam_icomponents" folder to where your html file is located, and include below script in your html file.</font></p>
+        <div class="container">
+                <div class="block">
+                    <div class="code" id="btn-code-type">
+                    <pre>&lt;script type="text/javascript" src="node_modules/iteam-icompontents/COMPONENT_NAME/COMPONENT_NAME.js"&gt;&lt;/script&gt;</pre>
+                    <!-- <span class="copy-code" onclick="copyToClipboard2()">
+                        <i style="color:rgb(72, 176, 245);" class="fa fa-clone"></i>
+                    </span> -->
+                    </div>
+                </div>
+            </div>
+            
         <h1>iButton</h1>
         <div id="button">
             <div class="button">

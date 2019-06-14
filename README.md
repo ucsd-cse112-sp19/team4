@@ -5,6 +5,7 @@
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/BartholomewTam.svg)](https://saucelabs.com/u/BartholomewTam)
 
 <img src="/team4/images/logo_new_32.png" width=200>
+
 ### iTeam
 
 ### Getting Started
