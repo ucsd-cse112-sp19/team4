@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "team-a-web-component",
-=======
-  "name": "ucsd-team4-web-component",
->>>>>>> c2ac0c7fc99cecee8e0278a66603dade1b50f623
   "version": "1.0.0",
   "description": "Team 4 project",
   "main": "index.js",
