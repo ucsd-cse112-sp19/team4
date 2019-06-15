@@ -487,6 +487,10 @@ template.innerHTML = `
  * And here is some random documentation
  * Ported from https://element.eleme.io/#/en-US/component/button
  */
+
+ /**
+  * Something new
+  */
 class ButtonComponent extends HTMLElement {
   /**
    * ButtonComponent constructor. Attaching button template into
