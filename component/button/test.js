@@ -12,7 +12,6 @@ function attributeEqulButton (component, attribute, value) {
   assert.isString(attribute)
   assert.include(ButtonComponent.observedAttributes, attribute)
   assert.equal(component[attribute], value)
-  assert.equal('foo', 'bar')
 }
 
 /**
