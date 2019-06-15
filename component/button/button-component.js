@@ -488,7 +488,7 @@ template.innerHTML = `
  * Ported from https://element.eleme.io/#/en-US/component/button
  */
 
- /**
+/**
   * Something new
   */
 class ButtonComponent extends HTMLElement {
