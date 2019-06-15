@@ -484,6 +484,7 @@ template.innerHTML = `
 /* global HTMLElement */
 /**
  * This is a custom button component
+ * And this is some random documentation
  * Ported from https://element.eleme.io/#/en-US/component/button
  */
 class ButtonComponent extends HTMLElement {
